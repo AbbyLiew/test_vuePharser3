@@ -1,9 +1,11 @@
 <script setup>
-import Game from '@/components/Game'
+import Game from "@/components/Game";
 </script>
 
 <template>
-  <Game />
+  <section>
+    <Game />
+  </section>
 </template>
 
 <style lang="scss">

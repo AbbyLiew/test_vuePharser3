@@ -1,5 +1,5 @@
 <script setup>
-import PhaserContainer from '@/components/PhaserContainer'
+import PhaserContainer from "@/components/PhaserContainer";
 </script>
 
 <template>
@@ -7,9 +7,7 @@ import PhaserContainer from '@/components/PhaserContainer'
     <PhaserContainer />
 
     <template #fallback>
-      <div class="placeholder">
-        Downloading ...
-      </div>
+      <div class="placeholder">Downloading ...</div>
     </template>
   </Suspense>
 </template>
@@ -17,6 +15,6 @@ import PhaserContainer from '@/components/PhaserContainer'
 <style lang="scss" scoped>
 .placeholder {
   font-size: 2rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 </style>
