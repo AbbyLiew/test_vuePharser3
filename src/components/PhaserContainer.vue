@@ -15,5 +15,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div :id="containerId" style="height: 100vh"></div>
+  <div style="height: 100vh">
+    <div :id="containerId"></div>
+  </div>
 </template>

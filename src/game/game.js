@@ -6,8 +6,10 @@ function launch(containerId) {
   return new Phaser.Game({
     type: Phaser.AUTO,
     parent: containerId,
-    width: 900,
-    height: 1600,
+    backgroundColor: "#f29799",
+    width: window.innerWidth,
+    height: window.innerHeight,
+    backgroundColor: "#f29799",
     mipmapFilter: "LINEAR_MIPMAP_LINEAR",
     scale: {
       autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -16,6 +18,7 @@ function launch(containerId) {
     render: { pixelArt: true, antialias: false },
     scene: [BootScene, PlayScene],
   });
+  C;
 }
 
 export default launch;
