@@ -7,8 +7,8 @@ function launch(containerId) {
     type: Phaser.AUTO,
     parent: containerId,
     backgroundColor: "#f29799",
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
     backgroundColor: "#f29799",
     mipmapFilter: "LINEAR_MIPMAP_LINEAR",
     scale: {
