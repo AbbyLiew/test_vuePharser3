@@ -10,7 +10,8 @@ function launch(containerId) {
     width: window.innerWidth * window.devicePixelRatio,
     height: window.innerHeight * window.devicePixelRatio,
     backgroundColor: "#f29799",
-    mipmapFilter: "LINEAR_MIPMAP_LINEAR",
+    mipmapFilter: "NEAREST_MIPMAP_LINEAR",
+    pixelArt: false,
     scale: {
       autoCenter: Phaser.Scale.CENTER_BOTH,
       mode: Phaser.Scale.FIT,

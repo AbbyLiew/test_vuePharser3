@@ -1,3 +1,5 @@
+console.clear();
+
 import { Scene } from "phaser";
 
 export default class PlayScene extends Scene {
@@ -16,24 +18,12 @@ export default class PlayScene extends Scene {
       "lorry"
     );
 
-    this.btn = this.add.image(
-      this.sys.game.config.width / 2,
-      this.sys.game.config.height / 2,
-      "startButton"
-    );
-    this.btn.scale = 0.4;
-    this.btn.alpha = 0;
-
-    this.btn.setInteractive();
-    this.btn.on("pointerdown", () => {
-      this.startGame();
-    });
-
     this.lorry.setOrigin(1, 1);
+    this.lorry.scale = (this.sys.game.config.height * 0.4) / this.lorry.height;
 
     this.tweens.add({
       targets: this.lorry,
-      x: (this.sys.game.config.width / 12) * 11.9,
+      x: (this.sys.game.config.width / 12) * 11,
       ease: "Linear",
       duration: 1000,
     });
@@ -65,27 +55,16 @@ export default class PlayScene extends Scene {
     this.broad.setDepth(-1);
 
     window.startGame = this.startGame.bind(this);
+
+    this.lorry.setInteractive();
+    this.lorry.on("pointerdown", () => {
+      this.startGame();
+    });
   }
 
   startGame() {
-    this._circle = this.add.circle(
-      this.sys.game.config.width / 2,
-      this.sys.game.config.height / 2,
-      50
-    );
-
-    // border
-    this._circle.setStrokeStyle(10, 0xffffff);
-    this.tweens.add({
-      targets: this._circle,
-      radius: this.sys.game.config.height,
-      ease: "fadeIn",
-      duration: 900,
-      onComplete: () => {
-        this._circle.destroy();
-      },
-    });
-    this.scene.transition({ target: "CardScene", duration: 260 });
+    // scene fade in
+    this.scene.transition({ target: "CardScene", duration: 100 });
   }
 
   update() {}

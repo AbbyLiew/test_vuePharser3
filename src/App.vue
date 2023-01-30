@@ -6,10 +6,6 @@ import { Data } from "phaser";
 <template>
   <section>
     <Game />
-    <section
-      :style="{ width: width + 'px', height: height + 'px' }"
-      class="mainSection"
-    ></section>
   </section>
 </template>
 

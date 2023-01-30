@@ -1,3 +1,5 @@
+console.clear();
+
 import { Scene, Phaser } from "phaser";
 
 export default class PlayScene extends Scene {
@@ -9,132 +11,177 @@ export default class PlayScene extends Scene {
     var x = this.sys.game.config.width / 2;
     var y = this.sys.game.config.height / 2;
 
-    this.cardgroup = this.add.group();
-    for (var i = 0; i < 8; i++) {
-      this.cardgroup.create(x, y, "card");
-    }
-    this.cardgroup.children.iterate((child, index) => {
-      child.rotation = index * -0.1;
-      child.setOrigin(0.5);
-      child.setInteractive();
-      child.on("pointerdown", () => {
-        this.rotateOriposition();
+    // create sprite sheet animation
+    this.anims.create({
+      key: "flip_card",
+      frames: this.ArrayFrame(1, 20, false),
+      frameRate: 30,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: "flip_card_reverse",
+      frames: this.ArrayFrame(20, 1, true),
+      frameRate: 30,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: "empty_card_flip",
+      frames: this.ArrayFrame(40, 60, false),
+      frameRate: 30,
+      repeat: 0,
+    });
+
+    // create sprite
+    this.cardGroup = this.add.group();
+    //
+
+    // global scope
+    window.cardGroup = this.cardGroup;
+    window.flipCard = this.flipCard.bind(this);
+    window.cardAimationFlow2 = this.cardAimationFlow2.bind(this);
+    window.cardaAimationFlow1 = this.cardaAimationFlow1.bind(this);
+    window.backToinitPosition = this.backToinitPosition.bind(this);
+
+    for (let i = 0; i < 8; i++) {
+      this.cardGroup.create(x, y, "Card_Flip_00000");
+      this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
+      let _ratio = (this.sys.game.config.height * 0.3) / this.cardHeight;
+
+      this.cardGroup.children.entries[i].scale = _ratio;
+      this.cardGroup.children.entries[i].setInteractive();
+      this.cardGroup.children.entries[i].on("pointerdown", () => {
+        this.cardGroup.children.entries[i].play("flip_card");
       });
-    });
-
-    this._circle = this.add
-      .circle(
-        this.sys.game.config.width / 2,
-        this.sys.game.config.height / 2,
-        50
-      )
-      .setDepth(-1);
-
-    // border
-    this._circle.setStrokeStyle(5, 0xffffff);
-    this._circle.blendMode = "DIFFERENCE";
-
-    // box-shadow
-    this.tweens.add({
-      targets: this._circle,
-      radius: this.sys.game.config.height,
-      ease: "fadeIn",
-      duration: 900,
-    });
-
-    window.shaferCard = this.shaferCard.bind(this);
-    window.rotateOriposition = this.rotateOriposition.bind(this);
-    window.cardgroup = this.cardgroup;
-    window.clearTween = this.clearTween.bind(this);
-  }
-
-  rotateOriposition() {
-    this.cardgroup.children.iterate((child, index) => {
       this.tweens.add({
-        targets: child,
+        targets: this.cardGroup.children.entries[i],
+        rotation: -0.1 * (i + 1),
+        ease: "Power1",
+        duration: 500,
+      });
+
+      this.time.addEvent({
+        delay: 1000,
+        callback: () => {
+          this.cardaAimationFlow1();
+        },
+      });
+
+      this.time.addEvent({
+        delay: 5500,
+        callback: () => {
+          this.cardAimationFlow2();
+        },
+      });
+    }
+  }
+
+  flipCard() {
+    this.cardGroup.children.entries[7].play("flip_card");
+  }
+
+  cardaAimationFlow1() {
+    this.cardGroup.children.entries.forEach((card, index) => {
+      let _ratio = (this.sys.game.config.height * 0.14) / this.cardHeight;
+
+      let _x;
+      let _y;
+      if (index % 2 === 0) {
+        _x = this.sys.game.config.width / 2 - (card.width * _ratio * 8) / 11;
+        _y =
+          this.sys.game.config.height * 0.25 +
+          (index * this.cardHeight * _ratio * 10) / 16;
+      } else {
+        _x = this.sys.game.config.width / 2 + (card.width * _ratio * 8) / 11;
+        _y =
+          this.sys.game.config.height * 0.25 +
+          ((index - 1) * this.cardHeight * _ratio * 10) / 16;
+      }
+
+      this.tweens.add({
+        targets: card,
         rotation: 0,
-        ease: "Linear",
-        duration: 700,
+        scale: _ratio,
+        x: _x,
+        y: _y,
+        rotate3d: { z: 10 },
+        ease: "Power1",
+        duration: 1000,
+        onComplete: () => {
+          this.time.addEvent({
+            delay: 100 * index,
+            callback: () => {
+              card.play("flip_card");
+              this.time.addEvent({
+                delay: 2000,
+                callback: () => {
+                  card.play("flip_card_reverse");
+                },
+              });
+            },
+          });
+        },
       });
     });
-
-    this.shaferCard();
   }
 
-  clearTween() {
-    this.tweens.killAll();
-  }
+  backToinitPosition() {
+    let _ratio = (this.sys.game.config.height * 0.5) / this.cardHeight;
 
-  shaferCard() {
-    this.cardgroup.children.iterate((child, index) => {
-      if (index % 2 == 0) {
-        this.tweens.add({
-          targets: child,
-          y:
-            this.sys.game.config.height * 0.125 * (index !== 0 ? index + 1 : 1),
-          x: this.sys.game.config.width * 0.25,
-          scale: 0.6,
-          delay: 1000,
-          onComplete: () => {
-            this.tweens.add({
-              targets: child,
-              ease: "Linear",
-              onComplete: () => {
-                this.tweens.add({
-                  targets: child,
-                  x: this.sys.game.config.width * 0.5,
-                  y: this.sys.game.config.height * 0.5,
-                  rotation: -0.5,
-                  scale: 1.7,
-                  ease: "Linear",
-                  onComplete: () => {
-                    this.tweens.add({
-                      targets: child,
-                      rotation: 0,
-                      ease: "Linear",
-                      duration: 50,
-                    });
-                  },
-                });
-              },
-            });
-          },
-        });
-      } else {
-        this.tweens.add({
-          targets: child,
-          y: this.sys.game.config.height * 0.125 * (index !== 0 ? index : 1),
-          x: this.sys.game.config.width * 0.75,
-          scale: 0.6,
-          delay: 1000,
-          onComplete: () => {
-            this.tweens.add({
-              targets: child,
-              ease: "Linear",
-              delay: 500,
-              onComplete: () => {
-                this.tweens.add({
-                  targets: child,
-                  x: this.sys.game.config.width * 0.5,
-                  y: this.sys.game.config.height * 0.5,
-                  rotation: 0.5,
-                  scale: 1.7,
-                  ease: "Linear",
-                  onComplete: () => {
-                    this.tweens.add({
-                      targets: child,
-                      rotation: 0,
-                      ease: "Linear",
-                      duration: 50,
-                    });
-                  },
-                });
-              },
-            });
-          },
-        });
-      }
+    this.cardGroup.children.entries.forEach((card, index) => {
+      this.tweens.add({
+        targets: card,
+        scale: _ratio,
+        x: this.sys.game.config.width / 2,
+        y: this.sys.game.config.height / 2,
+        ease: "Power1",
+        duration: 1000,
+        onComplete: () => {
+          if (index === 7) {
+            this.cardGroup.children.entries[7].play("flip_card");
+          }
+        },
+      });
     });
+  }
+
+  cardAimationFlow2() {
+    this.cardGroup.children.entries.forEach((card, index) => {
+      let _ratio = (this.sys.game.config.height * 0.5) / this.cardHeight;
+      this.tweens.add({
+        targets: card,
+        rotation: 0,
+        scale: _ratio,
+        x:
+          this.sys.game.config.width / 2 -
+          (this.cardGroup.children.entries.length - 1 - index) * 10,
+        y:
+          this.sys.game.config.height / 2 +
+          (this.cardGroup.children.entries.length - 1 - index) * 5,
+        ease: "Power2",
+        duration: 1000,
+        onComplete: () => {
+          this.cardGroup.children.entries[7].play("flip_card");
+        },
+      });
+    });
+  }
+
+  ArrayFrame(start, end, reverse) {
+    if (reverse) {
+      let arr = [];
+      for (let i = start; i >= end; i--) {
+        arr.push({ key: "Card_Flip_" + i.toString().padStart(5, "0") });
+      }
+      return arr;
+    } else {
+      let arr = [];
+      for (let i = start; i <= end; i++) {
+        arr.push({ key: "Card_Flip_" + i.toString().padStart(5, "0") });
+      }
+      return arr;
+    }
   }
 
   update() {}
