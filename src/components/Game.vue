@@ -17,7 +17,7 @@ export default {
       current: 1,
       innerHeight: window.innerHeight,
       innerWidth: window.innerWidth,
-      quationsData: {
+      questionsData: {
         quation1: "",
         quation2: "",
         quation3: "",
@@ -41,8 +41,8 @@ export default {
       this.current--;
     },
 
-    setQuaionData(quation, quationNumber) {
-      this.quationsData[quationNumber] = quation;
+    setQuestionData(question, questionNumber) {
+      this.questionsData[questionNumber] = question;
     },
   },
   mounted() {
@@ -59,64 +59,34 @@ export default {
     <section>
       <!-- if window resize -->
       <PhaserContainer />
-      <section
-        class="mainSection"
-        style="width: 100%; height: 100%; position: absolute; top: 0; left: 0"
-      >
+      <section class="mainSection" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0">
         <div v-if="current === 1">
-          <Page1
-            @nextPage="nextPage"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page1 @nextPage="nextPage" :innerHeight="innerHeight" :innerWidth="innerWidth" />
         </div>
         <div v-if="current === 2">
-          <Page2
-            @next="next"
-            @back="back"
-            @setQuaionData="setQuaionData"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page2 @next="next" @back="back" @setQuaionData="setQuestionData" :innerHeight="innerHeight"
+            :innerWidth="innerWidth" />
         </div>
         <div v-if="current === 3">
-          <Page3
-            @next="next"
-            @back="back"
-            @setQuaionData="setQuaionData"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page3 @next="next" @back="back" @setQuaionData="setQuestionData" :innerHeight="innerHeight"
+            :innerWidth="innerWidth" />
         </div>
         <div v-if="current === 4">
-          <Page4
-            @next="next"
-            @back="back"
-            @setQuaionData="setQuaionData"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page4 @next="next" @back="back" @setQuaionData="setQuestionData" :innerHeight="innerHeight"
+            :innerWidth="innerWidth" />
         </div>
         <div v-if="current === 5">
-          <Page5
-            @next="next"
-            @back="back"
-            @setQuaionData="setQuaionData"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page5 @next="next" @back="back" @setQuaionData="setQuestionData" :innerHeight="innerHeight"
+            :innerWidth="innerWidth" />
         </div>
         <div v-if="current === 6">
-          <Page6
-            @next="next"
-            @back="back"
-            @setQuaionData="setQuaionData"
-            :innerHeight="innerHeight"
-            :innerWidth="innerWidth"
-          />
+          <Page6 @next="next" @back="back" @setQuaionData="setQuestionData" :innerHeight="innerHeight"
+            :innerWidth="innerWidth" />
+        </div>
+        <div v-if="current === 7">
+          <Result quiz-result="1" />
         </div>
       </section>
-      <Result :quationsData="quationsData" />
     </section>
 
     <template #fallback>
