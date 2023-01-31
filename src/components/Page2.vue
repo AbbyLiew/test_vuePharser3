@@ -11,7 +11,7 @@
         <h2 :style="`text-align : center`">Your spirit shoe?</h2>
         <ul>
           <li>
-            <button @click="next">Nike</button>
+            <button @click="setQuaionData('A', 'question1')">Nike</button>
           </li>
           <li>
             <button @click="next">Adidas</button>

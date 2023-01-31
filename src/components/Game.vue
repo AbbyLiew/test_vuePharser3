@@ -42,6 +42,7 @@ export default {
     },
 
     setQuaionData(quation, quationNumber) {
+      console.log(quation, quationNumber);
       this.quationsData[quationNumber] = quation;
     },
   },
