@@ -11,6 +11,14 @@ export default class PlayScene extends Scene {
     var x = this.sys.game.config.width / 2;
     var y = this.sys.game.config.height / 2;
 
+    this.logo = this.add.image(
+      this.sys.game.config.width / 2,
+      this.sys.game.config.height * 0.125,
+      "logo"
+    );
+
+    this.logo.scale = (this.sys.game.config.height * 0.18) / this.logo.height;
+
     // create sprite sheet animation
     this.anims.create({
       key: "flip_card",
@@ -33,6 +41,13 @@ export default class PlayScene extends Scene {
       repeat: 0,
     });
 
+    this.anims.create({
+      key: "empty_card_flip_reverse",
+      frames: this.ArrayFrame(40, 60, true),
+      frameRate: 30,
+      repeat: 0,
+    });
+
     // create sprite
     this.cardGroup = this.add.group();
     //
@@ -43,6 +58,8 @@ export default class PlayScene extends Scene {
     window.cardAimationFlow2 = this.cardAimationFlow2.bind(this);
     window.cardaAimationFlow1 = this.cardaAimationFlow1.bind(this);
     window.backToinitPosition = this.backToinitPosition.bind(this);
+    window.flipCard_empty = this.flipCard_empty.bind(this);
+    window.flipCard_empty_reverse = this.flipCard_empty_reverse.bind(this);
 
     for (let i = 0; i < 8; i++) {
       this.cardGroup.create(x, y, "Card_Flip_00000");
@@ -50,10 +67,6 @@ export default class PlayScene extends Scene {
       let _ratio = (this.sys.game.config.height * 0.3) / this.cardHeight;
 
       this.cardGroup.children.entries[i].scale = _ratio;
-      this.cardGroup.children.entries[i].setInteractive();
-      this.cardGroup.children.entries[i].on("pointerdown", () => {
-        this.cardGroup.children.entries[i].play("flip_card");
-      });
       this.tweens.add({
         targets: this.cardGroup.children.entries[i],
         rotation: -0.1 * (i + 1),
@@ -80,8 +93,23 @@ export default class PlayScene extends Scene {
   flipCard() {
     this.cardGroup.children.entries[7].play("flip_card");
   }
+  flipCard_empty() {
+    this.cardGroup.children.entries[7].play("empty_card_flip");
+  }
+
+  flipCard_empty_reverse() {
+    this.cardGroup.children.entries[7].play("empty_card_flip_reverse");
+  }
 
   cardaAimationFlow1() {
+    this.tweens.add({
+      targets: this.logo,
+      ease: "Power1",
+      y: this.logo.y - 50,
+      duration: 1000,
+      scale: (this.sys.game.config.height * 0.12) / this.logo.height,
+    });
+
     this.cardGroup.children.entries.forEach((card, index) => {
       let _ratio = (this.sys.game.config.height * 0.14) / this.cardHeight;
 
@@ -147,6 +175,14 @@ export default class PlayScene extends Scene {
   }
 
   cardAimationFlow2() {
+    this.tweens.add({
+      targets: this.logo,
+      ease: "Power1",
+      y: this.logo.y + 50,
+      duration: 1000,
+      scale: (this.sys.game.config.height * 0.18) / this.logo.height,
+    });
+
     this.cardGroup.children.entries.forEach((card, index) => {
       let _ratio = (this.sys.game.config.height * 0.5) / this.cardHeight;
       this.tweens.add({

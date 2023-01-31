@@ -1,17 +1,17 @@
 <script setup>
 import Game from "@/components/Game";
+import { method } from "lodash";
 import { Data } from "phaser";
 </script>
 
 <template>
-  <section>
-    <Game />
-  </section>
+  <Game />
 </template>
 
 <!-- hooks for get window dimension -->
 <script>
 import { onMounted, onUnmounted, ref } from "vue";
+import PlayScene from "./game/scenes/PlayScene";
 // import phaser function
 const width = ref(window.innerWidth);
 const height = ref(window.innerHeight);
@@ -22,6 +22,7 @@ const resize = () => {
 onMounted(() => {
   window.addEventListener("resize", resize);
 });
+
 onUnmounted(() => {
   window.removeEventListener("resize", resize);
 });
@@ -29,7 +30,6 @@ onUnmounted(() => {
 
 <style lang="scss">
 body {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

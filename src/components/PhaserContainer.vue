@@ -14,8 +14,19 @@ onUnmounted(() => {
 });
 </script>
 
+<script>
+export default {
+  name: "PhaserContainer",
+  data: () => ({
+    innerHeight: window.innerHeight,
+  }),
+};
+</script>
+
 <template>
-  <div style="height: 100vh">
+  <div :style="`height : ${innerHeight}px;`">
     <div :id="containerId"></div>
   </div>
 </template>
+
+<style></style>

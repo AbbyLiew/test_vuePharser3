@@ -6,12 +6,17 @@ export default class PlayScene extends Scene {
   constructor() {
     super({ key: "PlayScene" });
     this.lorry = null;
-    // get the width and height of the game
-    // this.width = this.sys.game.config.width;
-    // this.height = this.sys.game.config.height;
   }
 
   create() {
+    this.logo = this.add.image(
+      this.sys.game.config.width / 2,
+      this.sys.game.config.height * 0.125,
+      "logo"
+    );
+
+    this.logo.scale = (this.sys.game.config.height * 0.18) / this.logo.height;
+
     this.lorry = this.add.image(
       this.sys.game.config.width + 300,
       (this.sys.game.config.height / 4) * 3.8,
@@ -19,7 +24,7 @@ export default class PlayScene extends Scene {
     );
 
     this.lorry.setOrigin(1, 1);
-    this.lorry.scale = (this.sys.game.config.height * 0.4) / this.lorry.height;
+    this.lorry.scale = (this.sys.game.config.width * 0.5) / this.lorry.width;
 
     this.tweens.add({
       targets: this.lorry,
@@ -55,11 +60,6 @@ export default class PlayScene extends Scene {
     this.broad.setDepth(-1);
 
     window.startGame = this.startGame.bind(this);
-
-    this.lorry.setInteractive();
-    this.lorry.on("pointerdown", () => {
-      this.startGame();
-    });
   }
 
   startGame() {
