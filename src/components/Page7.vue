@@ -1,5 +1,5 @@
 <template>
-  <div class="page2">
+  <div class="page7">
     <!-- <div class="block" :style="`height : ${innerHeight * 0.5}px`" /> -->
     <transition appear @before-enter="beforeEnter" @enter="enter">
       <div
@@ -8,30 +8,30 @@
           (innerHeight * 0.45 * 4.5) / 6.4
         }px;`"
       >
-        <h2 :style="`text-align : center`">Your spirit shoe?</h2>
+        <h2 :style="`text-align : center`">Pick an image</h2>
         <ul>
           <li>
-            <button @click="$emit('setQuaionData', 'quation1', 'A')">
+            <button @click="$emit('setQuaionData', 'quation6', 'A')">
               Nike
             </button>
           </li>
           <li>
-            <button @click="$emit('setQuaionData', 'quation1', 'B')">
+            <button @click="$emit('setQuaionData', 'quation6', 'B')">
               Adidas
             </button>
           </li>
           <li>
-            <button @click="$emit('setQuaionData', 'quation1', 'C')">
+            <button @click="$emit('setQuaionData', 'quation6', 'C')">
               Puma
             </button>
           </li>
           <li>
-            <button @click="$emit('setQuaionData', 'quation1', 'D')">
+            <button @click="$emit('setQuaionData', 'quation6', 'D')">
               Converse
             </button>
           </li>
         </ul>
-
+        <button @click="$emit('back')">Back</button>
         <button @click="$emit('next')">next</button>
       </div>
     </transition>
@@ -58,16 +58,9 @@ export default {
       type: Number,
       required: true,
     },
-    setQuaionData: {
-      type: Function,
-      required: true,
-    },
   },
 
   methods: {
-    doSomething() {
-      this.$emit("setQuaionData", "quation1", "A");
-    },
     beforeEnter(el) {
       el.style.opacity = "0";
     },
@@ -77,7 +70,7 @@ export default {
         duration: 1,
         y: 0,
         opacity: 1,
-        delay: 7,
+        delay: 1,
         type: "ease",
       });
     },

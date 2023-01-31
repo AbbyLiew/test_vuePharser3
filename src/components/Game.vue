@@ -7,6 +7,7 @@ import Page3 from "@/components/Page3";
 import Page4 from "@/components/Page4";
 import Page5 from "@/components/Page5";
 import Page6 from "@/components/Page6";
+import Page7 from "@/components/Page7";
 import Result from "@/components/Result";
 </script>
 
@@ -18,12 +19,12 @@ export default {
       innerHeight: window.innerHeight,
       innerWidth: window.innerWidth,
       quationsData: {
-        quation1: "",
-        quation2: "",
-        quation3: "",
-        quation4: "",
-        quation5: "",
-        quation6: "",
+        quation1: null,
+        quation2: null,
+        quation3: null,
+        quation4: null,
+        quation5: null,
+        quation6: null,
       },
     };
   },
@@ -41,9 +42,8 @@ export default {
       this.current--;
     },
 
-    setQuaionData(quation, quationNumber) {
-      console.log(quation, quationNumber);
-      this.quationsData[quationNumber] = quation;
+    setQuaionData(quationType, answer) {
+      this.quationsData[quationType] = answer;
     },
   },
   mounted() {
@@ -109,6 +109,15 @@ export default {
         </div>
         <div v-if="current === 6">
           <Page6
+            @next="next"
+            @back="back"
+            @setQuaionData="setQuaionData"
+            :innerHeight="innerHeight"
+            :innerWidth="innerWidth"
+          />
+        </div>
+        <div v-if="current === 7">
+          <Page7
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"

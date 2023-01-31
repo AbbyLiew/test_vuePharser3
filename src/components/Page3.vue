@@ -13,16 +13,24 @@
         </h2>
         <ul>
           <li>
-            <button @click="next">Nike</button>
+            <button @click="$emit('setQuaionData', 'quation2', 'A')">
+              Nike
+            </button>
           </li>
           <li>
-            <button @click="next">Adidas</button>
+            <button @click="$emit('setQuaionData', 'quation2', 'B')">
+              Adidas
+            </button>
           </li>
           <li>
-            <button @click="next">Puma</button>
+            <button @click="$emit('setQuaionData', 'quation2', 'C')">
+              Puma
+            </button>
           </li>
           <li>
-            <button @click="next">Converse</button>
+            <button @click="$emit('setQuaionData', 'quation2', 'D')">
+              Converse
+            </button>
           </li>
           <li>
             <button @click="next">Vans</button>

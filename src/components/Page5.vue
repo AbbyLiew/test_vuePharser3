@@ -11,19 +11,24 @@
         <h2 :style="`text-align : center`">Name your <br />memoir.</h2>
         <ul>
           <li>
-            <button @click="next">Nike</button>
+            <button @click="$emit('setQuaionData', 'quation4', 'A')">
+              Nike
+            </button>
           </li>
           <li>
-            <button @click="next">Adidas</button>
+            <button @click="$emit('setQuaionData', 'quation4', 'B')">
+              Adidas
+            </button>
           </li>
           <li>
-            <button @click="next">Puma</button>
+            <button @click="$emit('setQuaionData', 'quation4', 'C')">
+              Puma
+            </button>
           </li>
           <li>
-            <button @click="next">Converse</button>
-          </li>
-          <li>
-            <button @click="next">Vans</button>
+            <button @click="$emit('setQuaionData', 'quation4', 'D')">
+              Converse
+            </button>
           </li>
         </ul>
         <button @click="$emit('back')">Back</button>
