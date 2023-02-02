@@ -4,9 +4,18 @@ import { onMounted, onUnmounted } from "vue";
 let gameInstance = null;
 const containerId = "game-container";
 const game = await import(/* webpackChunkName: "game" */ "@/game/game");
+const game_desktop = await import(
+  /* webpackChunkName: "game" */ "@/game/game_desktop"
+);
 
 onMounted(() => {
-  gameInstance = game.launch(containerId);
+  if (window.innerWidth > 768) {
+    console.log("desktop");
+    gameInstance = game_desktop.launch(containerId);
+  } else {
+    console.log("mobile");
+    gameInstance = game.launch(containerId);
+  }
 });
 
 onUnmounted(() => {

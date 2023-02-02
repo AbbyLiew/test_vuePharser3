@@ -7,7 +7,7 @@ function launch(containerId) {
     type: Phaser.AUTO,
     parent: containerId,
     backgroundColor: "#FEDDE0",
-    width: window.innerWidth * window.devicePixelRatio,
+    width: 750,
     height: window.innerHeight * window.devicePixelRatio,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     // auto resize

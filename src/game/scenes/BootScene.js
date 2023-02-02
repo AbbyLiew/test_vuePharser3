@@ -31,6 +31,11 @@ export default class BootScene extends Scene {
       let asset_name = "bag_" + "0".repeat(5 - i.toString().length) + i;
       this.load.image(asset_name, "/bag/" + asset_name + ".png");
     }
+
+    // laoding progress bar
+    this.load.on("progress", (value) => {
+      console.log(value);
+    });
   }
 
   create() {
