@@ -9,12 +9,27 @@ export default class BootScene extends Scene {
   }
 
   preload() {
-    this.load.image("lorry", COACHlorry);
-    this.load.image("startButton", startButton);
     this.load.image("logo", "/logo.png");
-    for (let i = 0; i <= 100; i++) {
-      let asset_name = "Card_Flip_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/Card_Flip/" + asset_name + ".png");
+    this.load.image("blue_bag", "/bag/blue_bag.png");
+    this.load.image("pink_bag", "/bag/pink_bag.png");
+    this.load.image("white_bag", "/bag/white_bag.png");
+    this.load.image("yellow_bag", "/bag/yellow_bag.png");
+    this.load.image("purple_bag", "/bag/purple_bag.png");
+    this.load.image("minibox", "/box_bottom.jpg");
+    this.load.image("minibox_top", "/box_top.png");
+
+    this.load.image("roof", "/roof.png");
+    this.load.image("icon_icecream", "/icon-icecream.png");
+
+    for (let i = 0; i <= 70; i++) {
+      let asset_name =
+        "Card_Flip_Ans_" + "0".repeat(5 - i.toString().length) + i;
+      this.load.image(asset_name, "/Card_Flip_Ans_02/" + asset_name + ".png");
+    }
+
+    for (let i = 0; i < 5; i++) {
+      let asset_name = "bag_" + "0".repeat(5 - i.toString().length) + i;
+      this.load.image(asset_name, "/bag/" + asset_name + ".png");
     }
   }
 

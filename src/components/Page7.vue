@@ -4,8 +4,8 @@
     <transition appear @before-enter="beforeEnter" @enter="enter">
       <div
         class="container"
-        :style="`height : ${innerHeight * 0.5}px; width : ${
-          (innerHeight * 0.45 * 4.5) / 6.4
+        :style="`height : ${innerHeight * 0.6}px; width : ${
+          (innerHeight * 0.6 * 736) / 1103
         }px;`"
       >
         <h2 :style="`text-align : center`">Pick an image</h2>
@@ -31,8 +31,7 @@
             </button>
           </li>
         </ul>
-        <button @click="$emit('back')">Back</button>
-        <button @click="$emit('next')">next</button>
+        <button @click="end">next</button>
       </div>
     </transition>
   </div>
@@ -63,6 +62,13 @@ export default {
   methods: {
     beforeEnter(el) {
       el.style.opacity = "0";
+    },
+
+    end() {
+      let video = document.getElementById("resultVideo");
+      let container = document.querySelector(".Result");
+      container.style.zIndex = "100";
+      container.style.opacity = "1";
     },
     // where the animation will end up
     enter(el) {

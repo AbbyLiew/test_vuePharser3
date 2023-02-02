@@ -4,8 +4,8 @@
     <transition appear @before-enter="beforeEnter" @enter="enter">
       <div
         class="container"
-        :style="`height : ${innerHeight * 0.5}px; width : ${
-          (innerHeight * 0.45 * 4.5) / 6.4
+        :style="`height : ${innerHeight * 0.6}px; width : ${
+          (innerHeight * 0.6 * 736) / 1103
         }px;`"
       >
         <h2 :style="`text-align : center`">
@@ -33,7 +33,6 @@
             </button>
           </li>
         </ul>
-        <button @click="$emit('back')">Back</button>
         <button @click="$emit('next')">next</button>
       </div>
     </transition>

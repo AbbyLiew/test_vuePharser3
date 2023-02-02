@@ -5,61 +5,206 @@ import { Scene } from "phaser";
 export default class PlayScene extends Scene {
   constructor() {
     super({ key: "PlayScene" });
-    this.lorry = null;
   }
 
   create() {
-    this.logo = this.add.image(
-      this.sys.game.config.width / 2,
-      this.sys.game.config.height * 0.125,
-      "logo"
-    );
+    {
+      this.roof = this.add.sprite(this.sys.game.config.width / 2, -100, "roof");
+      this.roof.setOrigin(0.5, 0);
+      this.roof.setScale(this.sys.game.config.width / this.roof.width);
+      this.bagGroup = this.add.group();
+      let posY = 0;
 
-    this.logo.scale = (this.sys.game.config.height * 0.18) / this.logo.height;
+      if (this.roof.height > this.sys.game.config.height * 0.1) {
+        posY -= this.roof.height - this.sys.game.config.height * 0.1;
+      }
 
-    this.lorry = this.add.image(
-      this.sys.game.config.width + 300,
-      (this.sys.game.config.height / 4) * 3.8,
-      "lorry"
-    );
+      this.tweens.add({
+        targets: this.roof,
+        y: posY,
+        duration: 700,
+      });
+    }
 
-    this.lorry.setOrigin(1, 1);
-    this.lorry.scale = (this.sys.game.config.width * 0.5) / this.lorry.width;
+    {
+      this.boxGroup = this.add.group();
+      for (let i = 0; i < 12; i++) {
+        let minibox;
+        if (i < 3) {
+          minibox = this.add
+            .sprite(
+              (this.sys.game.config.width * i) / 3,
+              this.sys.game.config.height,
+              "minibox"
+            )
+            .setOrigin(0, 1);
 
-    this.tweens.add({
-      targets: this.lorry,
-      x: (this.sys.game.config.width / 12) * 11,
-      ease: "Linear",
-      duration: 1000,
+          minibox.setScale(this.sys.game.config.width / 3 / minibox.width);
+
+          if (i == 0) {
+            minibox.alpha = 0;
+            let top = this.add
+              .sprite(
+                (this.sys.game.config.width * i) / 3,
+                this.sys.game.config.height,
+                "minibox_top"
+              )
+              .setOrigin(0, 1);
+
+            let bag = this.add
+              .sprite(
+                (this.sys.game.config.width * i) / 3,
+                this.sys.game.config.height,
+                "bag_00004"
+              )
+              .setOrigin(0, 1);
+
+            top.setScale(this.sys.game.config.width / 3 / minibox.width);
+            bag.setScale(this.sys.game.config.width / 3 / minibox.width);
+
+            this.bagGroup.add(bag);
+          }
+          this.boxGroup.add(minibox);
+        }
+        if (i < 6 && i >= 3) {
+          minibox = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 3)) / 3,
+              this.sys.game.config.height,
+              "minibox"
+            )
+            .setOrigin(0, 1);
+          minibox.setScale(this.sys.game.config.width / 3 / minibox.width);
+
+          minibox.y -= ((this.sys.game.config.width / 3) * 438) / 626;
+
+          if (i == 5) {
+            minibox.alpha = 0;
+            let top = this.add
+              .sprite(
+                (this.sys.game.config.width * (i - 3)) / 3,
+                this.sys.game.config.height,
+                "minibox_top"
+              )
+              .setOrigin(0, 1);
+
+            let bag = this.add
+              .sprite(
+                (this.sys.game.config.width * (i - 3)) / 3,
+                this.sys.game.config.height,
+                "bag_00000"
+              )
+              .setOrigin(0, 1);
+
+            top.setScale(this.sys.game.config.width / 3 / minibox.width);
+            bag.setScale(this.sys.game.config.width / 3 / minibox.width);
+            bag.y -= ((this.sys.game.config.width / 3) * 438) / 626;
+            top.y -= ((this.sys.game.config.width / 3) * 438) / 626;
+
+            this.bagGroup.add(bag);
+          }
+
+          this.boxGroup.add(minibox);
+        }
+        if (i < 9 && i >= 6) {
+          minibox = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 6)) / 3,
+              this.sys.game.config.height,
+              "minibox"
+            )
+            .setOrigin(0, 1);
+          minibox.setScale(this.sys.game.config.width / 3 / minibox.width);
+
+          minibox.y -= (2 * ((this.sys.game.config.width / 3) * 438)) / 626;
+
+          if (i == 7) {
+            minibox.alpha = 0;
+            let top = this.add
+              .sprite(
+                (this.sys.game.config.width * (i - 6)) / 3,
+                this.sys.game.config.height,
+                "minibox_top"
+              )
+              .setOrigin(0, 1);
+
+            let bag = this.add
+              .sprite(
+                (this.sys.game.config.width * (i - 6)) / 3,
+                this.sys.game.config.height,
+                "bag_00003"
+              )
+              .setOrigin(0, 1);
+
+            top.setScale(this.sys.game.config.width / 3 / minibox.width);
+            bag.setScale(this.sys.game.config.width / 3 / minibox.width);
+            top.y -= (2 * ((this.sys.game.config.width / 3) * 438)) / 626;
+            bag.y -= (2 * ((this.sys.game.config.width / 3) * 438)) / 626;
+
+            this.bagGroup.add(bag);
+          }
+
+          this.boxGroup.add(minibox);
+        }
+        if (i == 11) {
+          let top = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 9)) / 3,
+              this.sys.game.config.height,
+              "minibox_top"
+            )
+            .setOrigin(0, 1);
+
+          let bag = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 9)) / 3,
+              this.sys.game.config.height,
+              "bag_00002"
+            )
+            .setOrigin(0, 1);
+
+          top.setScale(this.sys.game.config.width / 3 / bag.width);
+          bag.setScale(this.sys.game.config.width / 3 / bag.width);
+          top.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
+          bag.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
+
+          this.bagGroup.add(bag);
+        }
+      }
+    }
+    this.anims.create({
+      key: "play_bag",
+      frames: this.ArrayFrame(0, 4, false),
+      frameRate: 2,
+      repeat: -1,
     });
 
-    this.tweens.add({
-      targets: this.btn,
-      alpha: 1,
-      ease: "Linear",
+    this.bagGroup.children.iterate((child) => {
+      this.time.addEvent({
+        delay: Math.random() * 1000,
+        callback: () => {
+          child.play("play_bag");
+        },
+      });
     });
-    this._rectangle = this.add.rectangle({
-      x: this.sys.game.config.width / 2,
-      y: this.sys.game.config.height / 2,
-      width: this.sys.game.config.width,
-      height: this.sys.game.config.height,
-      fillStyle: {
-        color: 0xffb6be,
-      },
-    });
-
-    // create a broad
-    this.broad = this.add.rectangle(
-      this.sys.game.config.width / 2,
-      (this.sys.game.config.height / 5) * 4,
-      this.sys.game.config.width,
-      this.sys.game.config.height * 0.2,
-      0xffb6be
-    );
-    this.broad.setOrigin(0.5, 0);
-    this.broad.setDepth(-1);
 
     window.startGame = this.startGame.bind(this);
+  }
+
+  ArrayFrame(start, end, reverse) {
+    if (reverse) {
+      let arr = [];
+      for (let i = start; i >= end; i--) {
+        arr.push({ key: "bag_" + i.toString().padStart(5, "0") });
+      }
+      return arr;
+    } else {
+      let arr = [];
+      for (let i = start; i <= end; i++) {
+        arr.push({ key: "bag_" + i.toString().padStart(5, "0") });
+      }
+      return arr;
+    }
   }
 
   startGame() {

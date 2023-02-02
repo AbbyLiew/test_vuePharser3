@@ -6,10 +6,9 @@ function launch(containerId) {
   return new Phaser.Game({
     type: Phaser.AUTO,
     parent: containerId,
-    backgroundColor: "#f29799",
+    backgroundColor: "#FEDDE0",
     width: window.innerWidth * window.devicePixelRatio,
     height: window.innerHeight * window.devicePixelRatio,
-    backgroundColor: "#f29799",
     mipmapFilter: "NEAREST_MIPMAP_LINEAR",
     pixelArt: false,
     scale: {

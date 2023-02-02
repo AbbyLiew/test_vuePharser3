@@ -5,6 +5,7 @@ import { Scene, Phaser } from "phaser";
 export default class PlayScene extends Scene {
   constructor() {
     super({ key: "CardScene" });
+    this.current = 0;
   }
 
   create() {
@@ -17,7 +18,13 @@ export default class PlayScene extends Scene {
       "logo"
     );
 
-    this.logo.scale = (this.sys.game.config.height * 0.18) / this.logo.height;
+    this.ice_creame = this.add.image(
+      this.sys.game.config.width / 2,
+      this.sys.game.config.height * 0.5,
+      "icon_icecream"
+    );
+
+    this.logo.scale = (this.sys.game.config.height * 0.1) / this.logo.height;
 
     // create sprite sheet animation
     this.anims.create({
@@ -60,9 +67,10 @@ export default class PlayScene extends Scene {
     window.backToinitPosition = this.backToinitPosition.bind(this);
     window.flipCard_empty = this.flipCard_empty.bind(this);
     window.flipCard_empty_reverse = this.flipCard_empty_reverse.bind(this);
+    window.setCurrent = this.setCurrent.bind(this);
 
     for (let i = 0; i < 8; i++) {
-      this.cardGroup.create(x, y, "Card_Flip_00000");
+      this.cardGroup.create(x, y, "Card_Flip_Ans_00000");
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
       let _ratio = (this.sys.game.config.height * 0.3) / this.cardHeight;
 
@@ -107,7 +115,7 @@ export default class PlayScene extends Scene {
       ease: "Power1",
       y: this.logo.y - 50,
       duration: 1000,
-      scale: (this.sys.game.config.height * 0.12) / this.logo.height,
+      scale: (this.sys.game.config.height * 0.1) / this.logo.height,
     });
 
     this.cardGroup.children.entries.forEach((card, index) => {
@@ -180,11 +188,11 @@ export default class PlayScene extends Scene {
       ease: "Power1",
       y: this.logo.y + 50,
       duration: 1000,
-      scale: (this.sys.game.config.height * 0.18) / this.logo.height,
+      scale: (this.sys.game.config.height * 0.1) / this.logo.height,
     });
 
     this.cardGroup.children.entries.forEach((card, index) => {
-      let _ratio = (this.sys.game.config.height * 0.5) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
       this.tweens.add({
         targets: card,
         rotation: 0,
@@ -208,16 +216,20 @@ export default class PlayScene extends Scene {
     if (reverse) {
       let arr = [];
       for (let i = start; i >= end; i--) {
-        arr.push({ key: "Card_Flip_" + i.toString().padStart(5, "0") });
+        arr.push({ key: "Card_Flip_Ans_" + i.toString().padStart(5, "0") });
       }
       return arr;
     } else {
       let arr = [];
       for (let i = start; i <= end; i++) {
-        arr.push({ key: "Card_Flip_" + i.toString().padStart(5, "0") });
+        arr.push({ key: "Card_Flip_Ans_" + i.toString().padStart(5, "0") });
       }
       return arr;
     }
+  }
+
+  setCurrent(current) {
+    this.current = current;
   }
 
   update() {}

@@ -57,12 +57,12 @@ export default {
 
 <template>
   <Suspense>
-    <section>
+    <section :style="`width : ${innerWidth}px; height : ${innerHeight}px;`">
       <!-- if window resize -->
       <PhaserContainer />
       <section
         class="mainSection"
-        style="width: 100%; height: 100%; position: absolute; top: 0; left: 0"
+        :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
       >
         <div v-if="current === 1">
           <Page1
@@ -125,8 +125,28 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
+        <Result
+          :quationsData="quationsData"
+          :innerWidth="innerWidth"
+          :innerHeight="innerHeight"
+        />
+
+        <div
+          class="line"
+          v-if="current >= 2"
+          :style="`width : ${innerWidth * 0.85}px; bottom : ${
+            innerHeight * 0.05
+          }px`"
+        >
+          <div
+            class="line_inner"
+            :style="`width : ${((current - 1) / 8) * 100}%;`"
+          />
+          <div class="block_test">
+            <img src="/IceCreamIcon.png" alt="" />
+          </div>
+        </div>
       </section>
-      <Result :quationsData="quationsData" />
     </section>
 
     <template #fallback>
@@ -139,5 +159,24 @@ export default {
 .placeholder {
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
+}
+
+.line {
+  position: absolute;
+  height: 3px;
+  display: flex;
+  align-items: center;
+}
+.line_inner {
+  background-color: #e76163;
+  height: 4px;
+  transition: width 0.5s;
+}
+.block_test {
+  width: 20px;
+  height: fit-content;
+  img {
+    width: 100%;
+  }
 }
 </style>
