@@ -2,28 +2,56 @@
   <div class="page5">
     <!-- <div class="block" :style="`height : ${innerHeight * 0.5}px`" /> -->
     <transition appear @before-enter="beforeEnter" @enter="enter">
-      <div
-        class="containerSlider"
-        :style="`height : ${innerHeight * 0.6}px; width : ${innerWidth}px;`"
-      >
-        <h2 :style="`text-align : center;`">Name your <br />memoir.</h2>
-        <Carousel :items-to-show="2.5" :wrap-around="true">
-          <Slide v-for="slide in 4" :key="slide">
-            <div class="carousel__item">{{ slide }}</div>
-          </Slide>
-
-          <template>
-            <Navigation />
-          </template>
-        </Carousel>
-
-        <div :style="'width : 100%; display : flex'">
-          <button
-            :style="'max-width : 200px; margin : 10px auto;'"
-            @click="next"
-          >
-            next
-          </button>
+      <div>
+        <div
+          class="container"
+          :style="`height : ${innerHeight * 0.55}px; width : ${
+            (innerHeight * 0.55 * 736) / 1103
+          }px;`"
+        >
+          <h2 :style="`text-align : center`">Name your <br />memoir.</h2>
+          <ul>
+            <li
+              :class="sellected_item === 'A' ? '--active_sellected' : ''"
+              @click="sellected_item = 'A'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
+                IDGAF.
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'B' ? '--active_sellected' : ''"
+              @click="sellected_item = 'B'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
+                NGL…
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'C' ? '--active_sellected' : ''"
+              @click="sellected_item = 'C'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
+                FOMO
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'D' ? '--active_sellected' : ''"
+              @click="sellected_item = 'D'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
+                TFW…
+              </h6>
+            </li>
+          </ul>
+        </div>
+        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+        <div class="btn-next">
+          <button @click="next">next</button>
         </div>
       </div>
     </transition>
@@ -32,9 +60,6 @@
 
 <script>
 import gsap from "gsap";
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-
 export default {
   props: {
     next: {
@@ -54,11 +79,10 @@ export default {
       required: true,
     },
   },
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+  data() {
+    return {
+      sellected_item: null,
+    };
   },
 
   methods: {
@@ -71,12 +95,25 @@ export default {
         duration: 1,
         y: 0,
         opacity: 1,
-        delay: 1,
+        delay: 0.8,
         type: "ease",
       });
     },
-
     next() {
+      switch (this.sellected_item) {
+        case "A":
+          this.$emit("setQuaionData", "quation4", "A");
+          break;
+        case "B":
+          this.$emit("setQuaionData", "quation4", "B");
+          break;
+        case "C":
+          this.$emit("setQuaionData", "quation4", "C");
+          break;
+        case "D":
+          this.$emit("setQuaionData", "quation4", "D");
+          break;
+      }
       this.$emit("next");
     },
   },
@@ -84,28 +121,14 @@ export default {
 </script>
 
 <style>
-.carousel__item {
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-  margin: 0 10px;
-  color: black;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.--active_sellected {
+  background-color: #e87d8c;
 }
 
-h2 {
-  color: #f38a8c;
+.--extra_padding {
+  padding: 5% 0;
 }
-.carousel__slide--active {
-  background-color: #f38a8c;
-}
-.containerSlider {
-  padding: 10% 0;
-  box-sizing: border-box;
+.--color_white {
+  color: #fff;
 }
 </style>

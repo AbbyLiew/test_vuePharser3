@@ -8,7 +8,10 @@ import Page4 from "@/components/Page4";
 import Page5 from "@/components/Page5";
 import Page6 from "@/components/Page6";
 import Page7 from "@/components/Page7";
+import Page8 from "@/components/Page8";
 import Result from "@/components/Result";
+import IceCream from "@/components/svgs/icescream";
+import gsap from "gsap";
 </script>
 
 <script>
@@ -29,11 +32,25 @@ export default {
     };
   },
   methods: {
+    beforeEnter(el) {
+      el.style.opacity = "0";
+    },
+    enter(el) {
+      console.log("enter");
+      gsap.to(el, {
+        duration: 1,
+        opacity: 1,
+        delay: 7,
+        type: "ease",
+      });
+    },
+
     nextPage() {
       window?.startGame();
       this.current++;
     },
     next() {
+      console.log(this.current);
       window.flipCard_empty();
       this.current++;
     },
@@ -64,6 +81,7 @@ export default {
         class="mainSection"
         :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
       >
+        <div class="block" :style="`height : ${innerHeight * 0.21}px;`" />
         <div v-if="current === 1">
           <Page1
             @nextPage="nextPage"
@@ -125,27 +143,49 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
+        <div v-if="current === 8">
+          <Page8
+            @next="next"
+            @back="back"
+            @setQuaionData="setQuaionData"
+            :innerHeight="innerHeight"
+            :innerWidth="innerWidth"
+          />
+        </div>
         <Result
           :quationsData="quationsData"
           :innerWidth="innerWidth"
           :innerHeight="innerHeight"
         />
 
-        <div
-          class="line"
-          v-if="current >= 2"
-          :style="`width : ${innerWidth * 0.85}px; bottom : ${
-            innerHeight * 0.05
-          }px`"
-        >
+        <transition appear @before-enter="beforeEnter" @enter="enter">
           <div
-            class="line_inner"
-            :style="`width : ${((current - 1) / 8) * 100}%;`"
-          />
-          <div class="block_test">
-            <img src="/IceCreamIcon.png" alt="" />
+            class="line"
+            v-if="current >= 2"
+            :style="`width : ${innerWidth * 0.85}px; bottom : ${
+              innerHeight * 0.06
+            }px`"
+          >
+            <div
+              class="line_inner"
+              :style="`width : ${((current - 1) / 9) * 100}%;`"
+            />
+            <div class="block_test">
+              <div>
+                <IceCream />
+              </div>
+            </div>
+
+            <div
+              class="line_inner"
+              :style="`width : ${((9 - current + 2) / 9) * 100}%;`"
+            />
+
+            <div class="line_inner_font">
+              <h5>{{ current - 1 }} / 8</h5>
+            </div>
           </div>
-        </div>
+        </transition>
       </section>
     </section>
 
@@ -163,20 +203,32 @@ export default {
 
 .line {
   position: absolute;
-  height: 3px;
+  height: 2px;
   display: flex;
   align-items: center;
+  max-width: 750px;
 }
 .line_inner {
-  background-color: #e76163;
-  height: 4px;
+  background-color: #ff99a7;
+  height: 2px;
+  border-radius: 50px;
   transition: width 0.5s;
 }
 .block_test {
-  width: 20px;
+  width: 7vw;
+  max-width: 2rem;
   height: fit-content;
+  padding: 4px;
   img {
     width: 100%;
   }
+}
+.line_inner_font {
+  width: 4rem;
+  max-width: 4rem;
+  padding-left: 0.5rem;
+}
+.line_inner_font h5 {
+  font-size: 1.2rem;
 }
 </style>

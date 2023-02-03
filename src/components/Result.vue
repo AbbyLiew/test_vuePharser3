@@ -39,6 +39,7 @@ export default {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3, quation4, quation5, quation6 } =
           newVal;
+        console.log(quation1, quation2, quation3, quation4, quation5, quation6);
         if (quation1) {
           let result =
             quation1 + quation2 + quation3 + quation4 + quation5 + quation6;

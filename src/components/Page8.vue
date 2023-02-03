@@ -1,5 +1,5 @@
 <template>
-  <div class="page5">
+  <div class="page8">
     <!-- <div class="block" :style="`height : ${innerHeight * 0.5}px`" /> -->
     <transition appear @before-enter="beforeEnter" @enter="enter">
       <div>
@@ -10,53 +10,49 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            On your journey, what <br />personal obstacles<br />
-            have you overcome?
+            And finally, I <br />never leave home <br />without…
           </h2>
           <ul>
             <li
               :class="sellected_item === 'A' ? '--active_sellected' : ''"
               @click="sellected_item = 'A'"
-              class="--extra_padding"
             >
               <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
-                Self-doubt
+                A compact mirror and an <br />extra dose of confidence.
               </h6>
             </li>
             <li
               :class="sellected_item === 'B' ? '--active_sellected' : ''"
               @click="sellected_item = 'B'"
-              class="--extra_padding"
             >
               <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
-                Complacency
+                A water bottle and <br />a reality check.
               </h6>
             </li>
             <li
               :class="sellected_item === 'C' ? '--active_sellected' : ''"
               @click="sellected_item = 'C'"
-              class="--extra_padding"
             >
               <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
-                Overthinking
+                A book and a witty<br />
+                comeback.
               </h6>
             </li>
             <li
               :class="sellected_item === 'D' ? '--active_sellected' : ''"
               @click="sellected_item = 'D'"
-              class="--extra_padding"
             >
               <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
-                Vulnerability
+                A handknit scarf and <br />some warm words.
               </h6>
             </li>
             <li
               :class="sellected_item === 'E' ? '--active_sellected' : ''"
               @click="sellected_item = 'E'"
-              class="--extra_padding"
             >
               <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
-                The haters
+                All the above!<br />
+                But I forgot my keys…
               </h6>
             </li>
           </ul>

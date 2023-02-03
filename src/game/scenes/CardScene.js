@@ -14,17 +14,9 @@ export default class PlayScene extends Scene {
 
     this.logo = this.add.image(
       this.sys.game.config.width / 2,
-      this.sys.game.config.height * 0.125,
+      this.sys.game.config.height * 0.1,
       "logo"
     );
-
-    this.ice_creame = this.add.image(
-      this.sys.game.config.width / 2,
-      this.sys.game.config.height * 0.5,
-      "icon_icecream"
-    );
-
-    this.logo.scale = (this.sys.game.config.height * 0.1) / this.logo.height;
 
     // create sprite sheet animation
     this.anims.create({
@@ -169,7 +161,7 @@ export default class PlayScene extends Scene {
         targets: card,
         scale: _ratio,
         x: this.sys.game.config.width / 2,
-        y: this.sys.game.config.height / 2,
+        y: this.sys.game.config.height * 0.4,
         ease: "Power1",
         duration: 1000,
         onComplete: () => {
@@ -185,23 +177,23 @@ export default class PlayScene extends Scene {
     this.tweens.add({
       targets: this.logo,
       ease: "Power1",
-      y: this.logo.y + 50,
+      y: this.sys.game.config.height * 0.1,
       duration: 1000,
       scale: (this.sys.game.config.height * 0.1) / this.logo.height,
     });
 
     this.cardGroup.children.entries.forEach((card, index) => {
-      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.55) / this.cardHeight;
       this.tweens.add({
         targets: card,
         rotation: 0,
         scale: _ratio,
         x:
           this.sys.game.config.width / 2 -
-          (this.cardGroup.children.entries.length - 1 - index) * 10,
-        y:
-          this.sys.game.config.height / 2 +
           (this.cardGroup.children.entries.length - 1 - index) * 5,
+        y:
+          this.sys.game.config.height * 0.465 +
+          (this.cardGroup.children.entries.length - 1 - index) * 2.5,
         ease: "Power2",
         duration: 1000,
         onComplete: () => {
