@@ -73,11 +73,10 @@ export default class PlayScene extends Scene {
       this.cardGroup.create(x, y, "Card_Flip_Ans_00000");
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
       let _ratio = (this.sys.game.config.height * 0.3) / this.cardHeight;
-
       this.cardGroup.children.entries[i].scale = _ratio;
       this.tweens.add({
         targets: this.cardGroup.children.entries[i],
-        rotation: -0.1 * (i + 1),
+        rotation: -0.4 * (i + 1),
         ease: "Power1",
         duration: 500,
       });

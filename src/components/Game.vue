@@ -65,7 +65,6 @@ export default {
         :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
       >
         <div v-if="current === 1">
-          <h1>{{ preload_progress }}</h1>
           <Page1
             @nextPage="nextPage"
             :innerHeight="innerHeight"
