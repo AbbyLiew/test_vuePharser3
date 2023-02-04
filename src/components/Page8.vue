@@ -108,6 +108,12 @@ export default {
       });
     },
     next() {
+      let video = document.getElementById("resultVideo");
+      let container = document.querySelector(".Result");
+      container.style.zIndex = 10;
+      container.style.opacity = 1;
+      video.play();
+
       switch (this.sellected_item) {
         case "A":
           this.$emit("setQuaionData", "quation5", "A");

@@ -40,7 +40,7 @@ export default {
         const { quation1, quation2, quation3, quation4, quation5, quation6 } =
           newVal;
         console.log(quation1, quation2, quation3, quation4, quation5, quation6);
-        if (quation1) {
+        if (quation1 && quation2 && quation3) {
           let result =
             quation1 + quation2 + quation3 + quation4 + quation5 + quation6;
 
@@ -64,30 +64,32 @@ export default {
 
           let video = document.getElementById("resultVideo");
           let container = document.querySelector(".Result");
+          // if video is loaded
+
           switch (result) {
             case 1:
-              video.src = `/videos/demo_01.mp4`;
+              video.src = `/videos/3DBagDEMO_2.mp4`;
               // check if video is loaded
               video.onloadeddata = function () {
                 video.play();
               };
               break;
             case 2:
-              video.src = `/videos/demo_02.mp4`;
+              video.src = `/videos/3DBagDEMO_2.mp4`;
               // check if video is loaded
               video.onloadeddata = function () {
                 video.play();
               };
               break;
             case 3:
-              video.src = `/videos/demo_03.mp4`;
+              video.src = `/videos/3DBagDEMO_2.mp4`;
               // check if video is loaded
               video.onloadeddata = function () {
                 video.play();
               };
               break;
             case 4:
-              video.src = `/videos/demo_04.mp4`;
+              video.src = `/videos/3DBagDEMO_2.mp4`;
               // check if video is loaded
               video.onloadeddata = function () {
                 video.play();
@@ -112,6 +114,6 @@ export default {
   transition: all 1s ease-in-out;
 }
 #resultVideo {
-  object-fit: cover;
+  object-fit: contain;
 }
 </style>
