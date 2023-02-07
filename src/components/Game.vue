@@ -73,6 +73,10 @@ export default {
     setQuaionData(quationType, answer) {
       this.quationsData[quationType] = answer;
     },
+    closeTrriger() {
+      // window reload
+      window.location.reload();
+    },
   },
   mounted() {
     window.addEventListener("resize", () => {
@@ -93,7 +97,31 @@ export default {
         class="mainSection"
         :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
       >
-        <div class="block" :style="`height : ${innerHeight * 0.21}px;`" />
+        <div
+          class="block centerVertical"
+          :style="`height : ${innerHeight * 0.21}px;`"
+        >
+          <div
+            class="svgContainer"
+            :style="`height : ${innerHeight * 0.05}px; padding-right : ${
+              innerWidth * 0.05
+            }px;`"
+            v-if="current >= 4"
+            @click="closeTrriger"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                fill="#FF99A7"
+                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"
+              />
+            </svg>
+          </div>
+        </div>
         <div v-if="current === 1" :style="`opacity : ${isloading}`">
           <Page1
             @nextPage="nextPage"
@@ -238,6 +266,12 @@ export default {
   height: 2px;
   border-radius: 50px;
   transition: width 0.5s;
+}
+.centerVertical {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
 }
 .block_test {
   width: 7vw;
