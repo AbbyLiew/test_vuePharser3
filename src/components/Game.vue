@@ -30,6 +30,7 @@ export default {
         quation5: null,
         quation6: null,
       },
+      isloading: 0,
     };
   },
   methods: {
@@ -43,6 +44,10 @@ export default {
         type: "ease",
         delay: 4,
       });
+    },
+
+    setIsloading() {
+      this.isloading = 1;
     },
 
     nextPage() {
@@ -74,6 +79,7 @@ export default {
       this.innerHeight = window.innerHeight;
       this.innerWidth = window.innerWidth;
     });
+    window.setIsloading = this.setIsloading;
   },
 };
 </script>
@@ -88,7 +94,7 @@ export default {
         :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
       >
         <div class="block" :style="`height : ${innerHeight * 0.21}px;`" />
-        <div v-if="current === 1">
+        <div v-if="current === 1" :style="`opacity : ${isloading}`">
           <Page1
             @nextPage="nextPage"
             :innerHeight="innerHeight"

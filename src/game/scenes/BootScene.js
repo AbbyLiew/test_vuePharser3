@@ -42,6 +42,7 @@ export default class BootScene extends Scene {
 
     this.load.on("complete", function () {
       progress.destroy();
+      window.setIsloading();
     });
   }
 

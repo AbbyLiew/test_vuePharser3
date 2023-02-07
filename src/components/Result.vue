@@ -210,8 +210,7 @@ export default {
           newVal;
         console.log(quation1, quation2, quation3, quation4, quation5, quation6);
         if (quation1 && quation2 && quation3) {
-          let result =
-            quation1 + quation2 + quation3 + quation4 + quation5 + quation6;
+          let result = quation1 + quation2 + quation3;
 
           switch (result) {
             case "AAAAAA":

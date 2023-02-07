@@ -11,58 +11,78 @@
         >
           <h2 :style="`text-align : center`">Your spirit shoe?</h2>
           <ul class="section7_shoeContaienr">
-            <li
-              :class="sellected_item === 'A' ? '--active_sellected' : ''"
-              @click="sellected_item = 'A'"
-            >
+            <li @click="sellected_item = 'A'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
+                <div
+                  class="circle"
+                  :class="sellected_item === 'A' ? '--active_sellected' : ''"
+                  :style="`
+                  height : ${innerHeight * 0.09}px; 
+                  width : ${innerHeight * 0.09}px`"
+                />
                 <img src="/shoes/01shoes.png" alt="01shoes" />
               </div>
             </li>
-            <li
-              :class="sellected_item === 'B' ? '--active_sellected' : ''"
-              @click="sellected_item = 'B'"
-            >
+            <li @click="sellected_item = 'B'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
+                <div
+                  class="circle"
+                  :class="sellected_item === 'B' ? '--active_sellected' : ''"
+                  :style="`
+                  height : ${innerHeight * 0.09}px; 
+                  width : ${innerHeight * 0.09}px`"
+                />
                 <img src="/shoes/02shoes.png" alt="02shoes" />
               </div>
             </li>
-            <li
-              :class="sellected_item === 'C' ? '--active_sellected' : ''"
-              @click="sellected_item = 'C'"
-            >
+            <li @click="sellected_item = 'C'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
+                <div
+                  class="circle"
+                  :class="sellected_item === 'C' ? '--active_sellected' : ''"
+                  :style="`
+                  height : ${innerHeight * 0.09}px; 
+                  width : ${innerHeight * 0.09}px`"
+                />
                 <img src="/shoes/03shoes.png" alt="03shoes" />
               </div>
             </li>
-            <li
-              :class="sellected_item === 'D' ? '--active_sellected' : ''"
-              @click="sellected_item = 'D'"
-            >
+            <li @click="sellected_item = 'D'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
+                <div
+                  class="circle"
+                  :class="sellected_item === 'D' ? '--active_sellected' : ''"
+                  :style="`
+                  height : ${innerHeight * 0.09}px; 
+                  width : ${innerHeight * 0.09}px`"
+                />
                 <img src="/shoes/04shoes.png" alt="04shoes" />
               </div>
             </li>
-            <li
-              :class="sellected_item === 'E' ? '--active_sellected' : ''"
-              @click="sellected_item = 'E'"
-            >
+            <li @click="sellected_item = 'E'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
+                <div
+                  class="circle"
+                  :class="sellected_item === 'E' ? '--active_sellected' : ''"
+                  :style="`
+                  height : ${innerHeight * 0.09}px; 
+                  width : ${innerHeight * 0.09}px`"
+                />
                 <img src="/shoes/05shoes.png" alt="05shoes" />
               </div>
             </li>
@@ -144,7 +164,7 @@ export default {
 
 <style>
 .--active_sellected {
-  background-color: #e87d8c;
+  background-color: #e87d8c !important;
 }
 
 .--extra_padding {
@@ -166,5 +186,14 @@ export default {
 .section7_shoeContaienr li .imgContainer {
   position: static;
   transform: translate(0, 0);
+}
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background-color: #ffc9d3;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
 }
 </style>
