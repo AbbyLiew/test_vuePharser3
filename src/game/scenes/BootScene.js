@@ -35,14 +35,20 @@ export default class BootScene extends Scene {
     var progress = this.add.graphics();
 
     this.load.on("progress", function (value) {
-      progress.clear();
-      progress.fillStyle(0xffffff, 1);
-      progress.fillRect(0, 270, 800 * value, 60);
+      let left = 2091 - 2091 * value;
+      console.log(left);
+      window?.setDrawIceCream(left);
     });
 
     this.load.on("complete", function () {
       progress.destroy();
       window.setIsloading();
+
+      let icecream_preloading = document.querySelector(".icecream");
+
+      setTimeout(() => {
+        icecream_preloading?.classList.add("icecream--complete");
+      }, 1000);
     });
   }
 
