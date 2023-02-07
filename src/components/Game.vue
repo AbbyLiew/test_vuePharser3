@@ -108,11 +108,9 @@ export default {
           class="block centerVertical"
           :style="`height : ${innerHeight * 0.21}px;`"
         >
-          <div
-            class="svgContainer"
-            :style="`height : ${innerHeight * 0.05}px; padding-right : ${
-              innerWidth * 0.05
-            }px;`"
+          <!-- <div
+            class="svgContainer svgContainer_close"
+            :style="`height : ${innerHeight * 0.05}px;`"
             v-if="current >= 4"
             @click="closeTrriger"
           >
@@ -129,7 +127,7 @@ export default {
                 d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"
               />
             </svg>
-          </div>
+          </div> -->
         </div>
 
         <div
@@ -347,7 +345,7 @@ export default {
 .centerVertical {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   justify-content: flex-end;
 }
 .block_test {
@@ -389,5 +387,12 @@ export default {
 }
 .icecream--complete {
   z-index: -1000;
+}
+
+.svgContainer_close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 </style>
