@@ -9,6 +9,14 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <style>
+      @font-face {
+        font-family: "Cream-Bold";
+        src: url("/font/Cream-Bold-6010931.otf");
+      }
+      @font-face {
+        font-family: "HelveticaLTPro-Light";
+        src: url("/font/HelveticaLTPro-Light.ttf");
+      }
       body {
         background-color: #fedde0;
         overscroll-behavior-y: contain;
@@ -16,20 +24,33 @@
       .carousel__viewport * {
         overscroll-behavior-y: contain;
       }
-      h5 {
+      h5,
+      label {
         margin: 0;
         color: #ff99a7;
+        font-family: "Cream-Bold";
       }
       h6 {
         margin: 0;
         color: #ff99a7;
-        font-size: 1.8vh;
+        font-family: "Cream-Bold";
         line-height: 1;
       }
+      button,
+      h6 {
+        font-family: "HelveticaLTPro-Light";
+      }
+
+      ul h6 {
+        font-family: "Cream-Bold";
+        font-size: 1.5vh;
+      }
       h2 {
-        line-height: 0.9;
+        line-height: 1.1;
         margin-top: 0;
-        font-size: 1.2rem;
+        font-size: 2.2vh;
+        font-family: "Cream-Bold";
+        color: #ff99a7 !important;
       }
       ul {
         list-style: none;

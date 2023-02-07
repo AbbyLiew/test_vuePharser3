@@ -4,46 +4,61 @@
     <transition appear @before-enter="beforeEnter" @enter="enter">
       <div>
         <div
-          class="container extra"
-          :style="`height : ${innerHeight * 0.55}px; width : ${innerWidth}px;`"
+          class="container"
+          :style="`height : ${innerHeight * 0.55}px; width : ${
+            (innerHeight * 0.55 * 736) / 1103
+          }px;`"
         >
           <h2 :style="`text-align : center`">
-            What main <br />
-            character energy <br />are you serving?
+            What main <br />character energy <br />are you serving?
           </h2>
-          <Carousel :items-to-show="1.5" :wrap-around="true">
-            <Slide :key="slide_A">
-              <div
-                class="carousel__item"
-                :style="`height : ${innerHeight * 0.6 * 0.45}px;`"
-                key="slide_A"
-              >
-                <img src="/character01.png" />
-              </div>
-            </Slide>
-            <Slide :key="slide_B">
-              <div
-                class="carousel__item"
-                :style="`height : ${innerHeight * 0.6 * 0.45}px;`"
-                key="slide_B"
-              >
-                <img src="/character02.png" />
-              </div>
-            </Slide>
-            <Slide :key="slide_C">
-              <div
-                class="carousel__item"
-                :style="`height : ${innerHeight * 0.6 * 0.45}px;`"
-                key="slide_C"
-              >
-                <img src="/character03.png" />
-              </div>
-            </Slide>
-
-            <template #addons>
-              <Pagination />
-            </template>
-          </Carousel>
+          <ul>
+            <li
+              :class="sellected_item === 'A' ? '--active_sellected' : ''"
+              @click="sellected_item = 'A'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
+                The fearless hero
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'B' ? '--active_sellected' : ''"
+              @click="sellected_item = 'B'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
+                The reliable best friend
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'C' ? '--active_sellected' : ''"
+              @click="sellected_item = 'C'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
+                The sassy frenemy
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'D' ? '--active_sellected' : ''"
+              @click="sellected_item = 'D'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
+                The bleeding heart
+              </h6>
+            </li>
+            <li
+              :class="sellected_item === 'E' ? '--active_sellected' : ''"
+              @click="sellected_item = 'E'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
+                The wild card
+              </h6>
+            </li>
+          </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
@@ -56,9 +71,6 @@
 
 <script>
 import gsap from "gsap";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-import "vue3-carousel/dist/carousel.css";
-
 export default {
   props: {
     next: {
@@ -77,23 +89,14 @@ export default {
       type: Number,
       required: true,
     },
-    setQuaionData: {
-      type: Function,
-      required: true,
-    },
   },
-
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+  data() {
+    return {
+      sellected_item: null,
+    };
   },
 
   methods: {
-    doSomething() {
-      this.$emit("setQuaionData", "quation1", "A");
-    },
     beforeEnter(el) {
       el.style.opacity = "0";
     },
@@ -108,20 +111,25 @@ export default {
       });
     },
     next() {
-      let sellected = document.querySelector(".carousel__slide--active");
-      let base_url = window.location.origin;
-      let result = sellected.childNodes[0].childNodes[0].src;
-
-      // get base url
-      switch (result) {
-        case base_url + "/character01.png":
+      if (this.sellected_item === null) {
+        alert("Please select one of the options");
+        return;
+      }
+      switch (this.sellected_item) {
+        case "A":
           this.$emit("setQuaionData", "quation2", "A");
           break;
-        case base_url + "/character02.png":
+        case "B":
           this.$emit("setQuaionData", "quation2", "B");
           break;
-        case base_url + "/character03.png":
+        case "C":
           this.$emit("setQuaionData", "quation2", "C");
+          break;
+        case "D":
+          this.$emit("setQuaionData", "quation2", "D");
+          break;
+        case "E":
+          this.$emit("setQuaionData", "quation2", "E");
           break;
       }
       this.$emit("next");
@@ -134,7 +142,7 @@ export default {
 .container {
   border-radius: 30px;
   box-sizing: border-box;
-  padding-top: 10%;
+  padding-top: 12%;
   display: flex;
   flex-direction: column;
   padding-bottom: 10%;

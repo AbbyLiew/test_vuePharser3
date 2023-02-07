@@ -163,4 +163,8 @@ export default {
 .section7_shoeContaienr li {
   padding: 0 !important;
 }
+.section7_shoeContaienr li .imgContainer {
+  position: static;
+  transform: translate(0, 0);
+}
 </style>

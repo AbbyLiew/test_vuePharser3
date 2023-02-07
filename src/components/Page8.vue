@@ -10,7 +10,8 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            And finally, I <br />never leave home <br />without…
+            And finally, I <br />never leave home<br />
+            without…
           </h2>
           <ul>
             <li

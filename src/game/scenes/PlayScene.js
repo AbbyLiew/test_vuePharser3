@@ -26,8 +26,10 @@ export default class PlayScene extends Scene {
       });
     }
 
+    this.boxGroup = this.add.group();
+    this.bagGroup = this.add.group();
+    this.minitop = this.add.group();
     {
-      this.boxGroup = this.add.group();
       for (let i = 0; i < 12; i++) {
         let minibox;
         if (i < 3) {
@@ -63,6 +65,7 @@ export default class PlayScene extends Scene {
             bag.setScale(this.sys.game.config.width / 3 / minibox.width);
 
             this.bagGroup.add(bag);
+            this.minitop.add(top);
           }
           this.boxGroup.add(minibox);
         }
@@ -102,6 +105,7 @@ export default class PlayScene extends Scene {
             top.y -= ((this.sys.game.config.width / 3) * 438) / 626;
 
             this.bagGroup.add(bag);
+            this.minitop.add(top);
           }
 
           this.boxGroup.add(minibox);
@@ -141,6 +145,7 @@ export default class PlayScene extends Scene {
             top.y -= (2 * ((this.sys.game.config.width / 3) * 438)) / 626;
             bag.y -= (2 * ((this.sys.game.config.width / 3) * 438)) / 626;
 
+            this.minitop.add(top);
             this.bagGroup.add(bag);
           }
 
@@ -168,6 +173,7 @@ export default class PlayScene extends Scene {
           top.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
           bag.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
 
+          this.minitop.add(top);
           this.bagGroup.add(bag);
         }
       }
@@ -188,6 +194,8 @@ export default class PlayScene extends Scene {
       });
     });
 
+    window.fowardDown = this.fowardDown.bind(this);
+
     window.startGame = this.startGame.bind(this);
   }
 
@@ -205,6 +213,35 @@ export default class PlayScene extends Scene {
       }
       return arr;
     }
+  }
+
+  fowardDown() {
+    this.boxGroup.children.iterate((child) => {
+      this.tweens.add({
+        targets: child,
+        y: child.y + this.sys.game.config.height * 0.8,
+        duration: 1300,
+        ease: "Linear",
+      });
+    });
+
+    this.bagGroup.children.iterate((child) => {
+      this.tweens.add({
+        targets: child,
+        y: child.y + this.sys.game.config.height * 0.8,
+        duration: 1300,
+        ease: "Linear",
+      });
+    });
+
+    this.minitop.children.iterate((child) => {
+      this.tweens.add({
+        targets: child,
+        y: child.y + this.sys.game.config.height * 0.8,
+        duration: 1300,
+        ease: "Linear",
+      });
+    });
   }
 
   startGame() {

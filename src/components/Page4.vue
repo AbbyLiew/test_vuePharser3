@@ -17,7 +17,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
-                The club
+                Manifesting
               </h6>
             </li>
             <li
@@ -26,7 +26,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
-                Iykyk
+                Brunch
               </h6>
             </li>
             <li
@@ -35,7 +35,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
-                The metaverse
+                On my Hot Girl Walk
               </h6>
             </li>
             <li
@@ -109,6 +109,11 @@ export default {
       });
     },
     next() {
+      if (this.sellected_item === null) {
+        alert("Please select one of the options");
+        return;
+      }
+
       switch (this.sellected_item) {
         case "A":
           this.$emit("setQuaionData", "quation3", "A");

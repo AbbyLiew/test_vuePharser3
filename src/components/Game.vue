@@ -11,6 +11,7 @@ import Page7 from "@/components/Page7";
 import Page8 from "@/components/Page8";
 import Result from "@/components/Result";
 import IceCream from "@/components/svgs/icescream";
+import Form from "@/components/Form";
 import gsap from "gsap";
 </script>
 
@@ -36,17 +37,22 @@ export default {
       el.style.opacity = "0";
     },
     enter(el) {
-      console.log("enter");
       gsap.to(el, {
         duration: 1,
         opacity: 1,
-        delay: 7,
         type: "ease",
+        delay: 4,
       });
     },
 
     nextPage() {
+      window?.fowardDown();
+      this.current++;
+    },
+
+    triggerAnimation() {
       window?.startGame();
+      window?.triggerAnimation();
       this.current++;
     },
     next() {
@@ -90,6 +96,13 @@ export default {
           />
         </div>
         <div v-if="current === 2">
+          <Form
+            @triggerAnimation="triggerAnimation"
+            :innerHeight="innerHeight"
+            :innerWidth="innerWidth"
+          />
+        </div>
+        <div v-if="current === 3">
           <Page2
             @next="next"
             @back="back"
@@ -98,7 +111,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 3">
+        <div v-if="current === 4">
           <Page3
             @next="next"
             @back="back"
@@ -107,7 +120,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 4">
+        <div v-if="current === 5">
           <Page4
             @next="next"
             @back="back"
@@ -116,7 +129,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 5">
+        <div v-if="current === 6">
           <Page5
             @next="next"
             @back="back"
@@ -125,7 +138,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 6">
+        <div v-if="current === 7">
           <Page6
             @next="next"
             @back="back"
@@ -134,7 +147,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 7">
+        <div v-if="current === 8">
           <Page7
             @next="next"
             @back="back"
@@ -143,7 +156,7 @@ export default {
             :innerWidth="innerWidth"
           />
         </div>
-        <div v-if="current === 8">
+        <div v-if="current === 9">
           <Page8
             @next="next"
             @back="back"
@@ -156,9 +169,15 @@ export default {
           :quationsData="quationsData"
           :innerWidth="innerWidth"
           :innerHeight="innerHeight"
+          :current="current"
         />
 
-        <transition appear @before-enter="beforeEnter" @enter="enter">
+        <transition
+          v-if="current >= 3"
+          appear
+          @before-enter="beforeEnter"
+          @enter="enter"
+        >
           <div
             class="line"
             v-if="current >= 2"
@@ -168,7 +187,7 @@ export default {
           >
             <div
               class="line_inner"
-              :style="`width : ${((current - 1) / 9) * 100}%;`"
+              :style="`width : ${((current - 3) / 8) * 100}%;`"
             />
             <div class="block_test">
               <div>
@@ -178,11 +197,11 @@ export default {
 
             <div
               class="line_inner"
-              :style="`width : ${((9 - current + 2) / 9) * 100}%;`"
+              :style="`width : ${((10 - current) / 8) * 100}%;`"
             />
 
             <div class="line_inner_font">
-              <h5>{{ current - 1 }} / 8</h5>
+              <h5>{{ current - 2 }} / 8</h5>
             </div>
           </div>
         </transition>

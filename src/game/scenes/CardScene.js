@@ -9,9 +9,6 @@ export default class PlayScene extends Scene {
   }
 
   create() {
-    var x = this.sys.game.config.width / 2;
-    var y = this.sys.game.config.height / 2;
-
     this.logo = this.add.image(
       this.sys.game.config.width / 2,
       this.sys.game.config.height * 0.1,
@@ -60,6 +57,12 @@ export default class PlayScene extends Scene {
     window.flipCard_empty = this.flipCard_empty.bind(this);
     window.flipCard_empty_reverse = this.flipCard_empty_reverse.bind(this);
     window.setCurrent = this.setCurrent.bind(this);
+    window.triggerAnimation = this.triggerAnimation.bind(this);
+  }
+
+  triggerAnimation() {
+    var x = this.sys.game.config.width / 2;
+    var y = this.sys.game.config.height / 2;
 
     for (let i = 0; i < 8; i++) {
       this.cardGroup.create(x, y, "Card_Flip_Ans_00000");
@@ -74,14 +77,14 @@ export default class PlayScene extends Scene {
       });
 
       this.time.addEvent({
-        delay: 1000,
+        delay: 800,
         callback: () => {
           this.cardaAimationFlow1();
         },
       });
 
       this.time.addEvent({
-        delay: 5500,
+        delay: 2500,
         callback: () => {
           this.cardAimationFlow2();
         },
@@ -135,20 +138,20 @@ export default class PlayScene extends Scene {
         rotate3d: { z: 10 },
         ease: "Power1",
         duration: 1000,
-        onComplete: () => {
-          this.time.addEvent({
-            delay: 100 * index,
-            callback: () => {
-              card.play("flip_card");
-              this.time.addEvent({
-                delay: 2000,
-                callback: () => {
-                  card.play("flip_card_reverse");
-                },
-              });
-            },
-          });
-        },
+        // onComplete: () => {
+        //   this.time.addEvent({
+        //     delay: 100 * index,
+        //     callback: () => {
+        //       card.play("flip_card");
+        //       this.time.addEvent({
+        //         delay: 2000,
+        //         callback: () => {
+        //           card.play("flip_card_reverse");
+        //         },
+        //       });
+        //     },
+        //   });
+        // },
       });
     });
   }

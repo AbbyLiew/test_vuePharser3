@@ -17,7 +17,8 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
-                IDGAF.
+                Living Rent Free (in your <br />
+                head). OR Its Giving.
               </h6>
             </li>
             <li
@@ -26,7 +27,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
-                NGL…
+                Periodt
               </h6>
             </li>
             <li
@@ -35,7 +36,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
-                FOMO
+                Understood the Assignment
               </h6>
             </li>
             <li
@@ -44,7 +45,17 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
-                TFW…
+                Issa Vibe
+              </h6>
+            </li>
+
+            <li
+              :class="sellected_item === 'E' ? '--active_sellected' : ''"
+              @click="sellected_item = 'E'"
+              class="--extra_padding"
+            >
+              <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
+                We Outside
               </h6>
             </li>
           </ul>
@@ -100,6 +111,11 @@ export default {
       });
     },
     next() {
+      if (this.sellected_item === null) {
+        alert("Please select one of the options");
+        return;
+      }
+
       switch (this.sellected_item) {
         case "A":
           this.$emit("setQuaionData", "quation4", "A");
@@ -112,6 +128,9 @@ export default {
           break;
         case "D":
           this.$emit("setQuaionData", "quation4", "D");
+          break;
+        case "E":
+          this.$emit("setQuaionData", "quation4", "E");
           break;
       }
       this.$emit("next");

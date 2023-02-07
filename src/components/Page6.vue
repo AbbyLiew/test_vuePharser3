@@ -10,8 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            On your journey, what <br />personal obstacles<br />
-            have you overcome?
+            Who or what helps <br />you to overcome <br />obstacles?
           </h2>
           <ul>
             <li
@@ -20,7 +19,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
-                Self-doubt
+                Remembering I'm that b*tch
               </h6>
             </li>
             <li
@@ -29,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
-                Complacency
+                Netflix and chill ;)
               </h6>
             </li>
             <li
@@ -38,7 +37,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
-                Overthinking
+                (Retail) therapy
               </h6>
             </li>
             <li
@@ -47,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
-                Vulnerability
+                My homies Ben & Jerry
               </h6>
             </li>
             <li
@@ -56,7 +55,7 @@
               class="--extra_padding"
             >
               <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
-                The haters
+                The weekend
               </h6>
             </li>
           </ul>
