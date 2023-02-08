@@ -1,69 +1,91 @@
 <template>
   <div class="page2">
     <!-- <div class="block" :style="`height : ${innerHeight * 0.5}px`" /> -->
-    <transition appear @before-enter="beforeEnter" @enter="enter">
-      <div>
-        <div
-          class="container"
-          :style="`height : ${innerHeight * 0.55}px; width : ${
-            (innerHeight * 0.55 * 736) / 1103
-          }px;`"
-        >
-          <h2 :style="`text-align : center`">My Signature <br />style is...</h2>
-          <ul>
-            <li
-              :class="sellected_item === 'A' ? '--active_sellected' : ''"
-              @click="sellected_item = 'A'"
-              class="--extra_padding"
-            >
-              <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
-                Bright and bold
-              </h6>
-            </li>
-            <li
-              :class="sellected_item === 'B' ? '--active_sellected' : ''"
-              @click="sellected_item = 'B'"
-              class="--extra_padding"
-            >
-              <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
-                Comfortable and casual
-              </h6>
-            </li>
-            <li
-              :class="sellected_item === 'C' ? '--active_sellected' : ''"
-              @click="sellected_item = 'C'"
-              class="--extra_padding"
-            >
-              <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
-                Trendy and chic
-              </h6>
-            </li>
-            <li
-              :class="sellected_item === 'D' ? '--active_sellected' : ''"
-              @click="sellected_item = 'D'"
-              class="--extra_padding"
-            >
-              <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
-                Moody and nostalgic
-              </h6>
-            </li>
-            <li
-              :class="sellected_item === 'E' ? '--active_sellected' : ''"
-              @click="sellected_item = 'E'"
-              class="--extra_padding"
-            >
-              <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
-                How I feel when I wake up
-              </h6>
-            </li>
-          </ul>
+    <div v-if="current === 3">
+      <transition appear @before-enter="beforeEnter" @enter="enter">
+        <div>
+          <div
+            class="container"
+            :style="`height : ${innerHeight * 0.55}px; width : ${
+              (innerHeight * 0.55 * 736) / 1103
+            }px;`"
+            @click="nextPage"
+          ></div>
+          <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+          <div class="btn-next">
+            <h2>
+              Tap card to answer <br />
+              7 simple questions
+            </h2>
+          </div>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
-        <div class="btn-next">
-          <button @click="next">next</button>
+      </transition>
+    </div>
+
+    <div v-if="current === 4">
+      <transition appear @before-enter="beforeEnter" @enter="enter">
+        <div>
+          <div
+            class="container"
+            :style="`height : ${innerHeight * 0.55}px; width : ${
+              (innerHeight * 0.55 * 736) / 1103
+            }px;`"
+          >
+            <h2 :style="`text-align : center`">
+              My Signature <br />style is...
+            </h2>
+            <ul>
+              <li
+                :class="sellected_item === 'A' ? '--active_sellected' : ''"
+                @click="sellected_item = 'A'"
+                class="--extra_padding"
+              >
+                <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
+                  Bright and bold
+                </h6>
+              </li>
+              <li
+                :class="sellected_item === 'B' ? '--active_sellected' : ''"
+                @click="sellected_item = 'B'"
+                class="--extra_padding"
+              >
+                <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
+                  Comfortable and casual
+                </h6>
+              </li>
+              <li
+                :class="sellected_item === 'C' ? '--active_sellected' : ''"
+                @click="sellected_item = 'C'"
+                class="--extra_padding"
+              >
+                <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
+                  Trendy and chic
+                </h6>
+              </li>
+              <li
+                :class="sellected_item === 'D' ? '--active_sellected' : ''"
+                @click="sellected_item = 'D'"
+                class="--extra_padding"
+              >
+                <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
+                  Moody and nostalgic
+                </h6>
+              </li>
+              <li
+                :class="sellected_item === 'E' ? '--active_sellected' : ''"
+                @click="sellected_item = 'E'"
+                class="--extra_padding"
+              >
+                <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
+                  How I feel when I wake up
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         </div>
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -84,6 +106,22 @@ export default {
       required: true,
     },
     innerWidth: {
+      type: Number,
+      required: true,
+    },
+    quationsData: {
+      type: Object,
+      required: true,
+    },
+    setAction: {
+      type: Function,
+      required: true,
+    },
+    action: {
+      type: String,
+      required: true,
+    },
+    current: {
       type: Number,
       required: true,
     },
@@ -145,6 +183,7 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 h2 {
