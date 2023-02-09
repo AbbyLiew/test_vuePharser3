@@ -34,9 +34,13 @@ export default {
       isloading: 0,
       drawIceCream: 2091,
       action: "next",
+      isActive_video: false,
     };
   },
   methods: {
+    setIsActive() {
+      this.isActive_video = true;
+    },
     beforeEnter(el) {
       el.style.opacity = "0";
     },
@@ -141,10 +145,36 @@ export default {
 
         <div
           class="icecream"
-          :style="`opacity : ${1 - isloading}; transition : 1s;`"
+          :style="`opacity : ${
+            1 - isloading
+          }; transition : 1s;height : ${innerHeight}px; width : ${innerWidth}px`"
         >
-          <div :style="`height : ${innerHeight * 0.3}px;`"></div>
+          <div class="block" :style="`height : ${innerHeight * 0.05}px;`"></div>
+          <div
+            class="imgContainer_logo"
+            :style="`height : ${innerHeight * 0.1}px;`"
+          >
+            <img src="/logo.png" />
+          </div>
+
+          <div
+            class="block"
+            :style="`height : ${innerHeight * 0.225}px;`"
+          ></div>
+
+          <transition
+            @before-enter="beforeEnter_icecream"
+            @enter="enter_icecream"
+          >
+            <div
+              class="imgContainer_logo float"
+              :style="`height : ${innerHeight * 0.15}px;`"
+            >
+              <img src="/icon-icecream_darker.png" />
+            </div>
+          </transition>
         </div>
+
         <div v-if="current === 1" :style="`opacity : ${isloading}`">
           <Page1
             @nextPage="nextPage"
@@ -272,6 +302,7 @@ export default {
             :action="action"
             :current="current"
             @setCurrent="setCurrent"
+            @setIsActive="setIsActive"
           />
         </div>
         <Result
@@ -279,6 +310,7 @@ export default {
           :innerWidth="innerWidth"
           :innerHeight="innerHeight"
           :current="current"
+          :isActive_video="isActive_video"
         />
 
         <transition
@@ -296,7 +328,7 @@ export default {
           >
             <div
               class="line_inner"
-              :style="`width : ${((current - 3) / 8) * 100}%;`"
+              :style="`width : ${((current - 4) / 7) * 100}%;`"
             />
             <div class="block_test">
               <div>
@@ -306,11 +338,11 @@ export default {
 
             <div
               class="line_inner"
-              :style="`width : ${((10 - current) / 8) * 100}%;`"
+              :style="`width : ${((11 - current) / 7) * 100}%;`"
             />
 
             <div class="line_inner_font">
-              <h5>{{ current - 2 }} / 8</h5>
+              <h5>{{ current - 4 }} / 7</h5>
             </div>
           </div>
         </transition>
@@ -357,6 +389,9 @@ export default {
     width: 100%;
   }
 }
+.imgContainer_logo img {
+  height: 100%;
+}
 .line_inner_font {
   width: 4rem;
   max-width: 4rem;
@@ -378,11 +413,9 @@ export default {
 .icecream {
   position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-content: center;
   background-color: #ffc9d3;
 }
 .icecream--complete {
@@ -394,5 +427,21 @@ export default {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+}
+
+.float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 </style>

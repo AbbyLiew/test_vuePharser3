@@ -112,6 +112,10 @@ export default {
       type: String,
       required: true,
     },
+    setIsActive: {
+      type: Function,
+      required: true,
+    },
   },
   data() {
     return {
@@ -138,7 +142,14 @@ export default {
       let container = document.querySelector(".Result");
       container.style.zIndex = 10;
       container.style.opacity = 1;
-      video.play();
+      // check video is fully loaded
+      if (video.readyState === 4) {
+        video.play();
+      } else {
+        video.onloadeddata = () => {
+          video.play();
+        };
+      }
     },
   },
   watch: {
@@ -156,12 +167,6 @@ export default {
           setTimeout(() => {
             // this.$emit("setAction", "next");
             this.$emit("next");
-
-            let video = document.getElementById("resultVideo");
-            let container = document.querySelector(".Result");
-            container.style.zIndex = 10;
-            container.style.opacity = 1;
-            video.play();
           }, 700);
         }
       },

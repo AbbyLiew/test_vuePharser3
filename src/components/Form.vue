@@ -27,7 +27,25 @@
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
           <input type="text" placeholder="NAME" class="input" />
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
-          <input type="text" placeholder="MOBILE" class="input" />
+
+          <div
+            style="display: flex; justify-content: space-between; width: 100%"
+          >
+            <input
+              type="text"
+              placeholder="+1"
+              class="input left"
+              style="width: 15%"
+            />
+            <div style="width: 2.5%" />
+            <input
+              type="text"
+              placeholder="MOBILE"
+              class="input right"
+              style="width: 70%"
+            />
+          </div>
+
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="inputcheckBox">
             <input type="checkbox" id="terms" />
@@ -51,6 +69,9 @@
 
 <script>
 import { gsap } from "gsap";
+import { VueTelInput } from "vue3-tel-input";
+import "vue3-tel-input/dist/vue3-tel-input.css";
+
 export default {
   name: "Form",
   props: {
@@ -66,6 +87,9 @@ export default {
       type: Number,
       required: true,
     },
+  },
+  components: {
+    VueTelInput,
   },
   methods: {
     next() {
@@ -111,6 +135,7 @@ export default {
   border: none;
   font-family: "Cream-Bold";
   color: #ff99a7;
+  font-size: 2vh;
 }
 .inputcheckBox {
   display: flex;
@@ -129,5 +154,26 @@ export default {
   width: 50%;
   height: 1rem;
   border: none;
+}
+.vti__dropdown-list.below {
+  top: 33px;
+  height: 150px;
+  max-width: 100%;
+}
+.vti__dropdown-item strong {
+  display: none;
+}
+.vti__dropdown-item span {
+  display: none;
+}
+input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+input[type="checkbox"] {
+  appearance: white;
+  border: none;
+  position: relative;
+  background-color: white;
 }
 </style>
