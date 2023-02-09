@@ -323,7 +323,7 @@ export default {
             class="line"
             v-if="current >= 2"
             :style="`width : ${innerWidth * 0.85}px; bottom : ${
-              innerHeight * 0.06
+              innerHeight * 0.08
             }px`"
           >
             <div
@@ -338,7 +338,9 @@ export default {
 
             <div
               class="line_inner"
-              :style="`width : ${((11 - current) / 7) * 100}%;`"
+              :style="`width : ${
+                ((11 - current) / 7) * 100
+              }%;background-color : #FF99A7;`"
             />
 
             <div class="line_inner_font">
@@ -346,6 +348,18 @@ export default {
             </div>
           </div>
         </transition>
+
+        <div class="footer">
+          <p class="mt-auto" :style="`${1 === 1 ? 'color : white' : ''}}`">
+            &#174; ALL RIGHTS RESERVED BY COACH. POWERED BY
+            <a
+              href="https://conten.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CONTEN.T</a
+            >
+          </p>
+        </div>
       </section>
     </section>
 
@@ -369,7 +383,7 @@ export default {
   max-width: 750px;
 }
 .line_inner {
-  background-color: #ff99a7;
+  background-color: #e87d8c;
   height: 2px;
   border-radius: 50px;
   transition: width 0.5s;
@@ -443,5 +457,23 @@ export default {
   100% {
     transform: translate(0, -0px);
   }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 100000000000000000;
+}
+.footer p {
+  font-family: HelveticaLTPro-Light;
+  color: #e87d8c;
+  font-size: 1vh !important;
+}
+.footer a {
+  font-family: HelveticaLTPro-Light;
+  color: #e87d8c;
+  font-size: 1vh;
+}
+.color_white_font {
+  color: white !important;
 }
 </style>

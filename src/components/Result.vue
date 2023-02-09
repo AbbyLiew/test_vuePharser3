@@ -231,7 +231,7 @@
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
-            <button>SHARE THE VIDEO</button>
+            <button id="shareButton">SHARE THE VIDEO</button>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
@@ -286,6 +286,14 @@ export default {
         delay: 4,
       });
     },
+    share() {
+      let button = document.getElementById("shareButton");
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {}
+      });
+    },
   },
 
   watch: {
@@ -298,6 +306,22 @@ export default {
           video.addEventListener("ended", () => {
             console.log("video is play end");
             this.isActive = true;
+
+            setTimeout(() => {
+              let button = document.getElementById("shareButton");
+              const shareData = {
+                title: "MDN",
+                text: "Learn web development on MDN!",
+                url: "https://developer.mozilla.org",
+              };
+
+              button.addEventListener("click", async () => {
+                try {
+                  console.log("share");
+                  await navigator.share(shareData);
+                } catch (err) {}
+              });
+            }, 500);
           });
 
           setTimeout(() => {

@@ -59,9 +59,9 @@
           </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
-        <!-- <div class="btn-next">
+        <div class="btn-next">
           <button @click="next">next</button>
-        </div> -->
+        </div>
       </div>
     </transition>
   </div>
@@ -138,18 +138,9 @@ export default {
       });
     },
     next() {
-      let video = document.getElementById("resultVideo");
-      let container = document.querySelector(".Result");
-      container.style.zIndex = 10;
-      container.style.opacity = 1;
-      // check video is fully loaded
-      if (video.readyState === 4) {
-        video.play();
-      } else {
-        video.onloadeddata = () => {
-          video.play();
-        };
-      }
+      window.flipCard_empty_reverse();
+      this.$emit("setAction", "back");
+      this.$emit("back");
     },
   },
   watch: {

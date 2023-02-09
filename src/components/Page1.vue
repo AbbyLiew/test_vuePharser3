@@ -11,7 +11,9 @@
       discover what Tabby are you.
     </h5>
     <div class="block" :style="`height : ${innerHeight * 0.04}px`" />
-    <button @click="$emit('nextPage')">START</button>
+    <div class="btn-next">
+      <button @click="$emit('nextPage')">START</button>
+    </div>
   </div>
 </template>
 

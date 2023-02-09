@@ -21,6 +21,6 @@ export default {
 
 <style>
 .cls-1 {
-  fill: #e87d8c;
+  fill: #ff99a7;
 }
 </style>
