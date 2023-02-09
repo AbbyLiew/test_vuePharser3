@@ -11,14 +11,16 @@
         >
           <h2 :style="`text-align : center`">Your spirit shoe?</h2>
           <ul class="section7_shoeContaienr">
-            <li @click="sellected_item = 'A'">
+            <li @click="quationsData.quation6 = 'A'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
                 <div
                   class="circle"
-                  :class="sellected_item === 'A' ? '--active_sellected' : ''"
+                  :class="
+                    quationsData.quation6 === 'A' ? '--active_sellected' : ''
+                  "
                   :style="`
                   height : ${innerHeight * 0.09}px; 
                   width : ${innerHeight * 0.09}px`"
@@ -26,14 +28,16 @@
                 <img src="/shoes/01shoes.png" alt="01shoes" />
               </div>
             </li>
-            <li @click="sellected_item = 'B'">
+            <li @click="quationsData.quation6 = 'B'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
                 <div
                   class="circle"
-                  :class="sellected_item === 'B' ? '--active_sellected' : ''"
+                  :class="
+                    quationsData.quation6 === 'B' ? '--active_sellected' : ''
+                  "
                   :style="`
                   height : ${innerHeight * 0.09}px; 
                   width : ${innerHeight * 0.09}px`"
@@ -41,14 +45,16 @@
                 <img src="/shoes/02shoes.png" alt="02shoes" />
               </div>
             </li>
-            <li @click="sellected_item = 'C'">
+            <li @click="quationsData.quation6 = 'C'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
                 <div
                   class="circle"
-                  :class="sellected_item === 'C' ? '--active_sellected' : ''"
+                  :class="
+                    quationsData.quation6 === 'C' ? '--active_sellected' : ''
+                  "
                   :style="`
                   height : ${innerHeight * 0.09}px; 
                   width : ${innerHeight * 0.09}px`"
@@ -56,14 +62,16 @@
                 <img src="/shoes/03shoes.png" alt="03shoes" />
               </div>
             </li>
-            <li @click="sellected_item = 'D'">
+            <li @click="quationsData.quation6 = 'D'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
                 <div
                   class="circle"
-                  :class="sellected_item === 'D' ? '--active_sellected' : ''"
+                  :class="
+                    quationsData.quation6 === 'D' ? '--active_sellected' : ''
+                  "
                   :style="`
                   height : ${innerHeight * 0.09}px; 
                   width : ${innerHeight * 0.09}px`"
@@ -71,14 +79,16 @@
                 <img src="/shoes/04shoes.png" alt="04shoes" />
               </div>
             </li>
-            <li @click="sellected_item = 'E'">
+            <li @click="quationsData.quation6 = 'E'">
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
               >
                 <div
                   class="circle"
-                  :class="sellected_item === 'E' ? '--active_sellected' : ''"
+                  :class="
+                    quationsData.quation6 === 'E' ? '--active_sellected' : ''
+                  "
                   :style="`
                   height : ${innerHeight * 0.09}px; 
                   width : ${innerHeight * 0.09}px`"
@@ -90,7 +100,7 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
-          <button @click="next">next</button>
+          <button @click="next">back</button>
         </div>
       </div>
     </transition>
@@ -117,6 +127,31 @@ export default {
       type: Number,
       required: true,
     },
+    quationsData: {
+      type: Object,
+      required: true,
+    },
+
+    current: {
+      type: Number,
+      required: true,
+    },
+    nextPage: {
+      type: Function,
+      required: true,
+    },
+    setCurrent: {
+      type: Function,
+      required: true,
+    },
+    setAction: {
+      type: Function,
+      required: true,
+    },
+    action: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -139,24 +174,30 @@ export default {
       });
     },
     next() {
-      switch (this.sellected_item) {
-        case "A":
-          this.$emit("setQuaionData", "quation6", "A");
-          break;
-        case "B":
-          this.$emit("setQuaionData", "quation6", "B");
-          break;
-        case "C":
-          this.$emit("setQuaionData", "quation6", "C");
-          break;
-        case "D":
-          this.$emit("setQuaionData", "quation6", "D");
-          break;
-        case "E":
-          this.$emit("setQuaionData", "quation6", "E");
-          break;
-      }
-      this.$emit("next");
+      window.flipCard_empty_reverse();
+      this.$emit("setAction", "back");
+      this.$emit("back");
+    },
+  },
+  watch: {
+    quationsData: {
+      handler: function (val) {
+        if (val.quation3 !== null) {
+          this.sellected_item = val.quation3;
+        }
+      },
+      deep: true,
+    },
+    sellected_item: {
+      handler: function (val) {
+        if (val !== null) {
+          setTimeout(() => {
+            this.$emit("setAction", "next");
+            this.$emit("next");
+          }, 700);
+        }
+      },
+      deep: true,
     },
   },
 };

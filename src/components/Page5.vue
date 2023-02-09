@@ -12,49 +12,49 @@
           <h2 :style="`text-align : center`">Name your <br />memoir.</h2>
           <ul>
             <li
-              :class="sellected_item === 'A' ? '--active_sellected' : ''"
-              @click="sellected_item = 'A'"
+              :class="quationsData.quation4 === 'A' ? '--active_sellected' : ''"
+              @click="quationsData.quation4 = 'A'"
               class="--extra_padding"
             >
-              <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
+              <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
                 Living Rent Free (in your <br />
                 head). OR Its Giving.
               </h6>
             </li>
             <li
-              :class="sellected_item === 'B' ? '--active_sellected' : ''"
-              @click="sellected_item = 'B'"
+              :class="quationsData.quation4 === 'B' ? '--active_sellected' : ''"
+              @click="quationsData.quation4 = 'B'"
               class="--extra_padding"
             >
-              <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
+              <h6 :class="quationsData.quation4 === 'B' ? '--color_white' : ''">
                 Periodt
               </h6>
             </li>
             <li
-              :class="sellected_item === 'C' ? '--active_sellected' : ''"
-              @click="sellected_item = 'C'"
+              :class="quationsData.quation4 === 'C' ? '--active_sellected' : ''"
+              @click="quationsData.quation4 = 'C'"
               class="--extra_padding"
             >
-              <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
+              <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
                 Understood the Assignment
               </h6>
             </li>
             <li
-              :class="sellected_item === 'D' ? '--active_sellected' : ''"
-              @click="sellected_item = 'D'"
+              :class="quationsData.quation4 === 'D' ? '--active_sellected' : ''"
+              @click="quationsData.quation4 = 'D'"
               class="--extra_padding"
             >
-              <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
+              <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
                 Issa Vibe
               </h6>
             </li>
 
             <li
-              :class="sellected_item === 'E' ? '--active_sellected' : ''"
-              @click="sellected_item = 'E'"
+              :class="quationsData.quation4 === 'E' ? '--active_sellected' : ''"
+              @click="quationsData.quation4 = 'E'"
               class="--extra_padding"
             >
-              <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
+              <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
                 We Outside
               </h6>
             </li>
@@ -62,7 +62,7 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
-          <button @click="next">next</button>
+          <button @click="next">back</button>
         </div>
       </div>
     </transition>
@@ -89,6 +89,31 @@ export default {
       type: Number,
       required: true,
     },
+    quationsData: {
+      type: Object,
+      required: true,
+    },
+
+    current: {
+      type: Number,
+      required: true,
+    },
+    nextPage: {
+      type: Function,
+      required: true,
+    },
+    setCurrent: {
+      type: Function,
+      required: true,
+    },
+    setAction: {
+      type: Function,
+      required: true,
+    },
+    action: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -111,29 +136,30 @@ export default {
       });
     },
     next() {
-      if (this.sellected_item === null) {
-        alert("Please select one of the options");
-        return;
-      }
-
-      switch (this.sellected_item) {
-        case "A":
-          this.$emit("setQuaionData", "quation4", "A");
-          break;
-        case "B":
-          this.$emit("setQuaionData", "quation4", "B");
-          break;
-        case "C":
-          this.$emit("setQuaionData", "quation4", "C");
-          break;
-        case "D":
-          this.$emit("setQuaionData", "quation4", "D");
-          break;
-        case "E":
-          this.$emit("setQuaionData", "quation4", "E");
-          break;
-      }
-      this.$emit("next");
+      window.flipCard_empty_reverse();
+      this.$emit("setAction", "back");
+      this.$emit("back");
+    },
+  },
+  watch: {
+    quationsData: {
+      handler: function (val) {
+        if (val.quation4 !== null) {
+          this.sellected_item = val.quation4;
+        }
+      },
+      deep: true,
+    },
+    sellected_item: {
+      handler: function (val) {
+        if (val !== null) {
+          setTimeout(() => {
+            this.$emit("setAction", "next");
+            this.$emit("next");
+          }, 700);
+        }
+      },
+      deep: true,
     },
   },
 };

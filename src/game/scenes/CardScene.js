@@ -39,7 +39,7 @@ export default class PlayScene extends Scene {
 
     this.anims.create({
       key: "empty_card_flip_reverse",
-      frames: this.ArrayFrame(40, 60, true),
+      frames: this.ArrayFrame(60, 40, true),
       frameRate: 30,
       repeat: 0,
     });
@@ -58,6 +58,7 @@ export default class PlayScene extends Scene {
     window.flipCard_empty_reverse = this.flipCard_empty_reverse.bind(this);
     window.setCurrent = this.setCurrent.bind(this);
     window.triggerAnimation = this.triggerAnimation.bind(this);
+    window.triggerFlipCard = this.triggerFlipCard.bind(this);
   }
 
   triggerAnimation() {
@@ -138,20 +139,6 @@ export default class PlayScene extends Scene {
         rotate3d: { z: 10 },
         ease: "Power1",
         duration: 1000,
-        // onComplete: () => {
-        //   this.time.addEvent({
-        //     delay: 100 * index,
-        //     callback: () => {
-        //       card.play("flip_card");
-        //       this.time.addEvent({
-        //         delay: 2000,
-        //         callback: () => {
-        //           card.play("flip_card_reverse");
-        //         },
-        //       });
-        //     },
-        //   });
-        // },
       });
     });
   }
@@ -191,6 +178,21 @@ export default class PlayScene extends Scene {
         targets: card,
         rotation: 0,
         scale: _ratio,
+        x: this.sys.game.config.width / 2,
+        y: this.sys.game.config.height * 0.465,
+        ease: "Power2",
+        duration: 1000,
+      });
+    });
+  }
+
+  triggerFlipCard() {
+    this.cardGroup.children.entries.forEach((card, index) => {
+      let _ratio = (this.sys.game.config.height * 0.55) / this.cardHeight;
+      this.tweens.add({
+        targets: card,
+        rotation: 0,
+        scale: _ratio,
         x:
           this.sys.game.config.width / 2 -
           (this.cardGroup.children.entries.length - 1 - index) * 5,
@@ -198,7 +200,7 @@ export default class PlayScene extends Scene {
           this.sys.game.config.height * 0.465 +
           (this.cardGroup.children.entries.length - 1 - index) * 2.5,
         ease: "Power2",
-        duration: 1000,
+        duration: 500,
         onComplete: () => {
           this.cardGroup.children.entries[7].play("flip_card");
         },

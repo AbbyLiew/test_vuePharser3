@@ -16,6 +16,7 @@
       class="imgContainer"
       :style="`top : ${innerHeight * 0.05}px; height : ${innerHeight * 0.1}px`"
       v-if="true"
+      @click="handerPlay"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -122,31 +123,35 @@
       </svg>
     </div>
 
-    <!-- <transition>
-      <div
-        class="popUpresult"
-        :style="`height : ${innerHeight}px; width : ${innerWidth}px;`"
-        v-if="`${current} === 9`"
-      >
-        <div class="popUpresult__content">
-          <div class="popUpresult__content__title">
-            <h1>Result</h1>
-          </div>
-          <div class="popUpresult__content__text">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptate, quod, quia, voluptates quae voluptatibus quibusdam
-              voluptatum quidem quos quas nesciunt. Quisquam, quae. Quisquam
-              voluptate, quod, quia, voluptates quae voluptatibus quibusdam
-              voluptatum quidem quos quas nesciunt. Quisquam, quae.
-            </p>
-          </div>
-          <div class="popUpresult__content__btn">
-            <button>download</button>
+    <div v-if="isActive">
+      <transition name="fade" @before-enter="beforeEnter" @enter="enter">
+        <div
+          class="popUpresult"
+          :style="`height : ${innerHeight * 0.7}px; width : ${
+            innerWidth * 0.7
+          }px;`"
+          v-if="`${current} === 9`"
+        >
+          <div class="popUpresult__content">
+            <div class="popUpresult__content__title">
+              <h1>Result</h1>
+            </div>
+            <div class="popUpresult__content__text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptate, quod, quia, voluptates quae voluptatibus
+                quibusdam voluptatum quidem quos quas nesciunt. Quisquam, quae.
+                Quisquam voluptate, quod, quia, voluptates quae voluptatibus
+                quibusdam voluptatum quidem quos quas nesciunt. Quisquam, quae.
+              </p>
+            </div>
+            <div class="popUpresult__content__btn">
+              <button>download</button>
+            </div>
           </div>
         </div>
-      </div>
-    </transition> -->
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -183,10 +188,9 @@ export default {
     },
     enter(el) {
       gsap.to(el, {
-        duration: 1,
+        duration: 0.5,
         opacity: 1,
         type: "ease",
-        delay: 4,
       });
     },
   },
@@ -194,11 +198,13 @@ export default {
   watch: {
     current: {
       handler: function (newVal, oldVal) {
-        if (newVal === 10) {
-          // delay 2 seconds
-          setTimeout(() => {
+        console.log("current", newVal);
+        if (newVal === 11) {
+          let video = document.getElementById("resultVideo");
+          video.onended = () => {
+            console.log("video ended");
             this.isActive = true;
-          }, 400);
+          };
         } else {
           this.isActive = false;
         }
@@ -208,7 +214,6 @@ export default {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3, quation4, quation5, quation6 } =
           newVal;
-        console.log(quation1, quation2, quation3, quation4, quation5, quation6);
         if (quation1 && quation2 && quation3) {
           let result = quation1 + quation2 + quation3;
 
@@ -231,8 +236,8 @@ export default {
           }
 
           let video = document.getElementById("resultVideo");
-          let container = document.querySelector(".Result");
           // if video is loaded
+          if (video.src !== "") return;
 
           switch (result) {
             case 1:
@@ -290,20 +295,8 @@ export default {
   height: 100%;
 }
 
-.Result .v-enter-active,
-.Result .v-leave-active {
-  transition: opacity 0.5s ease;
-  /* delay */
-  transition-delay: 4s;
-}
-
-.Result .v-enter-from,
-.Result .v-leave-to {
-  opacity: 0;
-}
-
 .Result .cls-1 {
-  fill: #f597a7;
+  fill: white;
 }
 
 .active {

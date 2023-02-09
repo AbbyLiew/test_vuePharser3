@@ -9,7 +9,7 @@
             :style="`height : ${innerHeight * 0.55}px; width : ${
               (innerHeight * 0.55 * 736) / 1103
             }px;`"
-            @click="nextPage"
+            @click="triggerFilpcard"
           ></div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
@@ -23,7 +23,7 @@
     </div>
 
     <div v-if="current === 4">
-      <transition appear @before-enter="beforeEnter" @enter="enter">
+      <transition appear @before-enter="beforeEnter1" @enter="enter1">
         <div>
           <div
             class="container"
@@ -36,47 +36,67 @@
             </h2>
             <ul>
               <li
-                :class="sellected_item === 'A' ? '--active_sellected' : ''"
-                @click="sellected_item = 'A'"
+                :class="
+                  quationsData.quation1 === 'A' ? '--active_sellected' : ''
+                "
+                @click="quationsData.quation1 = 'A'"
                 class="--extra_padding"
               >
-                <h6 :class="sellected_item === 'A' ? '--color_white' : ''">
+                <h6
+                  :class="quationsData.quation1 === 'A' ? '--color_white' : ''"
+                >
                   Bright and bold
                 </h6>
               </li>
               <li
-                :class="sellected_item === 'B' ? '--active_sellected' : ''"
-                @click="sellected_item = 'B'"
+                :class="
+                  quationsData.quation1 === 'B' ? '--active_sellected' : ''
+                "
+                @click="quationsData.quation1 = 'B'"
                 class="--extra_padding"
               >
-                <h6 :class="sellected_item === 'B' ? '--color_white' : ''">
+                <h6
+                  :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
+                >
                   Comfortable and casual
                 </h6>
               </li>
               <li
-                :class="sellected_item === 'C' ? '--active_sellected' : ''"
-                @click="sellected_item = 'C'"
+                :class="
+                  quationsData.quation1 === 'C' ? '--active_sellected' : ''
+                "
+                @click="quationsData.quation1 = 'C'"
                 class="--extra_padding"
               >
-                <h6 :class="sellected_item === 'C' ? '--color_white' : ''">
+                <h6
+                  :class="quationsData.quation1 === 'C' ? '--color_white' : ''"
+                >
                   Trendy and chic
                 </h6>
               </li>
               <li
-                :class="sellected_item === 'D' ? '--active_sellected' : ''"
-                @click="sellected_item = 'D'"
+                :class="
+                  quationsData.quation1 === 'D' ? '--active_sellected' : ''
+                "
+                @click="quationsData.quation1 = 'D'"
                 class="--extra_padding"
               >
-                <h6 :class="sellected_item === 'D' ? '--color_white' : ''">
+                <h6
+                  :class="quationsData.quation1 === 'D' ? '--color_white' : ''"
+                >
                   Moody and nostalgic
                 </h6>
               </li>
               <li
-                :class="sellected_item === 'E' ? '--active_sellected' : ''"
-                @click="sellected_item = 'E'"
+                :class="
+                  quationsData.quation1 === 'E' ? '--active_sellected' : ''
+                "
+                @click="quationsData.quation1 = 'E'"
                 class="--extra_padding"
               >
-                <h6 :class="sellected_item === 'E' ? '--color_white' : ''">
+                <h6
+                  :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
+                >
                   How I feel when I wake up
                 </h6>
               </li>
@@ -113,16 +133,25 @@ export default {
       type: Object,
       required: true,
     },
+
+    current: {
+      type: Number,
+      required: true,
+    },
+    nextPage: {
+      type: Function,
+      required: true,
+    },
+    setCurrent: {
+      type: Function,
+      required: true,
+    },
     setAction: {
       type: Function,
       required: true,
     },
     action: {
       type: String,
-      required: true,
-    },
-    current: {
-      type: Number,
       required: true,
     },
   },
@@ -142,33 +171,48 @@ export default {
         duration: 1,
         y: 0,
         opacity: 1,
-        delay: 4,
+        delay: 3,
         type: "ease",
       });
     },
-    next() {
-      if (this.sellected_item === null) {
-        alert("Please select one of the options");
-        return;
-      }
-      switch (this.sellected_item) {
-        case "A":
-          this.$emit("setQuaionData", "quation1", "A");
-          break;
-        case "B":
-          this.$emit("setQuaionData", "quation1", "B");
-          break;
-        case "C":
-          this.$emit("setQuaionData", "quation1", "C");
-          break;
-        case "D":
-          this.$emit("setQuaionData", "quation1", "D");
-          break;
-        case "E":
-          this.$emit("setQuaionData", "quation1", "E");
-          break;
-      }
-      this.$emit("next");
+    beforeEnter1(el) {
+      el.style.opacity = "0";
+    },
+    // where the animation will end up
+    enter1(el) {
+      gsap.to(el, {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        delay: 1,
+        type: "ease",
+      });
+    },
+    triggerFilpcard() {
+      this.$emit("setCurrent", 4);
+      window.triggerFlipCard();
+    },
+    next() {},
+  },
+  watch: {
+    quationsData: {
+      handler: function (val) {
+        if (val.quation1 !== null) {
+          this.sellected_item = val.quation1;
+        }
+      },
+      deep: true,
+    },
+    sellected_item: {
+      handler: function (val) {
+        if (val !== null) {
+          setTimeout(() => {
+            this.$emit("setAction", "next");
+            this.$emit("next");
+          }, 700);
+        }
+      },
+      deep: true,
     },
   },
 };

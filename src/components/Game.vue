@@ -29,6 +29,7 @@ export default {
         quation4: null,
         quation5: null,
         quation6: null,
+        quation7: null,
       },
       isloading: 0,
       drawIceCream: 2091,
@@ -44,7 +45,7 @@ export default {
         duration: 1,
         opacity: 1,
         type: "ease",
-        delay: 4,
+        delay: 1,
       });
     },
 
@@ -63,6 +64,10 @@ export default {
     nextPage() {
       window?.fowardDown();
       this.current++;
+    },
+
+    setCurrent(num) {
+      this.current = num;
     },
 
     triggerAnimation() {
@@ -176,6 +181,7 @@ export default {
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 5">
@@ -183,12 +189,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 6">
@@ -196,12 +204,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 7">
@@ -209,12 +219,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 8">
@@ -222,12 +234,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 9">
@@ -235,12 +249,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <div v-if="current === 10">
@@ -248,12 +264,14 @@ export default {
             @next="next"
             @back="back"
             @setQuaionData="setQuaionData"
+            @nextPage="nextPage"
             :innerHeight="innerHeight"
             :innerWidth="innerWidth"
             :quationsData="quationsData"
             @setAction="setAction"
             :action="action"
             :current="current"
+            @setCurrent="setCurrent"
           />
         </div>
         <Result
@@ -264,7 +282,7 @@ export default {
         />
 
         <transition
-          v-if="current >= 3"
+          v-if="current >= 4"
           appear
           @before-enter="beforeEnter"
           @enter="enter"

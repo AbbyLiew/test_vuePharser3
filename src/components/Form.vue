@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
 export default {
   name: "Form",
   props: {
@@ -69,6 +70,17 @@ export default {
   methods: {
     next() {
       this.$emit("triggerAnimation");
+    },
+    beforeEnter(el) {
+      el.style.opacity = "0";
+    },
+    enter(el) {
+      gsap.to(el, {
+        duration: 1,
+        opacity: 1,
+        type: "ease",
+        delay: 0.5,
+      });
     },
   },
 };

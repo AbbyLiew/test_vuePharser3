@@ -168,13 +168,35 @@ export default class PlayScene extends Scene {
             )
             .setOrigin(0, 1);
 
+          let top2 = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 11)) / 3,
+              this.sys.game.config.height,
+              "minibox_top"
+            )
+            .setOrigin(0, 1);
+
+          let bag2 = this.add
+            .sprite(
+              (this.sys.game.config.width * (i - 11)) / 3,
+              this.sys.game.config.height,
+              "bag_00002"
+            )
+            .setOrigin(0, 1);
+
           top.setScale(this.sys.game.config.width / 3 / bag.width);
           bag.setScale(this.sys.game.config.width / 3 / bag.width);
+          top2.setScale(this.sys.game.config.width / 3 / bag.width);
+          bag2.setScale(this.sys.game.config.width / 3 / bag.width);
           top.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
           bag.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
+          top2.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
+          bag2.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
 
           this.minitop.add(top);
           this.bagGroup.add(bag);
+          this.minitop.add(top2);
+          this.bagGroup.add(bag2);
         }
       }
     }
@@ -219,8 +241,8 @@ export default class PlayScene extends Scene {
     this.boxGroup.children.iterate((child) => {
       this.tweens.add({
         targets: child,
-        y: child.y + this.sys.game.config.height * 0.8,
-        duration: 1300,
+        alpha: 0,
+        duration: 500,
         ease: "Linear",
       });
     });
@@ -228,8 +250,8 @@ export default class PlayScene extends Scene {
     this.bagGroup.children.iterate((child) => {
       this.tweens.add({
         targets: child,
-        y: child.y + this.sys.game.config.height * 0.8,
-        duration: 1300,
+        alpha: 0,
+        duration: 500,
         ease: "Linear",
       });
     });
@@ -237,8 +259,8 @@ export default class PlayScene extends Scene {
     this.minitop.children.iterate((child) => {
       this.tweens.add({
         targets: child,
-        y: child.y + this.sys.game.config.height * 0.8,
-        duration: 1300,
+        alpha: 0,
+        duration: 500,
         ease: "Linear",
       });
     });

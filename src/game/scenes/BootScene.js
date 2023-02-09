@@ -10,11 +10,6 @@ export default class BootScene extends Scene {
 
   preload() {
     this.load.image("logo", "/logo.png");
-    this.load.image("blue_bag", "/bag/blue_bag.png");
-    this.load.image("pink_bag", "/bag/pink_bag.png");
-    this.load.image("white_bag", "/bag/white_bag.png");
-    this.load.image("yellow_bag", "/bag/yellow_bag.png");
-    this.load.image("purple_bag", "/bag/purple_bag.png");
     this.load.image("minibox", "/box_bottom.jpg");
     this.load.image("minibox_top", "/box_top.png");
 
@@ -32,16 +27,7 @@ export default class BootScene extends Scene {
       this.load.image(asset_name, "/bag/" + asset_name + ".png");
     }
 
-    var progress = this.add.graphics();
-
-    this.load.on("progress", function (value) {
-      let left = 2091 - 2091 * value;
-      console.log(left);
-      window?.setDrawIceCream(left);
-    });
-
     this.load.on("complete", function () {
-      progress.destroy();
       window.setIsloading();
 
       let icecream_preloading = document.querySelector(".icecream");
