@@ -60,7 +60,7 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
-          <button @click="next">next</button>
+          <button @click="next">back</button>
         </div>
       </div>
     </transition>
