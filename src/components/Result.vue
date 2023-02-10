@@ -128,6 +128,34 @@
           class="popUpresult"
           :style="`height : ${innerHeight}px; width : ${innerWidth}px;`"
         >
+          <transition @before-enter="beforeEnter_final0" @enter="enter_final0">
+            <div
+              class="popupModal"
+              :style="`position : absolute;`"
+              v-if="closeModal"
+            >
+              <div
+                class="imgContainer0"
+                :style="`height : ${innerHeight * 0.35}px;`"
+              >
+                <img src="/result/pop-up.png" />
+              </div>
+              <div
+                class="svgContainerrrr"
+                :style="`height : ${innerHeight * 0.05}px;`"
+                @click="handlerClose"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g data-name="Layer 2" class="svg">
+                    <path
+                      d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+                      data-name="close"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </transition>
           <div
             class="imgContainer_logo"
             :style="`margin-top : ${innerHeight * 0.05}px; height : ${
@@ -224,21 +252,41 @@
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <!--  -->
           <div
-            :style="`height: ${innerHeight * 0.55}px; width: ${innerWidth}px;`"
+            :style="`height: ${innerHeight * 0.5}px; width: ${innerWidth}px;`"
             class="imgContainer_icecream"
           >
             <img :src="`/result/FN${this.output_color}.png`" />
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
-            <button id="shareButton" v-if="isIOS">SHARE THE VIDEO</button>
+            <button
+              id="shareButton"
+              v-if="isIOS"
+              :style="`width : ${innerWidth * 0.45}px`"
+            >
+              SHARE THE VIDEO
+            </button>
             <a href="/videos/3DBagDEMO_2.mp4" download>
-              <button id="shareButton" v-if="!isIOS">SHARE THE VIDEO</button>
+              <button
+                id="shareButton"
+                v-if="!isIOS"
+                :style="`width : ${innerWidth * 0.45}px`"
+              >
+                SHARE THE VIDEO
+              </button>
             </a>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
-            <button @click="postfunction">SHOP TABBY</button>
+            <button :style="`width : ${innerWidth * 0.45}px`">
+              SHOP TABBY
+            </button>
+          </div>
+          <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
+          <div class="btn-next">
+            <button :style="`width : ${innerWidth * 0.45}px`">
+              VIEW IN AR
+            </button>
           </div>
         </div>
       </transition>
@@ -277,6 +325,7 @@ export default {
       isActive: false,
       isIOS: false,
       output_color: "",
+      closeModal: true,
     };
   },
 
@@ -287,6 +336,22 @@ export default {
   },
 
   methods: {
+    handlerClose() {
+      this.closeModal = false;
+    },
+    beforeEnter_final0(el) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(100%)";
+    },
+    enter_final0(el) {
+      gsap.to(el, {
+        duration: 1,
+        opacity: 1,
+        transform: "translateY(-50%)",
+        type: "ease",
+        delay: 3,
+      });
+    },
     beforeEnter_final(el) {
       el.style.opacity = "0";
     },
@@ -524,6 +589,16 @@ export default {
   background-color: black;
 }
 
+.popupModal {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popupModal img {
+  height: 100%;
+}
+
 #resultVideo {
   object-fit: cover;
   width: 100%;
@@ -578,5 +653,16 @@ export default {
 .--active_container {
   z-index: 10000;
   opacity: 1;
+}
+.svg {
+  fill: white;
+}
+svg {
+  height: 100%;
+}
+.svgContainerrrr {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 </style>
