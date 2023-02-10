@@ -361,7 +361,7 @@ export default {
                   navigator
                     .share({
                       files: [
-                        new File([blob], "3DBagDEMO_2.mp4", {
+                        new File([blob], this.output_color + "MP4", {
                           type: "video/mp4",
                         }),
                       ],
@@ -382,6 +382,8 @@ export default {
           setTimeout(() => {
             container.classList.add("--active_container");
             // video start from 0
+            let body = document.querySelector("body");
+            body.style.background = this.output_color;
             video.currentTime = 0;
             video.play();
           }, 500);
