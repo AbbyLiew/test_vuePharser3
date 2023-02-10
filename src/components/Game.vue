@@ -16,6 +16,7 @@ import gsap from "gsap";
 </script>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -38,6 +39,28 @@ export default {
     };
   },
   methods: {
+    postfunction() {
+      let data = {
+        Headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer TUp5NTNXNW1YZ0VOb3htUGkzVGtqNms0VEc1dnBYQ2gwTkx2",
+        },
+        data: {
+          phone: "+11234567890",
+          email: "test@gmail.com",
+        },
+        signUpSourceId: "379277",
+      };
+      axios
+        .post("https://api.attentivemobile.com/v1/subscriptions", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     setIsActive() {
       this.isActive_video = true;
     },
@@ -103,7 +126,7 @@ export default {
       this.innerWidth = window.innerWidth;
     });
     window.setIsloading = this.setIsloading;
-    window.setDrawIceCream = this.setDrawIceCream;
+    window.postfunction = this.postfunction;
   },
 };
 </script>

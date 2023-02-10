@@ -231,11 +231,14 @@
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
-            <button id="shareButton">SHARE THE VIDEO</button>
+            <button id="shareButton" v-if="isIOS">SHARE THE VIDEO</button>
+            <a href="/videos/3DBagDEMO_2.mp4" download>
+              <button id="shareButton" v-if="!isIOS">SHARE THE VIDEO</button>
+            </a>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
-            <button>SHOP TABBY</button>
+            <button @click="postfunction">SHOP TABBY</button>
           </div>
         </div>
       </transition>
@@ -245,6 +248,7 @@
 
 <script>
 import gsap from "gsap";
+import axios from "axios";
 export default {
   props: {
     quationsData: {
@@ -271,7 +275,14 @@ export default {
   data() {
     return {
       isActive: false,
+      isIOS: false,
     };
+  },
+
+  mounted() {
+    let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+    let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
+    this.isIOS = isIOS;
   },
 
   methods: {
@@ -285,6 +296,28 @@ export default {
         type: "ease",
         delay: 4,
       });
+    },
+    postfunction() {
+      let data = {
+        Headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer TUp5NTNXNW1YZ0VOb3htUGkzVGtqNms0VEc1dnBYQ2gwTkx2",
+        },
+        data: {
+          phone: "+11234567890",
+          email: "test@gmail.com",
+        },
+        signUpSourceId: "379277",
+      };
+      axios
+        .post("https://api.tabby.com.tw/api/v1/quiz", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     share() {
       let button = document.getElementById("shareButton");
@@ -331,6 +364,8 @@ export default {
         if (newVal === 11) {
           let video = document.getElementById("resultVideo");
           let container = document.querySelector(".Result");
+
+          // check users is ios or android
 
           video.addEventListener("ended", () => {
             console.log("video is play end");
