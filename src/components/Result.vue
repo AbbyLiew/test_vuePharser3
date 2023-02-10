@@ -354,8 +354,8 @@ export default {
                           }
                         ),
                       ],
-                      title: "couch tabby",
-                      url: "https://codepen.io/ayoisaiah/pen/YbNazJ",
+                      title: "couch tabby redeem icecream",
+                      url: window.location.href,
                     })
                     .then(() => {
                       console.log("Thanks for sharing!");
