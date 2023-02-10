@@ -13,7 +13,7 @@ export default class BootScene extends Scene {
     this.load.image("roof", "/roof.png");
     this.load.image("icon_icecream", "/icon-icecream.png");
 
-    for (let i = 0; i <= 70; i++) {
+    for (let i = 0; i <= 60; i++) {
       let asset_name =
         "Tabby_Card_Flip_Anim_" + "0".repeat(5 - i.toString().length) + i;
       console.log(asset_name);
