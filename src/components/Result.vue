@@ -363,14 +363,7 @@ export default {
         delay: 4,
       });
     },
-    share() {
-      let button = document.getElementById("shareButton");
-      button.addEventListener("click", async () => {
-        try {
-          await navigator.share(shareData);
-        } catch (err) {}
-      });
-    },
+
     convertResult(result) {
       if (result[0] === "A" || result[0] === "B") {
         result[0] = "A";
@@ -420,7 +413,9 @@ export default {
 
               button.addEventListener("click", async (event) => {
                 // url mp4 to blob
-                let blob = await fetch(video.src).then((r) => r.blob());
+                let blob = await fetch(
+                  "/videos/LowRes/YellowDEMO_02_withoutLogo.mp4"
+                ).then((r) => r.blob());
 
                 if (navigator.share) {
                   navigator
@@ -472,10 +467,10 @@ export default {
           if (video.src !== "") return;
           // video pause
           let yellow = "/videos/YellowDEMO_02_withoutLogo.mp4";
-          let pink = "/videos/YellowDEMO_02_withoutLogo.mp4";
+          let pink = "/videos/3DBagDEMO_2.mp4";
           let teal = "/videos/YellowDEMO_02_withoutLogo.mp4";
-          let cream = "/videos/3DBagDEMO_2.mp4";
-          let purple = "/videos/3DBagDEMO_2.mp4";
+          let cream = "/videos/CreamDEMO_Dim.mp4";
+          let purple = "/videos/CreamDEMO_Dim.mp4";
 
           switch (result) {
             case "AAA":
