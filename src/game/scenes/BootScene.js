@@ -1,8 +1,5 @@
 console.clear();
 import { Scene } from "phaser";
-import COACHlorry from "@/game/assets/COACHlorry.png";
-import Card from "@/game/assets/Card.png";
-import startButton from "@/game/assets/Startbutton.png";
 export default class BootScene extends Scene {
   constructor() {
     super({ key: "BootScene" });
