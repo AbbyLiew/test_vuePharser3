@@ -98,7 +98,7 @@
                 <h6
                   :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
                 >
-                  How I feel when I wake up
+                  How I feel when <br />I wake up
                 </h6>
               </li>
             </ul>

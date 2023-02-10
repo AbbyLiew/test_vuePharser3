@@ -61,6 +61,7 @@ export default {
           console.log(err);
         });
     },
+
     setIsActive() {
       this.isActive_video = true;
     },
@@ -180,10 +181,7 @@ export default {
             <img src="/logo.png" />
           </div>
 
-          <div
-            class="block"
-            :style="`height : ${innerHeight * 0.225}px;`"
-          ></div>
+          <div class="block" :style="`height : ${innerHeight * 0.21}px;`"></div>
 
           <transition
             @before-enter="beforeEnter_icecream"
@@ -191,7 +189,7 @@ export default {
           >
             <div
               class="imgContainer_logo float"
-              :style="`height : ${innerHeight * 0.15}px;`"
+              :style="`height : ${innerHeight * 0.23}px;`"
             >
               <img src="/icon-icecream_darker.png" />
             </div>

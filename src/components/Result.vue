@@ -227,7 +227,7 @@
             :style="`height: ${innerHeight * 0.55}px; width: ${innerWidth}px;`"
             class="imgContainer_icecream"
           >
-            <img src="/result/FNpink.png" />
+            <img :src="`/result/FN${this.output_color}.png`" />
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
@@ -276,6 +276,7 @@ export default {
     return {
       isActive: false,
       isIOS: false,
+      output_color: "",
     };
   },
 
@@ -296,28 +297,6 @@ export default {
         type: "ease",
         delay: 4,
       });
-    },
-    postfunction() {
-      let data = {
-        Headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer TUp5NTNXNW1YZ0VOb3htUGkzVGtqNms0VEc1dnBYQ2gwTkx2",
-        },
-        data: {
-          phone: "+11234567890",
-          email: "test@gmail.com",
-        },
-        signUpSourceId: "379277",
-      };
-      axios
-        .post("https://api.tabby.com.tw/api/v1/quiz", data)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     },
     share() {
       let button = document.getElementById("shareButton");
@@ -423,81 +402,104 @@ export default {
           // if video is loaded
           if (video.src !== "") return;
           // video pause
-          let yellow = "/videos/3DBagDEMO_2.mp4";
-          let pink = "/videos/3DBagDEMO_2.mp4";
-          let teal = "/videos/3DBagDEMO_2.mp4";
+          let yellow = "/videos/YellowDEMO_02_withoutLogo.mp4";
+          let pink = "/videos/YellowDEMO_02_withoutLogo.mp4";
+          let teal = "/videos/YellowDEMO_02_withoutLogo.mp4";
           let cream = "/videos/3DBagDEMO_2.mp4";
           let purple = "/videos/3DBagDEMO_2.mp4";
 
           switch (result) {
             case "AAA":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "AAB":
               video.src = pink;
+              this.output_color = "pink";
               break;
             case "AAC":
               video.src = teal;
+              this.output_color = "teal";
               break;
             case "ABA":
               video.src = pink;
+              this.output_color = "pink";
               break;
             case "ABB":
               video.src = purple;
+              this.output_color = "purple";
               break;
             case "ABC":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "ACC":
               video.src = pink;
+              this.output_color = "pink";
               break;
             case "ACA":
               video.src = cream;
+              this.output_color = "cream";
               break;
             case "BAA":
               video.src = teal;
+              this.output_color = "teal";
               break;
             case "BAB":
               video.src = teal;
+              this.output_color = "teal";
               break;
             case "BAC":
               video.src = purple;
+              this.output_color = "purple";
               break;
             case "BBA":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "BBB":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "BBC":
               video.src = pink;
+              this.output_color = "pink";
               break;
             case "BCC":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "CAA":
               video.src = teal;
+              this.output_color = "teal";
               break;
             case "CAB":
               video.src = yellow;
+              this.output_color = "yellow";
               break;
             case "CAC":
               video.src = teal;
+              this.output_color = "teal";
               break;
             case "CBA":
               video.src = pink;
+              this.output_color = "pink";
               break;
             case "CBB":
               video.src = purple;
+              this.output_color = "purple";
               break;
             case "CBC":
               video.src = cream;
+              this.output_color = "cream";
               break;
             case "CCA":
               video.src = cream;
+              this.output_color = "cream";
               break;
             case "CCC":
               video.src = pink;
+              this.output_color = "pink";
               break;
           }
         }

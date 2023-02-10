@@ -55,7 +55,14 @@
               REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
               CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY. VIEW TERMS & PRIVACY.
+              APPLY. VIEW
+              <a target="_blank" href="http://attn.tv/coach/terms.html">
+                TERMS
+              </a>
+              &
+              <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
+                PRIVACY.
+              </a>
             </label>
           </div>
         </div>
