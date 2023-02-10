@@ -5,11 +5,13 @@
       <div>
         <div
           class="container"
-          :style="`height : ${innerHeight * 0.55}px; width : ${
-            (innerHeight * 0.55 * 736) / 1103
+          :style="`height : ${innerHeight * 0.6}px; width : ${
+            (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Where can we <br />find you?</h2>
+          <h2 :style="`text-align : center`">
+            Where can we <br />find you?<br />
+          </h2>
           <ul>
             <li
               :class="quationsData.quation3 === 'A' ? '--active_sellected' : ''"
@@ -58,7 +60,7 @@
             </li>
           </ul>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
           <button @click="next">back</button>
         </div>

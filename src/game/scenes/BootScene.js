@@ -18,8 +18,9 @@ export default class BootScene extends Scene {
 
     for (let i = 0; i <= 70; i++) {
       let asset_name =
-        "Card_Flip_Ans_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/Card_Flip_Ans_02/" + asset_name + ".png");
+        "Tabby_Card_Flip_Anim_" + "0".repeat(5 - i.toString().length) + i;
+      console.log(asset_name);
+      this.load.image(asset_name, "/Card_Flip/" + asset_name + ".png");
     }
 
     for (let i = 0; i < 5; i++) {

@@ -296,6 +296,35 @@ export default {
         } catch (err) {}
       });
     },
+    convertResult(result) {
+      if (result[0] === "A" || result[0] === "B") {
+        result[0] = "A";
+      } else if (result[0] === "C" || result[0] === "D") {
+        result[0] = "B";
+      } else if (result[0] === "E") {
+        result[0] = "C";
+      }
+
+      if (result[1] === "A" || result[1] === "B") {
+        result[1] = "A";
+      } else if (result[1] === "C" || result[1] === "D") {
+        result[1] = "B";
+      } else if (result[1] === "E") {
+        result[1] = "C";
+      }
+
+      if (result[2] === "A" || result[2] === "B") {
+        result[2] = "A";
+      } else if (result[2] === "C" || result[2] === "D") {
+        result[2] = "B";
+      } else if (result[2] === "E") {
+        result[2] = "C";
+      }
+
+      result = result[0] + result[1] + result[2];
+      console.log(result);
+      return result;
+    },
   },
 
   watch: {
@@ -311,17 +340,21 @@ export default {
 
             setTimeout(() => {
               let button = document.getElementById("shareButton");
-              const shareData = {
-                title: "MDN",
-                text: "Learn web development on MDN!",
-                url: "https://developer.mozilla.org",
-              };
 
               button.addEventListener("click", (event) => {
                 if (navigator.share) {
                   navigator
                     .share({
-                      title: "WebShare API Demo",
+                      files: [
+                        new File(
+                          ["/videos/3DBagDEMO_2.mp4"],
+                          "3DBagDEMO_2.mp4",
+                          {
+                            type: "video/mp4",
+                          }
+                        ),
+                      ],
+                      title: "couch tabby",
                       url: "https://codepen.io/ayoisaiah/pen/YbNazJ",
                     })
                     .then(() => {
@@ -343,29 +376,14 @@ export default {
       },
       deep: true,
     },
+
     quationsData: {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3 } = newVal;
         if (quation1 && quation2 && quation3) {
           let result = quation1 + quation2 + quation3;
-
-          switch (result) {
-            case "AAAAAA":
-              result = 1;
-              break;
-            case "BBBBBB":
-              result = 2;
-              break;
-            case "CCCCCC":
-              result = 3;
-              break;
-            case "DDDDDD":
-              result = 4;
-              break;
-            default:
-              result = Math.floor(Math.random() * 4) + 1;
-              break;
-          }
+          result = result.split("");
+          result = this.convertResult(result);
 
           let video = document.getElementById("resultVideo");
           video.pause();
@@ -373,22 +391,81 @@ export default {
           // if video is loaded
           if (video.src !== "") return;
           // video pause
+          let yellow = "/videos/3DBagDEMO_2.mp4";
+          let pink = "/videos/3DBagDEMO_2.mp4";
+          let teal = "/videos/3DBagDEMO_2.mp4";
+          let cream = "/videos/3DBagDEMO_2.mp4";
+          let purple = "/videos/3DBagDEMO_2.mp4";
+
           switch (result) {
-            case 1:
-              video.src = `/videos/3DBagDEMO_2.mp4`;
-              // check if video is loaded
+            case "AAA":
+              video.src = yellow;
               break;
-            case 2:
-              video.src = `/videos/3DBagDEMO_2.mp4`;
-              // check if video is loaded
+            case "AAB":
+              video.src = pink;
               break;
-            case 3:
-              video.src = `/videos/3DBagDEMO_2.mp4`;
-              // check if video is loaded
+            case "AAC":
+              video.src = teal;
               break;
-            case 4:
-              video.src = `/videos/3DBagDEMO_2.mp4`;
-              // check if video is loaded
+            case "ABA":
+              video.src = pink;
+              break;
+            case "ABB":
+              video.src = purple;
+              break;
+            case "ABC":
+              video.src = yellow;
+              break;
+            case "ACC":
+              video.src = pink;
+              break;
+            case "ACA":
+              video.src = cream;
+              break;
+            case "BAA":
+              video.src = teal;
+              break;
+            case "BAB":
+              video.src = teal;
+              break;
+            case "BAC":
+              video.src = purple;
+              break;
+            case "BBA":
+              video.src = yellow;
+              break;
+            case "BBB":
+              video.src = yellow;
+              break;
+            case "BBC":
+              video.src = pink;
+              break;
+            case "BCC":
+              video.src = yellow;
+              break;
+            case "CAA":
+              video.src = teal;
+              break;
+            case "CAB":
+              video.src = yellow;
+              break;
+            case "CAC":
+              video.src = teal;
+              break;
+            case "CBA":
+              video.src = pink;
+              break;
+            case "CBB":
+              video.src = purple;
+              break;
+            case "CBC":
+              video.src = cream;
+              break;
+            case "CCA":
+              video.src = cream;
+              break;
+            case "CCC":
+              video.src = pink;
               break;
           }
         }

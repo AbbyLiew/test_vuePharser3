@@ -5,11 +5,11 @@
       <div>
         <div
           class="container"
-          :style="`height : ${innerHeight * 0.55}px; width : ${
-            (innerHeight * 0.55 * 736) / 1103
+          :style="`height : ${innerHeight * 0.6}px; width : ${
+            (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Your spirit shoe?</h2>
+          <h2 :style="`text-align : center`">Your spirit shoe?<br /><br /></h2>
           <ul class="section7_shoeContaienr">
             <li @click="quationsData.quation6 = 'A'">
               <div
@@ -22,8 +22,8 @@
                     quationsData.quation6 === 'A' ? '--active_sellected' : ''
                   "
                   :style="`
-                  height : ${innerHeight * 0.09}px; 
-                  width : ${innerHeight * 0.09}px`"
+                  height : ${innerHeight * 0.11}px; 
+                  width : ${innerHeight * 0.11}px`"
                 />
                 <img src="/shoes/01shoes.png" alt="01shoes" />
               </div>
@@ -39,8 +39,8 @@
                     quationsData.quation6 === 'B' ? '--active_sellected' : ''
                   "
                   :style="`
-                  height : ${innerHeight * 0.09}px; 
-                  width : ${innerHeight * 0.09}px`"
+                  height : ${innerHeight * 0.11}px; 
+                  width : ${innerHeight * 0.11}px`"
                 />
                 <img src="/shoes/02shoes.png" alt="02shoes" />
               </div>
@@ -56,8 +56,8 @@
                     quationsData.quation6 === 'C' ? '--active_sellected' : ''
                   "
                   :style="`
-                  height : ${innerHeight * 0.09}px; 
-                  width : ${innerHeight * 0.09}px`"
+                  height : ${innerHeight * 0.11}px; 
+                  width : ${innerHeight * 0.11}px`"
                 />
                 <img src="/shoes/03shoes.png" alt="03shoes" />
               </div>
@@ -73,8 +73,8 @@
                     quationsData.quation6 === 'D' ? '--active_sellected' : ''
                   "
                   :style="`
-                  height : ${innerHeight * 0.09}px; 
-                  width : ${innerHeight * 0.09}px`"
+                  height : ${innerHeight * 0.11}px; 
+                  width : ${innerHeight * 0.11}px`"
                 />
                 <img src="/shoes/04shoes.png" alt="04shoes" />
               </div>
@@ -90,15 +90,15 @@
                     quationsData.quation6 === 'E' ? '--active_sellected' : ''
                   "
                   :style="`
-                  height : ${innerHeight * 0.09}px; 
-                  width : ${innerHeight * 0.09}px`"
+                  height : ${innerHeight * 0.11}px; 
+                  width : ${innerHeight * 0.11}px`"
                 />
                 <img src="/shoes/05shoes.png" alt="05shoes" />
               </div>
             </li>
           </ul>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
           <button @click="next">back</button>
         </div>

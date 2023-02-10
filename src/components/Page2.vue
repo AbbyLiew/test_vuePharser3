@@ -6,16 +6,17 @@
         <div>
           <div
             class="container"
-            :style="`height : ${innerHeight * 0.55}px; width : ${
-              (innerHeight * 0.55 * 736) / 1103
+            :style="`height : ${innerHeight * 0.6}px; width : ${
+              (innerHeight * 0.6 * 588) / 782
             }px;`"
             @click="triggerFilpcard"
           ></div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
-          <div class="btn-next">
+          <div class="btn-next" style="margin-top: -10%">
             <h2>
               Tap card to answer <br />
               7 simple questions
+              <br />
             </h2>
           </div>
         </div>
@@ -102,7 +103,7 @@
               </li>
             </ul>
           </div>
-          <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+          <div class="block" :style="`height : ${innerHeight * 0.03}px`" />
         </div>
       </transition>
     </div>

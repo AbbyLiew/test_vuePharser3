@@ -66,9 +66,9 @@ export default class PlayScene extends Scene {
     var y = this.sys.game.config.height / 2;
 
     for (let i = 0; i < 8; i++) {
-      this.cardGroup.create(x, y, "Card_Flip_Ans_00000");
+      this.cardGroup.create(x, y, "Tabby_Card_Flip_Anim_00000");
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
-      let _ratio = (this.sys.game.config.height * 0.3) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.4) / this.cardHeight;
       this.cardGroup.children.entries[i].scale = _ratio;
       this.tweens.add({
         targets: this.cardGroup.children.entries[i],
@@ -114,17 +114,17 @@ export default class PlayScene extends Scene {
     });
 
     this.cardGroup.children.entries.forEach((card, index) => {
-      let _ratio = (this.sys.game.config.height * 0.14) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.16) / this.cardHeight;
 
       let _x;
       let _y;
       if (index % 2 === 0) {
-        _x = this.sys.game.config.width / 2 - (card.width * _ratio * 8) / 11;
+        _x = this.sys.game.config.width / 2 - (card.width * _ratio * 5) / 11;
         _y =
           this.sys.game.config.height * 0.25 +
           (index * this.cardHeight * _ratio * 10) / 16;
       } else {
-        _x = this.sys.game.config.width / 2 + (card.width * _ratio * 8) / 11;
+        _x = this.sys.game.config.width / 2 + (card.width * _ratio * 5) / 11;
         _y =
           this.sys.game.config.height * 0.25 +
           ((index - 1) * this.cardHeight * _ratio * 10) / 16;
@@ -173,7 +173,7 @@ export default class PlayScene extends Scene {
     });
 
     this.cardGroup.children.entries.forEach((card, index) => {
-      let _ratio = (this.sys.game.config.height * 0.55) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
       this.tweens.add({
         targets: card,
         rotation: 0,
@@ -188,7 +188,7 @@ export default class PlayScene extends Scene {
 
   triggerFlipCard() {
     this.cardGroup.children.entries.forEach((card, index) => {
-      let _ratio = (this.sys.game.config.height * 0.55) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
       this.tweens.add({
         targets: card,
         rotation: 0,
@@ -212,13 +212,17 @@ export default class PlayScene extends Scene {
     if (reverse) {
       let arr = [];
       for (let i = start; i >= end; i--) {
-        arr.push({ key: "Card_Flip_Ans_" + i.toString().padStart(5, "0") });
+        arr.push({
+          key: "Tabby_Card_Flip_Anim_" + i.toString().padStart(5, "0"),
+        });
       }
       return arr;
     } else {
       let arr = [];
       for (let i = start; i <= end; i++) {
-        arr.push({ key: "Card_Flip_Ans_" + i.toString().padStart(5, "0") });
+        arr.push({
+          key: "Tabby_Card_Flip_Anim_" + i.toString().padStart(5, "0"),
+        });
       }
       return arr;
     }
