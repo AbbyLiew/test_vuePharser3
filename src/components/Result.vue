@@ -231,9 +231,7 @@
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
-            <a href="/videos/3DBagDEMO_2.mp4" download>
-              <button id="shareButton">SHARE THE VIDEO</button>
-            </a>
+            <button id="shareButton">SHARE THE VIDEO</button>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
