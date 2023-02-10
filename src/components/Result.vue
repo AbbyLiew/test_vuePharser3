@@ -122,7 +122,7 @@
       </svg>
     </div>
 
-    <div v-if="isActive">
+    <div v-if="isActive || true">
       <transition @before-enter="beforeEnter_final" @enter="enter_final">
         <div
           class="popUpresult"
@@ -517,10 +517,10 @@ export default {
 <style>
 .Result {
   position: fixed;
-  z-index: -10;
+  z-index: 10;
   transition: all 0.5s ease-in-out;
   max-width: 750px;
-  opacity: 0;
+  opacity: 1;
   background-color: black;
 }
 
