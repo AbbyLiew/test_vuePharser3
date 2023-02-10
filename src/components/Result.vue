@@ -518,13 +518,15 @@ export default {
 .Result {
   position: fixed;
   z-index: -10;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   max-width: 750px;
   opacity: 0;
+  background-color: black;
 }
 
 #resultVideo {
   object-fit: cover;
+  width: 100%;
   max-width: 750px;
 }
 .popUpresult {
