@@ -339,18 +339,17 @@ export default {
             setTimeout(() => {
               let button = document.getElementById("shareButton");
 
-              button.addEventListener("click", (event) => {
+              button.addEventListener("click", async (event) => {
+                // url mp4 to blob
+                let blob = await fetch(video.src).then((r) => r.blob());
+
                 if (navigator.share) {
                   navigator
                     .share({
                       files: [
-                        new File(
-                          ["/videos/3DBagDEMO_2.mp4"],
-                          "3DBagDEMO_2.mp4",
-                          {
-                            type: "video/mp4",
-                          }
-                        ),
+                        new File([blob], "3DBagDEMO_2.mp4", {
+                          type: "video/mp4",
+                        }),
                       ],
                       title: "couch tabby redeem icecream",
                       url: window.location.href,
