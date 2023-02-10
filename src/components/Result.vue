@@ -381,6 +381,8 @@ export default {
 
           setTimeout(() => {
             container.classList.add("--active_container");
+            // video start from 0
+            video.currentTime = 0;
             video.play();
           }, 500);
         }
