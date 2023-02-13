@@ -264,7 +264,7 @@
               v-if="isIOS"
               :style="`width : ${innerWidth * 0.45}px`"
             >
-              SHARE THE VIDEO
+              SHARE THE VIDEO ios
             </button>
             <a href="/videos/3DBagDEMO_2.mp4" download>
               <button
