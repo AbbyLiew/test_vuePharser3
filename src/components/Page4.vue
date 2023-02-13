@@ -21,7 +21,7 @@
                     : ''
                 "
               >
-                <img src="/mall_icon.png" alt="01shoes" />
+                <img src="/mall.png" alt="01shoes" />
               </div>
             </li>
             <li @click="quationsData.quation3 = 'B'">
