@@ -259,22 +259,9 @@
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
-            <button
-              id="shareButton"
-              v-if="isIOS"
-              :style="`width : ${innerWidth * 0.45}px`"
-            >
+            <button id="shareButton" :style="`width : ${innerWidth * 0.45}px`">
               SHARE THE VIDEO ios
             </button>
-            <a href="/videos/3DBagDEMO_2.mp4" download>
-              <button
-                id="shareButton"
-                v-if="!isIOS"
-                :style="`width : ${innerWidth * 0.45}px`"
-              >
-                SHARE THE VIDEO
-              </button>
-            </a>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
