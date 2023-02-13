@@ -260,7 +260,7 @@
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next">
             <button id="shareButton" :style="`width : ${innerWidth * 0.45}px`">
-              SHARE THE VIDEO ios
+              SHARE THE VIDEO
             </button>
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />

@@ -169,7 +169,7 @@ export default {
 .container {
   border-radius: 30px;
   box-sizing: border-box;
-  padding-top: 9%;
+  padding-top: 10%;
   display: flex;
   flex-direction: column;
   padding-bottom: 10%;

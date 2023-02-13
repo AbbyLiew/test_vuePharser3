@@ -13,7 +13,7 @@
           <ul class="section7_shoeContaienr">
             <li @click="quationsData.quation3 = 'A'">
               <div
-                class="imgContainer"
+                class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
                 :class="
                   quationsData.quation3 === 'A'
@@ -26,7 +26,7 @@
             </li>
             <li @click="quationsData.quation3 = 'B'">
               <div
-                class="imgContainer"
+                class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
                 :class="
                   quationsData.quation3 === 'B'
@@ -39,7 +39,7 @@
             </li>
             <li @click="quationsData.quation3 = 'C'">
               <div
-                class="imgContainer"
+                class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
                 :class="
                   quationsData.quation3 === 'C'
@@ -52,7 +52,7 @@
             </li>
             <li @click="quationsData.quation3 = 'D'">
               <div
-                class="imgContainer"
+                class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
                 :class="
                   quationsData.quation3 === 'D'
@@ -65,7 +65,7 @@
             </li>
             <li @click="quationsData.quation3 = 'E'">
               <div
-                class="imgContainer"
+                class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
                 :class="
                   quationsData.quation3 === 'E'
@@ -195,11 +195,29 @@ export default {
   color: #fff;
 }
 .--active_sellected_rotate {
-  transform: rotate(360deg) !important;
+  animation: spin 0.5s linear;
+  /* spin one times */
+
   transition: 0.5s;
 }
 .--active_sellected_rotate_reverse {
-  transform: rotate(-360deg) !important;
-  transition: 0.5s;
+  animation: spin_reverse 0.5s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin_reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 </style>

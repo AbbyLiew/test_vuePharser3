@@ -330,12 +330,20 @@ export default {
         </transition>
 
         <div class="footer">
-          <p class="mt-auto" :style="`${1 === 1 ? 'color : white' : ''}}`">
+          <p
+            class="mt-auto"
+            :style="`${
+              current === 11 ? 'color : transparent;' : ' color: #e87d8c;'
+            }}`"
+          >
             &#174; ALL RIGHTS RESERVED BY COACH. POWERED BY
             <a
               href="https://conten.tech"
               target="_blank"
               rel="noopener noreferrer"
+              :style="`${
+                current === 11 ? 'color : transparent;' : ' color: #e87d8c;'
+              }}`"
               >CONTEN.T</a
             >
           </p>
@@ -344,7 +352,7 @@ export default {
     </section>
 
     <template #fallback>
-      <div class="placeholder">Downloading ...</div>
+      <div class="placeholder"></div>
     </template>
   </Suspense>
 </template>
@@ -446,12 +454,11 @@ export default {
 .footer p {
   font-family: HelveticaLTPro-Light;
   color: #e87d8c;
-  font-size: 1vh !important;
+  font-size: 0.7vh !important;
 }
 .footer a {
   font-family: HelveticaLTPro-Light;
-  color: #e87d8c;
-  font-size: 1vh;
+  font-size: 0.7vh;
 }
 .color_white_font {
   color: white !important;
