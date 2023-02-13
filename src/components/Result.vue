@@ -332,7 +332,7 @@ export default {
         duration: 1,
         opacity: 1,
         type: "ease",
-        delay: 4,
+        delay: us,
       });
     },
     beforeEnter_final(el) {
@@ -346,6 +346,7 @@ export default {
         delay: 2,
       });
     },
+    //
 
     convertResult(result) {
       if (result[0] === "A" || result[0] === "B") {
