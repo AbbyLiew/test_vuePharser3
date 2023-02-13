@@ -332,7 +332,7 @@ export default {
         duration: 1,
         opacity: 1,
         type: "ease",
-        delay: 6,
+        delay: 4,
       });
     },
     beforeEnter_final(el) {
@@ -343,7 +343,7 @@ export default {
         duration: 1,
         opacity: 1,
         type: "ease",
-        delay: 4,
+        delay: 2,
       });
     },
 
