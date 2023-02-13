@@ -414,7 +414,7 @@ export default {
               button.addEventListener("click", async (event) => {
                 // url mp4 to blob
                 let blob = await fetch(
-                  "/videos/LowRes/YellowDEMO_02_withoutLogo.mp4"
+                  `/videos/LowRes/compressed_pink.mp4`
                 ).then((r) => r.blob());
 
                 if (navigator.share) {

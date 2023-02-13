@@ -9,54 +9,72 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">
-            Where can we <br />find you?<br />
-          </h2>
-          <ul>
-            <li
-              :class="quationsData.quation3 === 'A' ? '--active_sellected' : ''"
-              @click="quationsData.quation3 = 'A'"
-              class="--extra_padding"
-            >
-              <h6 :class="quationsData.quation3 === 'A' ? '--color_white' : ''">
-                Manifesting
-              </h6>
+          <h2 :style="`text-align : center`">Your spirit shoe?<br /><br /></h2>
+          <ul class="section7_shoeContaienr">
+            <li @click="quationsData.quation3 = 'A'">
+              <div
+                class="imgContainer"
+                :style="`height : ${innerHeight * 0.13}px;`"
+                :class="
+                  quationsData.quation3 === 'A'
+                    ? '--active_sellected_rotate_reverse'
+                    : ''
+                "
+              >
+                <img src="/mall_icon.png" alt="01shoes" />
+              </div>
             </li>
-            <li
-              :class="quationsData.quation3 === 'B' ? '--active_sellected' : ''"
-              @click="quationsData.quation3 = 'B'"
-              class="--extra_padding"
-            >
-              <h6 :class="quationsData.quation3 === 'B' ? '--color_white' : ''">
-                Brunch
-              </h6>
+            <li @click="quationsData.quation3 = 'B'">
+              <div
+                class="imgContainer"
+                :style="`height : ${innerHeight * 0.13}px;`"
+                :class="
+                  quationsData.quation3 === 'B'
+                    ? '--active_sellected_rotate_reverse'
+                    : ''
+                "
+              >
+                <img src="/Brunch.png" alt="02shoes" />
+              </div>
             </li>
-            <li
-              :class="quationsData.quation3 === 'C' ? '--active_sellected' : ''"
-              @click="quationsData.quation3 = 'C'"
-              class="--extra_padding"
-            >
-              <h6 :class="quationsData.quation3 === 'C' ? '--color_white' : ''">
-                On my Hot Girl Walk
-              </h6>
+            <li @click="quationsData.quation3 = 'C'">
+              <div
+                class="imgContainer"
+                :style="`height : ${innerHeight * 0.13}px;`"
+                :class="
+                  quationsData.quation3 === 'C'
+                    ? '--active_sellected_rotate'
+                    : ''
+                "
+              >
+                <img src="/manifesting.png" alt="03shoes" />
+              </div>
             </li>
-            <li
-              :class="quationsData.quation3 === 'D' ? '--active_sellected' : ''"
-              @click="quationsData.quation3 = 'D'"
-              class="--extra_padding"
-            >
-              <h6 :class="quationsData.quation3 === 'D' ? '--color_white' : ''">
-                In my feelings
-              </h6>
+            <li @click="quationsData.quation3 = 'D'">
+              <div
+                class="imgContainer"
+                :style="`height : ${innerHeight * 0.13}px;`"
+                :class="
+                  quationsData.quation3 === 'D'
+                    ? '--active_sellected_rotate_reverse'
+                    : ''
+                "
+              >
+                <img src="/love.png" alt="04shoes" />
+              </div>
             </li>
-            <li
-              :class="quationsData.quation3 === 'E' ? '--active_sellected' : ''"
-              @click="quationsData.quation3 = 'E'"
-              class="--extra_padding"
-            >
-              <h6 :class="quationsData.quation3 === 'E' ? '--color_white' : ''">
-                The mall
-              </h6>
+            <li @click="quationsData.quation3 = 'E'">
+              <div
+                class="imgContainer"
+                :style="`height : ${innerHeight * 0.13}px;`"
+                :class="
+                  quationsData.quation3 === 'E'
+                    ? '--active_sellected_rotate'
+                    : ''
+                "
+              >
+                <img src="/hot.png" alt="05shoes" />
+              </div>
             </li>
           </ul>
         </div>
@@ -175,5 +193,16 @@ export default {
 }
 .--color_white {
   color: #fff;
+}
+.--active_sellected_rotate {
+  transform: rotate(45deg) !important;
+  transition: 0.5s;
+}
+.--active_sellected_rotate_reverse {
+  transform: rotate(-45deg) !important;
+  transition: 0.5s;
+}
+.imgContainer {
+  transition: 0.5s;
 }
 </style>
