@@ -123,12 +123,16 @@
     </div>
 
     <div v-if="isActive">
-      <transition @before-enter="beforeEnter_final" @enter="enter_final">
+      <transition appear @before-enter="beforeEnter_final" @enter="enter_final">
         <div
           class="popUpresult"
           :style="`height : ${innerHeight}px; width : ${innerWidth}px;`"
         >
-          <transition @before-enter="beforeEnter_final0" @enter="enter_final0">
+          <transition
+            appear
+            @before-enter="beforeEnter_final0"
+            @enter="enter_final0"
+          >
             <div
               class="popupModal"
               :style="`position : absolute;`"
@@ -156,6 +160,7 @@
               </div>
             </div>
           </transition>
+
           <div
             class="imgContainer_logo"
             :style="`margin-top : ${innerHeight * 0.05}px; height : ${
@@ -315,28 +320,19 @@ export default {
       closeModal: true,
     };
   },
-
-  mounted() {
-    let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
-    let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
-    this.isIOS = isIOS;
-  },
-
   methods: {
     handlerClose() {
       this.closeModal = false;
     },
     beforeEnter_final0(el) {
       el.style.opacity = "0";
-      el.style.transform = "translateY(100%)";
     },
     enter_final0(el) {
       gsap.to(el, {
         duration: 1,
         opacity: 1,
-        transform: "translateY(-50%)",
         type: "ease",
-        delay: 3,
+        delay: 6,
       });
     },
     beforeEnter_final(el) {
@@ -380,6 +376,12 @@ export default {
       console.log(result);
       return result;
     },
+  },
+
+  mounted() {
+    let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+    let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
+    this.isIOS = isIOS;
   },
 
   watch: {
