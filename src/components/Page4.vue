@@ -202,7 +202,4 @@ export default {
   transform: rotate(-45deg) !important;
   transition: 0.5s;
 }
-.imgContainer {
-  transition: 0.5s;
-}
 </style>

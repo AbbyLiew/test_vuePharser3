@@ -404,6 +404,8 @@ export default {
                   window.location.href + `/videos/LowRes/compressed_pink.mp4`
                 ).then((r) => r.blob());
 
+                alert(blob);
+
                 if (navigator.share) {
                   navigator
                     .share({
