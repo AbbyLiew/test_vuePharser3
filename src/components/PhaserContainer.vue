@@ -10,10 +10,8 @@ const game_desktop = await import(
 
 onMounted(() => {
   if (window.innerWidth > 768) {
-    console.log("desktop");
     gameInstance = game_desktop.launch(containerId);
   } else {
-    console.log("mobile");
     gameInstance = game.launch(containerId);
   }
 });

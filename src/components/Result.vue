@@ -466,11 +466,11 @@ export default {
           // if video is loaded
           if (video.src !== "") return;
           // video pause
-          let yellow = "/videos/YellowDEMO_02_withoutLogo.mp4";
-          let pink = "/videos/3DBagDEMO_2.mp4";
-          let teal = "/videos/YellowDEMO_02_withoutLogo.mp4";
-          let cream = "/videos/CreamDEMO_Dim.mp4";
-          let purple = "/videos/CreamDEMO_Dim.mp4";
+          let yellow = "/videos/Yellow_01.mp4";
+          let pink = "/videos/Pink_01.mp4";
+          let teal = "/videos/Teal_01.mp4";
+          let cream = "/videos/Cream_01.mp4";
+          let purple = "/videos/Purple_01.mp4";
 
           switch (result) {
             case "AAA":

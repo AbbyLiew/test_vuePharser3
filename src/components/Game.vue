@@ -16,7 +16,6 @@ import gsap from "gsap";
 </script>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -39,29 +38,6 @@ export default {
     };
   },
   methods: {
-    postfunction() {
-      let data = {
-        Headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer TUp5NTNXNW1YZ0VOb3htUGkzVGtqNms0VEc1dnBYQ2gwTkx2",
-        },
-        data: {
-          phone: "+11234567890",
-          email: "test@gmail.com",
-        },
-        signUpSourceId: "379277",
-      };
-      axios
-        .post("https://api.attentivemobile.com/v1/subscriptions", data)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-
     setIsActive() {
       this.isActive_video = true;
     },
@@ -104,7 +80,6 @@ export default {
       this.current++;
     },
     next() {
-      console.log(this.current);
       window.flipCard_empty();
       this.current++;
     },
@@ -120,7 +95,10 @@ export default {
       window.location.reload();
     },
   },
-  beforeCreate() {},
+  beforeCreate() {
+    console.log("mounted", console.log(process.env));
+  },
+
   mounted() {
     window.addEventListener("resize", () => {
       this.innerHeight = window.innerHeight;
@@ -128,6 +106,8 @@ export default {
     });
     window.setIsloading = this.setIsloading;
     window.postfunction = this.postfunction;
+
+    console.log("mounted", console.log(process.env));
   },
 };
 </script>
@@ -144,28 +124,7 @@ export default {
         <div
           class="block centerVertical"
           :style="`height : ${innerHeight * 0.21}px;`"
-        >
-          <!-- <div
-            class="svgContainer svgContainer_close"
-            :style="`height : ${innerHeight * 0.05}px;`"
-            v-if="current >= 4"
-            @click="closeTrriger"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100%"
-              height="100%"
-              viewBox="0 0 1024 1024"
-              style="``"
-            >
-              <path
-                fill="#FF99A7"
-                stroke-dashoffset:
-                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"
-              />
-            </svg>
-          </div> -->
-        </div>
+        />
 
         <div
           class="icecream"

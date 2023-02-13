@@ -1,5 +1,3 @@
-console.clear();
-
 import { Scene, Phaser } from "phaser";
 
 export default class PlayScene extends Scene {

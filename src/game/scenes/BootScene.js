@@ -1,4 +1,3 @@
-console.clear();
 import { Scene } from "phaser";
 export default class BootScene extends Scene {
   constructor() {
@@ -16,7 +15,6 @@ export default class BootScene extends Scene {
     for (let i = 0; i <= 60; i++) {
       let asset_name =
         "Tabby_Card_Flip_Anim_" + "0".repeat(5 - i.toString().length) + i;
-      console.log(asset_name);
       this.load.image(asset_name, "/Card_Flip/" + asset_name + ".png");
     }
 
