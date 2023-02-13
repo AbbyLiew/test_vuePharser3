@@ -9,7 +9,9 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Your spirit shoe?<br /><br /></h2>
+          <h2 :style="`text-align : center`">
+            Where can we <br />find you?<br />
+          </h2>
           <ul class="section7_shoeContaienr">
             <li @click="quationsData.quation3 = 'A'">
               <div
