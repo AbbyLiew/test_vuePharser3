@@ -34,7 +34,7 @@
                     : ''
                 "
               >
-                <img src="/Brunch.png" alt="02shoes" />
+                <img src="/brunch.png" alt="02shoes" />
               </div>
             </li>
             <li @click="quationsData.quation3 = 'C'">
