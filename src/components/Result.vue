@@ -399,31 +399,29 @@ export default {
               let button = document.getElementById("shareButton");
 
               button.addEventListener("click", async (event) => {
-                // url mp4 to blob
-                let blob = await fetch(
-                  window.location.href + `/videos/LowRes/compressed_pink.mp4`
-                ).then((r) => r.blob());
-
-                alert(blob);
-
-                if (navigator.share) {
-                  navigator
-                    .share({
-                      files: [
-                        new File([blob], this.output_color + "MP4", {
-                          type: "video/mp4",
-                        }),
-                      ],
-                      title: "couch tabby redeem icecream",
-                      url: window.location.href,
-                    })
-                    .then(() => {
-                      console.log("Thanks for sharing!");
-                    })
-                    .catch(console.error);
-                } else {
-                  // fallback
-                }
+                fetch("/videos/LowRes/compressed_pink.mp4")
+                  .then((res) => res.blob()) // Gets the response and returns it as a blob
+                  .then((blob) => {
+                    console.log(blob);
+                    if (navigator.share) {
+                      navigator
+                        .share({
+                          files: [
+                            new File([blob], this.output_color + "MP4", {
+                              type: "video/mp4",
+                            }),
+                          ],
+                          title: "couch tabby redeem icecream",
+                          url: window.location.href,
+                        })
+                        .then(() => {
+                          console.log("Thanks for sharing!");
+                        })
+                        .catch(console.error);
+                    } else {
+                      // fallback
+                    }
+                  });
               });
             }, 500);
           });
