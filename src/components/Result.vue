@@ -402,24 +402,37 @@ export default {
                 fetch("/videos/LowRes/compressed_pink.mp4")
                   .then((res) => res.blob()) // Gets the response and returns it as a blob
                   .then((blob) => {
-                    console.log(blob);
                     if (navigator.share) {
-                      navigator
-                        .share({
-                          files: [
-                            new File([blob], this.output_color + "MP4", {
-                              type: "video/mp4",
-                            }),
-                          ],
-                          title: "couch tabby redeem icecream",
-                          url: window.location.href,
-                        })
-                        .then(() => {
-                          console.log("Thanks for sharing!");
-                        })
-                        .catch(console.error);
+                      var file = new File([blob], "video.mp4", {
+                        type: "video/mp4",
+                      });
+                      var filesArray = [file];
+
+                      if (
+                        navigator.canShare &&
+                        navigator.canShare({ files: filesArray })
+                      ) {
+                        navigator
+                          .share({
+                            files: [
+                              new File(filesArray, this.output_color + "MP4", {
+                                type: "video/mp4",
+                              }),
+                            ],
+                            title: "couch tabby redeem icecream",
+                            url: window.location.href,
+                          })
+                          .then(() => {
+                            console.log("Thanks for sharing!");
+                          })
+                          .catch(console.error);
+                      }
                     } else {
-                      // fallback
+                      console.log(blob);
+                      let a = document.createElement("a");
+                      a.href = window.URL.createObjectURL(blob);
+                      a.download = this.output_color + "MP4";
+                      a.click();
                     }
                   });
               });
