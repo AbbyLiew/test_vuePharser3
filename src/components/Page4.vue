@@ -195,11 +195,11 @@ export default {
   color: #fff;
 }
 .--active_sellected_rotate {
-  transform: rotate(45deg) !important;
+  transform: rotate(360deg) !important;
   transition: 0.5s;
 }
 .--active_sellected_rotate_reverse {
-  transform: rotate(-45deg) !important;
+  transform: rotate(-360deg) !important;
   transition: 0.5s;
 }
 </style>

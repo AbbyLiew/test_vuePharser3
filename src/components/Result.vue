@@ -403,30 +403,20 @@ export default {
                   .then((res) => res.blob()) // Gets the response and returns it as a blob
                   .then((blob) => {
                     if (navigator.share) {
-                      var file = new File([blob], "video.mp4", {
-                        type: "video/mp4",
-                      });
-                      var filesArray = [file];
-
-                      if (
-                        navigator.canShare &&
-                        navigator.canShare({ files: filesArray })
-                      ) {
-                        navigator
-                          .share({
-                            files: [
-                              new File(filesArray, this.output_color + "MP4", {
-                                type: "video/mp4",
-                              }),
-                            ],
-                            title: "couch tabby redeem icecream",
-                            url: window.location.href,
-                          })
-                          .then(() => {
-                            console.log("Thanks for sharing!");
-                          })
-                          .catch(console.error);
-                      }
+                      navigator
+                        .share({
+                          files: [
+                            new File([blob], "video.mp4", {
+                              type: "video/mp4",
+                            }),
+                          ],
+                          title: "couch tabby redeem icecream",
+                          url: window.location.href,
+                        })
+                        .then(() => {
+                          console.log("Thanks for sharing!");
+                        })
+                        .catch(console.error);
                     } else {
                       console.log(blob);
                       let a = document.createElement("a");
