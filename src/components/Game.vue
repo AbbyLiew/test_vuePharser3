@@ -118,6 +118,12 @@ export default {
     });
     window.setIsloading = this.setIsloading;
     window.postfunction = this.postfunction;
+
+    // env file
+    window.env = {
+      API_URL: process.env,
+      API_KEY: process.env.VUE_APP_TITLE,
+    };
   },
 };
 </script>

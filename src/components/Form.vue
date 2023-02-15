@@ -78,7 +78,7 @@
 import { gsap } from "gsap";
 import { VueTelInput } from "vue3-tel-input";
 import "vue3-tel-input/dist/vue3-tel-input.css";
-
+import axios from "axios";
 export default {
   name: "Form",
   props: {
@@ -100,7 +100,16 @@ export default {
   },
   methods: {
     next() {
-      this.$emit("triggerAnimation");
+      // this.$emit("triggerAnimation");
+      axios
+        .get(process.env.VUE_APP_API_URL + "/data")
+        .then((response) => {
+          // handle success
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     beforeEnter(el) {
       el.style.opacity = "0";

@@ -265,7 +265,6 @@ export default class PlayScene extends Scene {
       for (let i = start; i <= end; i++) {
         arr.push({ key: "bag_" + i.toString().padStart(5, "0") });
       }
-      console.log(arr);
       return arr;
     }
   }
