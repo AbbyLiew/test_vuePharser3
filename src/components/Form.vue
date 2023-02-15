@@ -25,7 +25,12 @@
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
-          <input type="text" placeholder="NAME" class="input" />
+          <input
+            type="text"
+            placeholder="EMAIL"
+            class="input"
+            v-model="email"
+          />
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
 
           <div
@@ -43,6 +48,8 @@
               placeholder="MOBILE"
               class="input right"
               style="width: 70%"
+              v-model="phone"
+              @change="handleInputChange_phone"
             />
           </div>
 
@@ -98,18 +105,43 @@ export default {
   components: {
     VueTelInput,
   },
+  data() {
+    return {
+      email: "",
+      phone: "",
+    };
+  },
   methods: {
     next() {
-      // this.$emit("triggerAnimation");
-      axios
-        .get(process.env.VUE_APP_API_URL + "/data")
-        .then((response) => {
-          // handle success
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.$emit("triggerAnimation");
+
+      // if (!document.querySelector("#terms").checked) {
+      //   alert("Please check the terms and conditions checkbox");
+      //   return;
+      // }
+      // if (this.email === "" || this.phone === "") {
+      //   alert("Please fill in all the fields");
+      //   return;
+      // }
+
+      // axios
+      //   .get(process.env.VUE_APP_API_URL, {
+      //     params: {
+      //       email: this.email,
+      //       phone: "+1" + this.phone,
+      //     },
+      //   })
+      //   .then((response) => {
+      //     // handle success
+      //     if (response.data.message.statusCode === 400) {
+      //       alert(response.data.message.body);
+      //     } else {
+      //       this.$emit("triggerAnimation");
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     },
     beforeEnter(el) {
       el.style.opacity = "0";
