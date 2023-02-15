@@ -1,5 +1,5 @@
 import { Scene, Phaser } from "phaser";
-
+import gsap from "gsap";
 export default class PinkScene extends Scene {
   constructor() {
     super({ key: "PinkScene" });
@@ -28,6 +28,19 @@ export default class PinkScene extends Scene {
               this.video.setDepth(1);
               this.video_reverse.setDepth(0);
               this.video.play(false, 8, 9);
+
+              console.log(this.acc);
+              this.acc++;
+              if (this.acc > 16) {
+                gsap.to("#game-container", {
+                  zIndex: -10,
+                });
+                gsap.to(".Result", {
+                  zIndex: 10,
+                  opacity: 1,
+                  duration: 1,
+                });
+              }
             } else if (e.downX < e.x) {
               this.video.setDepth(0);
               this.video_reverse.setDepth(1);

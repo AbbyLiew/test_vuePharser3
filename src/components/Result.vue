@@ -191,7 +191,7 @@ export default {
     return {
       isActive: false,
       isIOS: false,
-      output_color: "",
+      output_color: "pink",
       closeModal: true,
     };
   },
@@ -286,6 +286,8 @@ export default {
     let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
     let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
     this.isIOS = isIOS;
+
+    this.shareButton();
   },
 
   watch: {
