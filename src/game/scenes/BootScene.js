@@ -25,7 +25,6 @@ export default class BootScene extends Scene {
 
     this.load.on("complete", function () {
       window.setIsloading();
-
       let icecream_preloading = document.querySelector(".icecream");
 
       setTimeout(() => {

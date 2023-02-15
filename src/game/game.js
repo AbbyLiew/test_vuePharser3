@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import BootScene from "@/game/scenes/BootScene";
 import PlayScene from "@/game/scenes/PlayScene";
 import CardScene from "@/game/scenes/CardScene";
+import PinkScene from "@/game/scenes/PinkScene";
 function launch(containerId) {
   return new Phaser.Game({
     type: Phaser.AUTO,
@@ -22,7 +23,7 @@ function launch(containerId) {
       mode: Phaser.Scale.FIT,
     },
     render: { pixelArt: false, antialias: false },
-    scene: [BootScene, PlayScene, CardScene],
+    scene: [BootScene, PinkScene, PlayScene, CardScene],
   });
 }
 

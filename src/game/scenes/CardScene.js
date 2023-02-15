@@ -57,6 +57,22 @@ export default class PlayScene extends Scene {
     window.setCurrent = this.setCurrent.bind(this);
     window.triggerAnimation = this.triggerAnimation.bind(this);
     window.triggerFlipCard = this.triggerFlipCard.bind(this);
+    window.startPinkScene = this.startPinkScene.bind(this);
+    window.switchScene = this.switchScene.bind(this);
+  }
+  startPinkScene() {
+    // distory other scene
+    this.scene.stop("CardScene123123");
+    this.scene.launch("PinkScene");
+    this.scene.bringToTop("PinkScene");
+  }
+  switchScene() {
+    // triiger function from PinkScene
+    // all asset to transparent
+
+    const PinkScene = this.scene.get("PinkScene");
+    // PinkScene on top of CardScene
+    PinkScene.vidioFadeIn();
   }
 
   triggerAnimation() {

@@ -205,11 +205,45 @@ export default class PlayScene extends Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: "play_bag_reverse",
+      frames: [
+        { key: "bag_00004" },
+        { key: "bag_00003" },
+        { key: "bag_00002" },
+        { key: "bag_00001" },
+        { key: "bag_00000" },
+      ],
+      frameRate: 2,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "play_bag_random",
+      frames: [
+        { key: "bag_00004" },
+        { key: "bag_00002" },
+        { key: "bag_00001" },
+        { key: "bag_00002" },
+        { key: "bag_00003" },
+      ],
+      frameRate: 2,
+      repeat: -1,
+    });
+
     this.bagGroup.children.iterate((child) => {
       this.time.addEvent({
         delay: Math.random() * 1000,
         callback: () => {
-          child.play("play_bag");
+          // random 0 or 1
+          let random = Math.floor(Math.random() * 3);
+          if (random == 0) {
+            child.anims.play("play_bag");
+          } else if (random == 1) {
+            child.anims.play("play_bag_reverse");
+          } else {
+            child.anims.play("play_bag_random");
+          }
         },
       });
     });
@@ -231,6 +265,7 @@ export default class PlayScene extends Scene {
       for (let i = start; i <= end; i++) {
         arr.push({ key: "bag_" + i.toString().padStart(5, "0") });
       }
+      console.log(arr);
       return arr;
     }
   }

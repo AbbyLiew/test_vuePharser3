@@ -44,6 +44,10 @@ export default {
   display: flex;
   flex-direction: column;
 }
+/* .page1 {
+  opacity: 0;
+  z-index: -10000;
+} */
 .page1 button {
   width: fit-content;
   margin: 0 auto;

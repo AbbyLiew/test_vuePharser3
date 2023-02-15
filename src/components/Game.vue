@@ -37,6 +37,21 @@ export default {
       isActive_video: false,
     };
   },
+  watch: {
+    current: {
+      handler: function (newVal, oldVal) {
+        if (newVal === 11) {
+          gsap.to(".line", {
+            duration: 1,
+            opacity: 0,
+            type: "ease",
+            delay: 0.5,
+          });
+        }
+      },
+      deep: true,
+    },
+  },
   methods: {
     setIsActive() {
       this.isActive_video = true;
@@ -95,9 +110,6 @@ export default {
       window.location.reload();
     },
   },
-  beforeCreate() {
-    console.log("mounted", console.log(process.env));
-  },
 
   mounted() {
     window.addEventListener("resize", () => {
@@ -106,8 +118,6 @@ export default {
     });
     window.setIsloading = this.setIsloading;
     window.postfunction = this.postfunction;
-
-    console.log("mounted", console.log(process.env));
   },
 };
 </script>
@@ -116,7 +126,7 @@ export default {
   <Suspense>
     <section :style="`width : ${innerWidth}px; height : ${innerHeight}px;`">
       <!-- if window resize -->
-      <PhaserContainer />
+      <PhaserContainer :current="current" />
       <section
         class="mainSection"
         :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
