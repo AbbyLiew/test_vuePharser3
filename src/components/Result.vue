@@ -406,6 +406,10 @@ export default {
               window.startPinkScene();
               this.output_color = "pink";
               break;
+            default:
+              window.startYellowScene();
+              this.output_color = "yellow";
+              break;
           }
         }
       },
