@@ -299,6 +299,8 @@ export default {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
           window.switchScene();
+          let body = document.querySelector("body");
+          body.style.backgroundColor = this.output_color;
         }
       },
       deep: true,
@@ -314,7 +316,7 @@ export default {
           switch (result) {
             case "AAA":
               this.output_color = "yellow";
-              window.startPinkScene();
+              window.startYellowScene();
               break;
             case "AAB":
               this.output_color = "pink";
@@ -322,18 +324,18 @@ export default {
               break;
             case "AAC":
               this.output_color = "teal";
-              window.startPinkScene();
+              window.startPurpleScene();
               break;
             case "ABA":
               window.startPinkScene();
               this.output_color = "pink";
               break;
             case "ABB":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "purple";
               break;
             case "ABC":
-              window.startPinkScene();
+              window.startYellowScene();
               this.output_color = "yellow";
               break;
             case "ACC":
@@ -341,27 +343,27 @@ export default {
               this.output_color = "pink";
               break;
             case "ACA":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "cream";
               break;
             case "BAA":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "teal";
               break;
             case "BAB":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "teal";
               break;
             case "BAC":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "purple";
               break;
             case "BBA":
-              window.startPinkScene();
+              window.startYellowScene();
               this.output_color = "yellow";
               break;
             case "BBB":
-              window.startPinkScene();
+              window.startYellowScene();
               this.output_color = "yellow";
               break;
             case "BBC":
@@ -369,19 +371,19 @@ export default {
               this.output_color = "pink";
               break;
             case "BCC":
-              window.startPinkScene();
+              window.startYellowScene();
               this.output_color = "yellow";
               break;
             case "CAA":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "teal";
               break;
             case "CAB":
-              window.startPinkScene();
+              window.startYellowScene();
               this.output_color = "yellow";
               break;
             case "CAC":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "teal";
               break;
             case "CBA":
@@ -389,15 +391,15 @@ export default {
               this.output_color = "pink";
               break;
             case "CBB":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "purple";
               break;
             case "CBC":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "cream";
               break;
             case "CCA":
-              window.startPinkScene();
+              window.startPurpleScene();
               this.output_color = "cream";
               break;
             case "CCC":

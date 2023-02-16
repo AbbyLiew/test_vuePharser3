@@ -165,6 +165,7 @@ export default {
   methods: {
     beforeEnter(el) {
       el.style.opacity = "0";
+      el.style.pointerEvents = "none";
     },
     // where the animation will end up
     enter(el) {
@@ -173,6 +174,8 @@ export default {
         y: 0,
         opacity: 1,
         type: "ease",
+        pointerEvents: "auto",
+        delay: 2.5,
       });
     },
     beforeEnter1(el) {

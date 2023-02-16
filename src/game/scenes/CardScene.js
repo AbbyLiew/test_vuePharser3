@@ -4,6 +4,7 @@ export default class PlayScene extends Scene {
   constructor() {
     super({ key: "CardScene" });
     this.current = 0;
+    this.currentSellected = "";
   }
 
   create() {
@@ -57,22 +58,45 @@ export default class PlayScene extends Scene {
     window.setCurrent = this.setCurrent.bind(this);
     window.triggerAnimation = this.triggerAnimation.bind(this);
     window.triggerFlipCard = this.triggerFlipCard.bind(this);
+
+    // scene switch
     window.startPinkScene = this.startPinkScene.bind(this);
+    window.startYellowScene = this.startYellowScene.bind(this);
+    window.startPurpleScene = this.startPurpleScene.bind(this);
+
     window.switchScene = this.switchScene.bind(this);
   }
   startPinkScene() {
-    // distory other scene
-    this.scene.stop("CardScene123123");
     this.scene.launch("PinkScene");
     this.scene.bringToTop("PinkScene");
+    this.currentSellected = "PinkScene";
   }
-  switchScene() {
-    // triiger function from PinkScene
-    // all asset to transparent
+  startYellowScene() {
+    this.scene.launch("YellowScene");
+    this.scene.bringToTop("YellowScene");
+    this.currentSellected = "YellowScene";
+  }
+  startPurpleScene() {
+    this.scene.launch("PurpleScene");
+    this.scene.bringToTop("PurpleScene");
+    this.currentSellected = "PurpleScene";
+  }
 
-    const PinkScene = this.scene.get("PinkScene");
-    // PinkScene on top of CardScene
-    PinkScene.vidioFadeIn();
+  switchScene() {
+    switch (this.currentSellected) {
+      case "PinkScene":
+        const PinkScene = this.scene.get("PinkScene");
+        PinkScene.vidioFadeIn();
+        break;
+      case "YellowScene":
+        const YellowScene = this.scene.get("YellowScene");
+        YellowScene.vidioFadeIn();
+        break;
+      case "PurpleScene":
+        const PurpleScene = this.scene.get("PurpleScene");
+        PurpleScene.vidioFadeIn();
+        break;
+    }
   }
 
   triggerAnimation() {
@@ -82,28 +106,28 @@ export default class PlayScene extends Scene {
     for (let i = 0; i < 8; i++) {
       this.cardGroup.create(x, y, "Tabby_Card_Flip_Anim_00000");
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
-      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.45) / this.cardHeight;
       this.cardGroup.children.entries[i].scale = _ratio;
-      // this.tweens.add({
-      //   targets: this.cardGroup.children.entries[i],
-      //   rotation: -0.4 * (i + 1),
-      //   ease: "Power1",
-      //   duration: 500,
-      // });
-
-      // this.time.addEvent({
-      //   delay: 800,
-      //   callback: () => {
-      //     this.cardaAimationFlow1();
-      //   },
-      // });
+      this.cardGroup.children.entries[i].rotation = (7 - i) * -0.15;
     }
-    // this.time.addEvent({
-    //   delay: 800,
-    //   callback: () => {
-    //     this.cardAimationFlow2();
-    //   },
-    // });
+
+    this.cardGroup.children.entries.forEach((card, index) => {
+      this.tweens.add({
+        targets: card,
+        ease: "Power1",
+        rotation: 0,
+        duration: 1000,
+        delay: 750,
+      });
+    });
+    this.cardGroup.children.entries.forEach((card, index) => {
+      this.tweens.add({
+        targets: card,
+        ease: "Power1",
+        scale: (this.sys.game.config.height * 0.6) / this.cardHeight,
+        delay: 1750,
+      });
+    });
   }
 
   flipCard() {

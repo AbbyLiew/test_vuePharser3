@@ -18,7 +18,7 @@ export default class PinkScene extends Scene {
       );
     }
     this.load.video("pink", "/videos/Pink_01.mp4", "loadeddata", false, true);
-    this.load.image("hand", "/pink_icon.png");
+    this.load.image("hand", "/icon/pink.png");
   }
 
   vidioFadeIn() {
@@ -37,13 +37,20 @@ export default class PinkScene extends Scene {
 
           this.hand.setDepth(3);
           this.hand.setAlpha(1);
-          this.tweens.add({
+          this.tweens.timeline({
             targets: this.hand,
-            x: this.sys.game.config.width * 0.3,
-            duration: 2000,
             ease: "Power4",
-            delay: 500,
-            repeat: -1,
+            loop: -1,
+            tweens: [
+              {
+                x: this.sys.game.config.width * 0.42,
+                duration: 2000,
+              },
+              {
+                x: this.sys.game.config.width * 0.63,
+                duration: 1000,
+              },
+            ],
           });
         });
       },
@@ -73,7 +80,7 @@ export default class PinkScene extends Scene {
       window.innerHeight * devicePixelRatio * 0.09
     );
     this.hand.setPosition(
-      this.sys.game.config.width * 0.7,
+      this.sys.game.config.width * 0.58,
       this.sys.game.config.height * 0.7
     );
 
@@ -83,7 +90,7 @@ export default class PinkScene extends Scene {
     window.hand = this.hand;
 
     this.video = this.add.video(0, 0, "pink");
-    this.video.setAlpha(1);
+    this.video.setAlpha(0);
 
     window.video = this.video;
     window.video_reverse = this.video_reverse;
