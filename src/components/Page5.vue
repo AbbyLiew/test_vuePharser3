@@ -17,8 +17,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                Living Rent Free (in your <br />
-                head). OR Its Giving.
+                Living Rent Free<br />
+                (in your head)
               </h6>
             </li>
             <li

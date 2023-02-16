@@ -20,8 +20,8 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            ENTER YOUR MOBILE NUMBER <br />TO REVEAL YOUR TABBY AND
-            <br />RECEIVE A PRIZE
+            ENTER YOUR PHONE NUMBER TO <br />DISCOVER YOUR TABBY AND <br />CLAIM
+            YOUR PRIZE
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
@@ -62,7 +62,7 @@
               REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
               CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY. VIEW
+              APPLY. VIEW TERMS & PRIVACY.
               <a target="_blank" href="http://attn.tv/coach/terms.html">
                 TERMS
               </a>

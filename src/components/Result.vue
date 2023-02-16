@@ -151,7 +151,7 @@
           </div>
           <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
           <div class="btn-next">
-            <button :style="`width : ${innerWidth * 0.45}px`">
+            <button :style="`width : ${innerWidth * 0.45}px`" @click="toshop">
               SHOP TABBY
             </button>
           </div>
@@ -196,6 +196,10 @@ export default {
     };
   },
   methods: {
+    toshop() {
+      // open new tab to link
+      window.open("https://www.couchtabby.com/", "_blank");
+    },
     shareButton() {
       let button = document.getElementById("shareButton");
       button.addEventListener("click", async (event) => {

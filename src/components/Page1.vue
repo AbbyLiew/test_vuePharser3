@@ -6,10 +6,10 @@
       :style="`max-height : ${innerHeight * 0.25}px;margin : 0 auto`"
     />
     <div class="block" :style="`height : ${innerHeight * 0.02}px`" />
-    <h5 :style="`text-align : center; font-family: HelveticaLTPro-Light;`">
+    <!-- <h5 :style="`text-align : center; font-family: HelveticaLTPro-Light;`">
       Take a personality quiz to<br />
       discover what Tabby are you.
-    </h5>
+    </h5> -->
     <div class="block" :style="`height : ${innerHeight * 0.04}px`" />
     <div class="btn-next">
       <button @click="$emit('nextPage')">START</button>

@@ -77,34 +77,33 @@ export default class PlayScene extends Scene {
 
   triggerAnimation() {
     var x = this.sys.game.config.width / 2;
-    var y = this.sys.game.config.height / 2;
+    var y = this.sys.game.config.height * 0.465;
 
     for (let i = 0; i < 8; i++) {
       this.cardGroup.create(x, y, "Tabby_Card_Flip_Anim_00000");
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
-      let _ratio = (this.sys.game.config.height * 0.4) / this.cardHeight;
+      let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;
       this.cardGroup.children.entries[i].scale = _ratio;
-      this.tweens.add({
-        targets: this.cardGroup.children.entries[i],
-        rotation: -0.4 * (i + 1),
-        ease: "Power1",
-        duration: 500,
-      });
+      // this.tweens.add({
+      //   targets: this.cardGroup.children.entries[i],
+      //   rotation: -0.4 * (i + 1),
+      //   ease: "Power1",
+      //   duration: 500,
+      // });
 
-      this.time.addEvent({
-        delay: 800,
-        callback: () => {
-          this.cardaAimationFlow1();
-        },
-      });
-
-      this.time.addEvent({
-        delay: 2500,
-        callback: () => {
-          this.cardAimationFlow2();
-        },
-      });
+      // this.time.addEvent({
+      //   delay: 800,
+      //   callback: () => {
+      //     this.cardaAimationFlow1();
+      //   },
+      // });
     }
+    // this.time.addEvent({
+    //   delay: 800,
+    //   callback: () => {
+    //     this.cardAimationFlow2();
+    //   },
+    // });
   }
 
   flipCard() {
@@ -178,13 +177,13 @@ export default class PlayScene extends Scene {
   }
 
   cardAimationFlow2() {
-    this.tweens.add({
-      targets: this.logo,
-      ease: "Power1",
-      y: this.sys.game.config.height * 0.1,
-      duration: 1000,
-      scale: (this.sys.game.config.height * 0.1) / this.logo.height,
-    });
+    // this.tweens.add({
+    //   targets: this.logo,
+    //   ease: "Power1",
+    //   y: this.sys.game.config.height * 0.1,
+    //   duration: 1000,
+    //   scale: (this.sys.game.config.height * 0.1) / this.logo.height,
+    // });
 
     this.cardGroup.children.entries.forEach((card, index) => {
       let _ratio = (this.sys.game.config.height * 0.6) / this.cardHeight;

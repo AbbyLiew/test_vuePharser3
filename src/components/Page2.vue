@@ -169,10 +169,9 @@ export default {
     // where the animation will end up
     enter(el) {
       gsap.to(el, {
-        duration: 1,
+        duration: 0.5,
         y: 0,
         opacity: 1,
-        delay: 3,
         type: "ease",
       });
     },

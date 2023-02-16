@@ -10,7 +10,9 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            Who or what helps <br />you to overcome <br />obstacles?
+            Who or what helps <br />
+            you to overcome<br />
+            obstacles?
           </h2>
           <ul>
             <li
@@ -19,7 +21,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                Remembering <br />I'm that b*tch
+                My go-to hype songs
               </h6>
             </li>
             <li
@@ -28,7 +30,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                Netflix and chill ;)
+                Netflix and chill
               </h6>
             </li>
             <li
