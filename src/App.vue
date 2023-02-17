@@ -2,6 +2,8 @@
 import Game from "@/components/Game";
 import { method } from "lodash";
 import { Data } from "phaser";
+import VueAnalytics from "vue-analytics";
+import Vue from "vue";
 </script>
 
 <template>
@@ -19,6 +21,7 @@ const resize = () => {
   width.value = window.innerWidth;
   height.value = window.innerHeight;
 };
+
 onMounted(() => {
   window.addEventListener("resize", resize);
 });

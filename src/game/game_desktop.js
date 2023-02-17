@@ -5,6 +5,8 @@ import CardScene from "@/game/scenes/CardScene";
 import PinkScene from "@/game/scenes/PinkScene";
 import YellowScene from "@/game/scenes/YellowScene";
 import PurpleScene from "@/game/scenes/PurpleScene";
+import GreenScene from "@/game/scenes/GreenScene";
+import ChalkScene from "@/game/scenes/ChalkScene";
 
 function launch(containerId) {
   return new Phaser.Game({
@@ -33,6 +35,8 @@ function launch(containerId) {
       PlayScene,
       CardScene,
       PinkScene,
+      GreenScene,
+      ChalkScene,
     ],
   });
 }

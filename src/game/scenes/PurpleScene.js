@@ -19,12 +19,32 @@ export default class PurpleScene extends Scene {
     }
     this.load.video(
       "purple",
-      "/videos/Purple_01.mp4",
+      "/videos/purple_01.mp4",
       "loadeddata",
       false,
       true
     );
     this.load.image("hand", "/icon/lightviolet.png");
+    this.load.image("hand_white", "/icon/white.png");
+  }
+
+  horizontalMove(target) {
+    this.tweens.timeline({
+      targets: target,
+      ease: "Power4",
+      loop: -1,
+      tweens: [
+        {
+          x: this.sys.game.config.width * 0.42,
+          duration: 2000,
+        },
+        {
+          x: this.sys.game.config.width * 0.63,
+          duration: 1000,
+          delay: 500,
+        },
+      ],
+    });
   }
 
   vidioFadeIn() {
@@ -44,21 +64,7 @@ export default class PurpleScene extends Scene {
           this.hand.setDepth(3);
           this.hand.setAlpha(1);
 
-          this.tweens.timeline({
-            targets: this.hand,
-            ease: "Power4",
-            loop: -1,
-            tweens: [
-              {
-                x: this.sys.game.config.width * 0.42,
-                duration: 2000,
-              },
-              {
-                x: this.sys.game.config.width * 0.63,
-                duration: 2000,
-              },
-            ],
-          });
+          this.horizontalMove(this.hand);
         });
       },
     });
@@ -82,19 +88,36 @@ export default class PurpleScene extends Scene {
   create() {
     this.addSprite();
     this.hand = this.add.image(0, 0, "hand");
-    this.hand.setDisplaySize(
-      window.innerHeight * devicePixelRatio * 0.09,
-      window.innerHeight * devicePixelRatio * 0.09
-    );
+    this.hand.setScale((this.sys.game.config.height * 0.08) / this.hand.height);
     this.hand.setPosition(
-      this.sys.game.config.width * 0.63,
-      this.sys.game.config.height * 0.7
+      this.sys.game.config.width * 0.55,
+      this.sys.game.config.height * 0.68
     );
+
+    this.hand_white = this.add.image(0, 0, "hand_white");
+    this.hand_white.setScale(
+      (this.sys.game.config.height * 0.08) / this.hand_white.height
+    );
+    this.hand_white.setPosition(
+      this.sys.game.config.width * 0.55,
+      this.sys.game.config.height * 0.68
+    );
+    this.hand_white.setAlpha(0);
+    this.hand_white.setDepth(3);
+
+    this.hand_white2 = this.add.image(0, 0, "hand_white");
+    this.hand_white2.setScale(
+      (this.sys.game.config.height * 0.08) / this.hand_white2.height
+    );
+    this.hand_white2.setPosition(
+      this.sys.game.config.width * 0.55,
+      this.sys.game.config.height * 0.68
+    );
+    this.hand_white2.setAlpha(0);
+    this.hand_white2.setDepth(3);
 
     this.hand.setDepth(3);
     this.hand.setAlpha(0);
-
-    window.hand = this.hand;
 
     this.video = this.add.video(0, 0, "purple");
     this.video.setAlpha(1);
@@ -169,19 +192,25 @@ export default class PurpleScene extends Scene {
       if (this.sprite.anims.isPlaying) {
         return;
       }
-
       if (e.downX >= e.x) {
-        if (this.hand.alpha === 1) {
-          this.hand.setAlpha(0);
-        }
-
         if (this.playedCard1 === false) {
           this.sprite.anims.play("play_card1");
           this.playedCard1 = true;
+          this.hand.destroy();
+          this.sprite.on("animationcomplete", () => {
+            this.hand_white.setAlpha(1);
+            this.horizontalMove(this.hand_white);
+          });
         } else if (this.playedCard2 === false) {
           this.sprite.anims.play("play_card2");
+          this.hand_white.destroy();
           this.playedCard2 = true;
+          this.sprite.on("animationcomplete", () => {
+            this.hand_white2.setAlpha(1);
+            this.horizontalMove(this.hand_white2);
+          });
         } else if (this.playedCard3 === false) {
+          this.hand_white2.destroy();
           gsap.to("#game-container", {
             zIndex: -10,
           });
@@ -194,10 +223,18 @@ export default class PurpleScene extends Scene {
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {
           this.sprite.anims.play("play_card2_reverse");
+          console.log("play_card2_reverse");
           this.playedCard2 = false;
+          this.hand_white2.destroy();
+
+          this.hand.setAlpha(0);
         } else if (this.playedCard1 === true) {
           this.sprite.anims.play("play_card1_reverse");
           this.playedCard1 = false;
+          this.hand_white.destroy();
+
+          this.hand.setAlpha(0);
+          console.log("play_card1_reverse");
         }
       }
     });

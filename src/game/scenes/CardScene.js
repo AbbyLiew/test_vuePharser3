@@ -63,6 +63,8 @@ export default class PlayScene extends Scene {
     window.startPinkScene = this.startPinkScene.bind(this);
     window.startYellowScene = this.startYellowScene.bind(this);
     window.startPurpleScene = this.startPurpleScene.bind(this);
+    window.startChalkScene = this.startChalkScene.bind(this);
+    window.startGreenScene = this.startGreenScene.bind(this);
 
     window.switchScene = this.switchScene.bind(this);
   }
@@ -81,6 +83,16 @@ export default class PlayScene extends Scene {
     this.scene.bringToTop("PurpleScene");
     this.currentSellected = "PurpleScene";
   }
+  startChalkScene() {
+    this.scene.launch("ChalkScene");
+    this.scene.bringToTop("ChalkScene");
+    this.currentSellected = "ChalkScene";
+  }
+  startGreenScene() {
+    this.scene.launch("GreenScene");
+    this.scene.bringToTop("GreenScene");
+    this.currentSellected = "GreenScene";
+  }
 
   switchScene() {
     switch (this.currentSellected) {
@@ -96,6 +108,14 @@ export default class PlayScene extends Scene {
         const PurpleScene = this.scene.get("PurpleScene");
         PurpleScene.vidioFadeIn();
         break;
+      case "ChalkScene":
+        const ChalkScene = this.scene.get("ChalkScene");
+        ChalkScene.vidioFadeIn();
+        break;
+      case "GreenScene":
+        const GreenScene = this.scene.get("GreenScene");
+        GreenScene.vidioFadeIn();
+        break;
     }
   }
 
@@ -108,7 +128,7 @@ export default class PlayScene extends Scene {
       this.cardHeight = (this.cardGroup.children.entries[i].height * 11) / 16;
       let _ratio = (this.sys.game.config.height * 0.45) / this.cardHeight;
       this.cardGroup.children.entries[i].scale = _ratio;
-      this.cardGroup.children.entries[i].rotation = (7 - i) * -0.15;
+      this.cardGroup.children.entries[i].rotation = (7 - i) * -0.21;
     }
 
     this.cardGroup.children.entries.forEach((card, index) => {

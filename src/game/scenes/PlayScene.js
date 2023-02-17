@@ -201,7 +201,7 @@ export default class PlayScene extends Scene {
     this.anims.create({
       key: "play_bag",
       frames: this.ArrayFrame(0, 4, false),
-      frameRate: 2,
+      frameRate: 1,
       repeat: -1,
     });
 
@@ -214,7 +214,7 @@ export default class PlayScene extends Scene {
         { key: "bag_00001" },
         { key: "bag_00000" },
       ],
-      frameRate: 2,
+      frameRate: 1,
       repeat: -1,
     });
 
@@ -227,7 +227,20 @@ export default class PlayScene extends Scene {
         { key: "bag_00002" },
         { key: "bag_00003" },
       ],
-      frameRate: 2,
+      frameRate: 1,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "play_bag_random_2",
+      frames: [
+        { key: "bag_00002" },
+        { key: "bag_00000" },
+        { key: "bag_00001" },
+        { key: "bag_00004" },
+        { key: "bag_00003" },
+      ],
+      frameRate: 1,
       repeat: -1,
     });
 
@@ -236,13 +249,15 @@ export default class PlayScene extends Scene {
         delay: Math.random() * 1000,
         callback: () => {
           // random 0 or 1
-          let random = Math.floor(Math.random() * 3);
+          let random = Math.floor(Math.random() * 4);
           if (random == 0) {
             child.anims.play("play_bag");
           } else if (random == 1) {
             child.anims.play("play_bag_reverse");
-          } else {
+          } else if (random == 2) {
             child.anims.play("play_bag_random");
+          } else if (random == 3) {
+            child.anims.play("play_bag_random_2");
           }
         },
       });

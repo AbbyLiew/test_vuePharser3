@@ -202,8 +202,26 @@ export default {
     },
     shareButton() {
       let button = document.getElementById("shareButton");
+      let storylink = "";
+      switch (this.output_color) {
+        case "pink":
+          storylink = "/StoryDownloadSIZE/PINK_story.mp4";
+          break;
+        case "teal":
+          storylink = "/StoryDownloadSIZE/GREEN_story.mp4";
+          break;
+        case "yellow":
+          storylink = "/StoryDownloadSIZE/YELLOW_story.mp4";
+          break;
+        case "purple":
+          storylink = "/StoryDownloadSIZE/PURPLE_story.mp4";
+          break;
+        case "cream":
+          storylink = "/StoryDownloadSIZE/CHALK_story.mp4";
+          break;
+      }
       button.addEventListener("click", async (event) => {
-        fetch("/videos/LowRes/compressed_pink.mp4")
+        fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
             if (navigator.share) {
@@ -224,7 +242,7 @@ export default {
             } else {
               let a = document.createElement("a");
               a.href = window.URL.createObjectURL(blob);
-              a.download = this.output_color + "MP4";
+              a.download = this.output_color + "_story";
               a.click();
             }
           });
@@ -290,8 +308,6 @@ export default {
     let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
     let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
     this.isIOS = isIOS;
-
-    this.shareButton();
   },
 
   watch: {
@@ -300,6 +316,11 @@ export default {
         if (newVal === 11) {
           window.switchScene();
           let body = document.querySelector("body");
+          if (this.output_color === "cream") {
+            body.style.backgroundColor = "#ececb8";
+          } else {
+            this.output_color;
+          }
           body.style.backgroundColor = this.output_color;
         }
       },
@@ -324,7 +345,7 @@ export default {
               break;
             case "AAC":
               this.output_color = "teal";
-              window.startPurpleScene();
+              window.startGreenScene();
               break;
             case "ABA":
               window.startPinkScene();
@@ -343,15 +364,15 @@ export default {
               this.output_color = "pink";
               break;
             case "ACA":
-              window.startPurpleScene();
+              window.startChalkScene();
               this.output_color = "cream";
               break;
             case "BAA":
-              window.startPurpleScene();
+              window.startGreenScene();
               this.output_color = "teal";
               break;
             case "BAB":
-              window.startPurpleScene();
+              window.startGreenScene();
               this.output_color = "teal";
               break;
             case "BAC":
@@ -375,7 +396,7 @@ export default {
               this.output_color = "yellow";
               break;
             case "CAA":
-              window.startPurpleScene();
+              window.startGreenScene();
               this.output_color = "teal";
               break;
             case "CAB":
@@ -383,7 +404,7 @@ export default {
               this.output_color = "yellow";
               break;
             case "CAC":
-              window.startPurpleScene();
+              window.startGreenScene();
               this.output_color = "teal";
               break;
             case "CBA":
@@ -395,11 +416,11 @@ export default {
               this.output_color = "purple";
               break;
             case "CBC":
-              window.startPurpleScene();
+              window.startChalkScene();
               this.output_color = "cream";
               break;
             case "CCA":
-              window.startPurpleScene();
+              window.startChalkScene();
               this.output_color = "cream";
               break;
             case "CCC":
@@ -411,6 +432,7 @@ export default {
               this.output_color = "yellow";
               break;
           }
+          this.shareButton();
         }
       },
       deep: true,
