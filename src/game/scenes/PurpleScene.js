@@ -29,21 +29,12 @@ export default class PurpleScene extends Scene {
   }
 
   horizontalMove(target) {
-    this.tweens.timeline({
+    this.tweens.add({
       targets: target,
-      ease: "Power4",
+      ease: "Linear",
       loop: -1,
-      tweens: [
-        {
-          x: this.sys.game.config.width * 0.42,
-          duration: 2000,
-        },
-        {
-          x: this.sys.game.config.width * 0.63,
-          duration: 1000,
-          delay: 500,
-        },
-      ],
+      yoyo: true,
+      x: this.sys.game.config.width * 0.44,
     });
   }
 
@@ -90,7 +81,7 @@ export default class PurpleScene extends Scene {
     this.hand = this.add.image(0, 0, "hand");
     this.hand.setScale((this.sys.game.config.height * 0.08) / this.hand.height);
     this.hand.setPosition(
-      this.sys.game.config.width * 0.55,
+      this.sys.game.config.width * 0.6,
       this.sys.game.config.height * 0.68
     );
 
@@ -99,7 +90,7 @@ export default class PurpleScene extends Scene {
       (this.sys.game.config.height * 0.08) / this.hand_white.height
     );
     this.hand_white.setPosition(
-      this.sys.game.config.width * 0.55,
+      this.sys.game.config.width * 0.6,
       this.sys.game.config.height * 0.68
     );
     this.hand_white.setAlpha(0);
@@ -110,7 +101,7 @@ export default class PurpleScene extends Scene {
       (this.sys.game.config.height * 0.08) / this.hand_white2.height
     );
     this.hand_white2.setPosition(
-      this.sys.game.config.width * 0.55,
+      this.sys.game.config.width * 0.6,
       this.sys.game.config.height * 0.68
     );
     this.hand_white2.setAlpha(0);
@@ -219,6 +210,16 @@ export default class PurpleScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
+          gsap.fromTo(
+            ".popupModal",
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              delay: 2.5,
+            }
+          );
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {
