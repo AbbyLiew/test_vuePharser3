@@ -124,24 +124,24 @@ export default {
       //   return;
       // }
 
-      // axios
-      //   .get(process.env.VUE_APP_API_URL, {
-      //     params: {
-      //       email: this.email,
-      //       phone: "+1" + this.phone,
-      //     },
-      //   })
-      //   .then((response) => {
-      //     // handle success
-      //     if (response.data.message.statusCode === 400) {
-      //       alert(response.data.message.body);
-      //     } else {
-      //       this.$emit("triggerAnimation");
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
+      axios
+        .get(process.env.VUE_APP_API_URL, {
+          params: {
+            email: this.email,
+            phone: "+1" + this.phone,
+          },
+        })
+        .then((response) => {
+          // handle success
+          if (response.data.message.statusCode === 400) {
+            alert(response.data.message.body);
+          } else {
+            this.$emit("triggerAnimation");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     beforeEnter(el) {
       el.style.opacity = "0";
