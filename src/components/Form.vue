@@ -113,27 +113,25 @@ export default {
   },
   methods: {
     next() {
-      this.$emit("triggerAnimation");
-
-      // if (!document.querySelector("#terms").checked) {
-      //   alert("Please check the terms and conditions checkbox");
-      //   return;
-      // }
-      // if (this.email === "" || this.phone === "") {
-      //   alert("Please fill in all the fields");
-      //   return;
-      // }
+      if (!document.querySelector("#terms").checked) {
+        alert("Please check the terms and conditions checkbox");
+        return;
+      }
+      if (this.email === "" || this.phone === "") {
+        alert("Please fill in all the fields");
+        return;
+      }
 
       axios
         .get(process.env.VUE_APP_API_URL, {
           params: {
             email: this.email,
-            phone: "+1" + this.phone,
+            phone: this.phone,
           },
         })
         .then((response) => {
           // handle success
-          if (response.data.message.statusCode === 400) {
+          if (response.data.message?.statusCode === 400) {
             alert(response.data.message.body);
           } else {
             this.$emit("triggerAnimation");
