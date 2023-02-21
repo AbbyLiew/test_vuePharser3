@@ -11,7 +11,7 @@ export default class GreenScene extends Scene {
     this.playedCard3 = false;
   }
   preload() {
-    for (let i = 300; i < 420; i++) {
+    for (let i = 327; i < 420; i++) {
       this.load.image(
         "GreenSET_" + i,
         "/videos/sequance_green/" + "GreenSET_" + i + ".jpg"
@@ -139,7 +139,7 @@ export default class GreenScene extends Scene {
 
     this.anims.create({
       key: "play_card1_reverse",
-      frames: this.ArrayFrame(342, 310, true),
+      frames: this.ArrayFrame(342, 328, true),
       frameRate: 30,
       repeat: 0,
     });
@@ -210,16 +210,10 @@ export default class GreenScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
-          gsap.fromTo(
-            ".popupModal",
-            {
-              opacity: 0,
-            },
-            {
-              opacity: 1,
-              delay: 2.5,
-            }
-          );
+          gsap.to(".popupModal", {
+            opacity: 1,
+            delay: 2.5,
+          });
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {

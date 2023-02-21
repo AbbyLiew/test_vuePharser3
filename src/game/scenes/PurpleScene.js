@@ -210,16 +210,10 @@ export default class PurpleScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
-          gsap.fromTo(
-            ".popupModal",
-            {
-              opacity: 0,
-            },
-            {
-              opacity: 1,
-              delay: 2.5,
-            }
-          );
+          gsap.to(".popupModal", {
+            opacity: 1,
+            delay: 2.5,
+          });
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg
+      version="1.1"
+      class="center-block"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="800"
+      height="600"
+      style="border: 1px solid black"
+    >
+      <defs>
+        <clipPath id="triangle-mask">
+          <path d="M 100 100 L 300 100 L 200 300 Z" />
+        </clipPath>
+      </defs>
+
+      <g>
+        <g scale(1,1) mask="url(#myMask)">
+          <foreignObject x="0" y="0" width="800" height="600">
+            <video
+              xmlns="http://www.w3.org/1999/xhtml"
+              width="800"
+              height="600"
+              controls=""
+              muted
+              autoplay
+              loop
+            >
+              <source
+                src="http://techslides.com/demos/sample-videos/small.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </foreignObject>
+        </g>
+      </g>
+    </svg>
+  </body>
+</html>

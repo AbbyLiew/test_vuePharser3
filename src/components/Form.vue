@@ -74,7 +74,10 @@
           </div>
         </div>
         <div class="btn-next">
-          <button @click="next">SUBMIT</button>
+          <button @click="next" class="loadingBTN">
+            <h4 v-if="!isloading">submit</h4>
+            <div v-if="isloading" class="loader"></div>
+          </button>
         </div>
       </div>
     </transition>
@@ -109,16 +112,20 @@ export default {
     return {
       email: "",
       phone: "",
+      isloading: false,
     };
   },
   methods: {
     next() {
+      this.isloading = true;
       if (!document.querySelector("#terms").checked) {
         alert("Please check the terms and conditions checkbox");
+        this.isloading = false;
         return;
       }
       if (this.email === "" || this.phone === "") {
         alert("Please fill in all the fields");
+        this.isloading = false;
         return;
       }
 
@@ -132,12 +139,15 @@ export default {
         .then((response) => {
           // handle success
           if (response.data.message?.statusCode === 400) {
+            this.isloading = false;
             alert(response.data.message.body);
           } else {
+            this.isloading = false;
             this.$emit("triggerAnimation");
           }
         })
         .catch((error) => {
+          this.isloading = false;
           console.log(error);
         });
     },
@@ -221,5 +231,27 @@ input[type="checkbox"] {
   border: none;
   position: relative;
   background-color: white;
+}
+
+.loader {
+  border: 0.1rem solid #f3f3f3; /* Light grey */
+  border-top: 0.1rem solid #ff99a7;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingBTN h4 {
+  margin: 0;
 }
 </style>
