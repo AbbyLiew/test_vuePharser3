@@ -119,12 +119,12 @@ export default {
     next() {
       this.isloading = true;
       if (!document.querySelector("#terms").checked) {
-        alert("Please check the terms and conditions checkbox");
+        alert("Please check the Terms and Conditions box to proceed.");
         this.isloading = false;
         return;
       }
       if (this.email === "" || this.phone === "") {
-        alert("Please fill in all the fields");
+        alert("Please fill in your email and mobile to proceed.");
         this.isloading = false;
         return;
       }
