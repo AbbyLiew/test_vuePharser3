@@ -114,8 +114,8 @@ export default class YellowScene extends Scene {
     this.video.setAlpha(1);
 
     this.video.setDisplaySize(
-      window.innerHeight * devicePixelRatio,
-      window.innerHeight * devicePixelRatio
+      this.sys.game.config.height,
+      this.sys.game.config.height
     );
     this.video.setPosition(
       this.sys.game.config.width / 2,

@@ -112,8 +112,8 @@ export default class PinkScene extends Scene {
     window.video = this.video;
     window.video_reverse = this.video_reverse;
     this.video.setDisplaySize(
-      window.innerHeight * devicePixelRatio,
-      window.innerHeight * devicePixelRatio
+      this.sys.game.config.height,
+      this.sys.game.config.height
     );
     this.video.setPosition(
       this.sys.game.config.width / 2,
