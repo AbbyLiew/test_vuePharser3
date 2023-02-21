@@ -15,5 +15,6 @@ module.exports = defineConfig({
 
   devServer: {
     hot: false,
+    https: true,
   },
 });

@@ -11,10 +11,12 @@ export default class ChalkScene extends Scene {
     this.playedCard3 = false;
   }
   preload() {
-    for (let i = 300; i < 420; i++) {
+    for (let i = 10; i < 84; i++) {
+      let assetname = "ChalkSET26_" + i.toString().padStart(3, "0");
+
       this.load.image(
         "ChalkSET_" + i,
-        "/videos/sequance_chalk/" + "ChalkSET_" + i + ".jpg"
+        "/videos/sequance_chalk/" + assetname + ".jpg"
       );
     }
     this.load.video(
@@ -132,33 +134,33 @@ export default class ChalkScene extends Scene {
   addSprite() {
     this.anims.create({
       key: "play_card1",
-      frames: this.ArrayFrame(328, 350, false),
+      frames: this.ArrayFrame(28, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card1_reverse",
-      frames: this.ArrayFrame(342, 310, true),
+      frames: this.ArrayFrame(42, 10, true),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card2",
-      frames: this.ArrayFrame(365, 383, false),
+      frames: this.ArrayFrame(65, 83, false),
       frameRate: 45,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card2_reverse",
-      frames: this.ArrayFrame(383, 352, true),
+      frames: this.ArrayFrame(83, 52, true),
       frameRate: 45,
       repeat: 0,
     });
 
-    this.sprite = this.add.sprite(0, 0, "ChalkSET_300");
+    this.sprite = this.add.sprite(0, 0, "ChalkSET_10");
 
     this.sprite.setDisplaySize(
       window.innerHeight * devicePixelRatio,
