@@ -12,8 +12,16 @@
           <h2 :style="`text-align : center`">
             Where can we <br />find you?<br />
           </h2>
+          <div class="block" style="height: 1vh" />
           <ul class="section7_shoeContaienr">
-            <li @click="quationsData.quation3 = 'A'">
+            <li
+              @click="
+                if (quationsData.quation3 === 'A') {
+                  this.$emit('next');
+                }
+                quationsData.quation3 = 'A';
+              "
+            >
               <div
                 class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -23,10 +31,17 @@
                     : ''
                 "
               >
-                <img src="/mall.png" alt="01shoes" />
+                <img src="/mall.png" alt="01shoes" style="rotate: -25deg" />
               </div>
             </li>
-            <li @click="quationsData.quation3 = 'B'">
+            <li
+              @click="
+                if (quationsData.quation3 === 'B') {
+                  this.$emit('next');
+                }
+                quationsData.quation3 = 'B';
+              "
+            >
               <div
                 class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -36,10 +51,22 @@
                     : ''
                 "
               >
-                <img src="/brunch.png" alt="02shoes" />
+                <!-- <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" /> -->
+                <img
+                  src="/manifesting.png"
+                  alt="03shoes"
+                  style="rotate: 15deg"
+                />
               </div>
             </li>
-            <li @click="quationsData.quation3 = 'C'">
+            <li
+              @click="
+                if (quationsData.quation3 === 'C') {
+                  this.$emit('next');
+                }
+                quationsData.quation3 = 'C';
+              "
+            >
               <div
                 class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -49,10 +76,22 @@
                     : ''
                 "
               >
-                <img src="/manifesting.png" alt="03shoes" />
+                <!-- <img
+                  src="/manifesting.png"
+                  alt="03shoes"
+                  style="rotate: 35deg"
+                /> -->
+                <img src="/hot.png" alt="05shoes" style="rotate: -15deg" />
               </div>
             </li>
-            <li @click="quationsData.quation3 = 'D'">
+            <li
+              @click="
+                if (quationsData.quation3 === 'D') {
+                  this.$emit('next');
+                }
+                quationsData.quation3 = 'D';
+              "
+            >
               <div
                 class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -62,10 +101,18 @@
                     : ''
                 "
               >
-                <img src="/love.png" alt="04shoes" />
+                <img src="/love.png" alt="04shoes" style="rotate: -15deg" />
               </div>
             </li>
-            <li @click="quationsData.quation3 = 'E'">
+            <li
+              @click="
+                if (quationsData.quation3 === 'E') {
+                  this.$emit('next');
+                }
+                quationsData.quation3 = 'E';
+              "
+              style="grid-column: 1/3"
+            >
               <div
                 class="imgContainer spin"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -75,7 +122,8 @@
                     : ''
                 "
               >
-                <img src="/hot.png" alt="05shoes" />
+                <!-- <img src="/hot.png" alt="05shoes" style="rotate: 45deg" /> -->
+                <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" />
               </div>
             </li>
           </ul>
@@ -191,35 +239,20 @@ export default {
 }
 
 .--extra_padding {
-  padding: 5% 0;
+  padding: 4% 0;
 }
 .--color_white {
   color: #fff;
 }
 .--active_sellected_rotate {
-  animation: spin 0.5s linear;
+  filter: drop-shadow(-5px 5px 0px #ff99a7);
+  /* animation: spin 0.5s linear; */
   /* spin one times */
-
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .--active_sellected_rotate_reverse {
-  animation: spin_reverse 0.5s linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin_reverse {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
+  filter: drop-shadow(5px 5px 0px #ff99a7);
+  transition: 0.3s;
+  /* animation: spin_reverse 0.5s linear; */
 }
 </style>

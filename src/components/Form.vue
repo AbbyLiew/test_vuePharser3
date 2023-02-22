@@ -25,12 +25,7 @@
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
-          <input
-            type="text"
-            placeholder="EMAIL"
-            class="input"
-            v-model="email"
-          />
+          <input type="text" placeholder="NAME" class="input" v-model="email" />
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
 
           <div
@@ -40,14 +35,14 @@
               type="text"
               placeholder="+1"
               class="input left"
-              style="width: 15%"
+              style="width: 20%"
             />
             <div style="width: 2.5%" />
             <input
               type="text"
               placeholder="MOBILE"
               class="input right"
-              style="width: 70%"
+              style="width: 77.5%"
               v-model="phone"
               @change="handleInputChange_phone"
             />
@@ -62,7 +57,7 @@
               REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
               CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY. VIEW TERMS & PRIVACY.
+              APPLY.
               <a target="_blank" href="http://attn.tv/coach/terms.html">
                 TERMS
               </a>
@@ -117,6 +112,9 @@ export default {
   },
   methods: {
     next() {
+      // del later
+      this.$emit("triggerAnimation");
+
       this.isloading = true;
       if (!document.querySelector("#terms").checked) {
         alert("Please check the Terms and Conditions box to proceed.");

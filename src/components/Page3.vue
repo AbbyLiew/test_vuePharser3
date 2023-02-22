@@ -12,10 +12,19 @@
           <h2 :style="`text-align : center`">
             What main <br />character energy <br />are you serving?
           </h2>
-          <ul>
+          <ul class="ul_extra_padding">
             <li
-              :class="quationsData.quation2 === 'A' ? '--active_sellected' : ''"
-              @click="quationsData.quation2 = 'A'"
+              :class="
+                quationsData.quation2 === 'A'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation2 === 'A') {
+                  this.$emit('next');
+                }
+                quationsData.quation2 = 'A';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'A' ? '--color_white' : ''">
@@ -23,8 +32,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation2 === 'B' ? '--active_sellected' : ''"
-              @click="quationsData.quation2 = 'B'"
+              :class="
+                quationsData.quation2 === 'B'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation2 === 'B') {
+                  this.$emit('next');
+                }
+                quationsData.quation2 = 'B';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'B' ? '--color_white' : ''">
@@ -32,8 +50,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation2 === 'C' ? '--active_sellected' : ''"
-              @click="quationsData.quation2 = 'C'"
+              :class="
+                quationsData.quation2 === 'C'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation2 === 'C') {
+                  this.$emit('next');
+                }
+                quationsData.quation2 = 'C';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
@@ -41,8 +68,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation2 === 'D' ? '--active_sellected' : ''"
-              @click="quationsData.quation2 = 'D'"
+              :class="
+                quationsData.quation2 === 'D'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation2 === 'D') {
+                  this.$emit('next');
+                }
+                quationsData.quation2 = 'D';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
@@ -50,8 +86,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation2 === 'E' ? '--active_sellected' : ''"
-              @click="quationsData.quation2 = 'E'"
+              :class="
+                quationsData.quation2 === 'E'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation2 === 'E') {
+                  this.$emit('next');
+                }
+                quationsData.quation2 = 'E';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'E' ? '--color_white' : ''">
@@ -165,61 +210,4 @@ export default {
 };
 </script>
 
-<style>
-.container {
-  border-radius: 30px;
-  box-sizing: border-box;
-  padding-top: 10%;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10%;
-}
-.carousel__item {
-  text-align: center;
-  margin: 0 10px;
-  color: black;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel__item img {
-  height: 100%;
-}
-
-.carousel__slide--active {
-  background-color: transparent;
-}
-.containerSlider {
-  box-sizing: border-box;
-}
-.carousel__pagination {
-  padding: 0;
-}
-.carousel__pagination-button::after {
-  display: block;
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: var(--vc-pgn-border-radius);
-  background-color: #ffc9d3;
-  border-radius: 50%;
-}
-.carousel__pagination-button--active::after {
-  background-color: #e87d8c;
-}
-
-.btn-next button {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  background-color: #ff99a7;
-  border: none;
-  color: white;
-  border-radius: 20px;
-}
-
-h2 {
-  color: #f38a8c;
-}
-</style>
+<style></style>

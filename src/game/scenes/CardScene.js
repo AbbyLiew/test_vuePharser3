@@ -58,6 +58,7 @@ export default class PlayScene extends Scene {
     window.setCurrent = this.setCurrent.bind(this);
     window.triggerAnimation = this.triggerAnimation.bind(this);
     window.triggerFlipCard = this.triggerFlipCard.bind(this);
+    window.reStartScene = this.reStartScene.bind(this);
 
     // scene switch
     window.startPinkScene = this.startPinkScene.bind(this);
@@ -71,27 +72,95 @@ export default class PlayScene extends Scene {
   startPinkScene() {
     this.scene.launch("PinkScene");
     this.scene.bringToTop("PinkScene");
+    // destroy the scene when it's not active
+    this.scene.sleep("YellowScene");
+    this.scene.sleep("PurpleScene");
+    this.scene.sleep("ChalkScene");
+    this.scene.sleep("GreenScene");
+
     this.currentSellected = "PinkScene";
   }
+
   startYellowScene() {
     this.scene.launch("YellowScene");
     this.scene.bringToTop("YellowScene");
+
+    this.scene.sleep("PinkScene");
+    this.scene.sleep("PurpleScene");
+    this.scene.sleep("ChalkScene");
+    this.scene.sleep("GreenScene");
+
     this.currentSellected = "YellowScene";
   }
   startPurpleScene() {
     this.scene.launch("PurpleScene");
     this.scene.bringToTop("PurpleScene");
+
+    this.scene.sleep("PinkScene");
+    this.scene.sleep("YellowScene");
+    this.scene.sleep("ChalkScene");
+    this.scene.sleep("GreenScene");
+
     this.currentSellected = "PurpleScene";
   }
   startChalkScene() {
     this.scene.launch("ChalkScene");
     this.scene.bringToTop("ChalkScene");
+
+    this.scene.sleep("PinkScene");
+    this.scene.sleep("YellowScene");
+    this.scene.sleep("PurpleScene");
+    this.scene.sleep("GreenScene");
+
     this.currentSellected = "ChalkScene";
   }
   startGreenScene() {
     this.scene.launch("GreenScene");
     this.scene.bringToTop("GreenScene");
+
+    this.scene.sleep("PinkScene");
+    this.scene.sleep("YellowScene");
+    this.scene.sleep("PurpleScene");
+    this.scene.sleep("ChalkScene");
+
     this.currentSellected = "GreenScene";
+  }
+
+  reStartScene() {
+    // destroy the scene
+    switch (this.currentSellected) {
+      case "PinkScene":
+        this.scene.get("PinkScene").resetScene();
+        this.scene.stop("PinkScene");
+        break;
+      case "YellowScene":
+        console.log("YellowScene reset");
+        this.scene.get("YellowScene").resetScene();
+        this.scene.stop("YellowScene");
+        break;
+      case "PurpleScene":
+        this.scene.get("PurpleScene").resetScene();
+        this.scene.stop("PurpleScene");
+        break;
+      case "ChalkScene":
+        this.scene.get("ChalkScene").resetScene();
+        this.scene.stop("ChalkScene");
+        break;
+      case "GreenScene":
+        this.scene.get("GreenScene").resetScene();
+        this.scene.stop("GreenScene");
+        break;
+    }
+    this.scene.sleep("PinkScene");
+    this.scene.sleep("YellowScene");
+    this.scene.sleep("PurpleScene");
+    this.scene.sleep("ChalkScene");
+    this.scene.sleep("GreenScene");
+
+    this.currentSellected = "";
+    this.cardGroup.clear(true, true);
+
+    this.triggerAnimation();
   }
 
   switchScene() {

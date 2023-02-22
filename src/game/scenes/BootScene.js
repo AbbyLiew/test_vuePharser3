@@ -33,7 +33,15 @@ export default class BootScene extends Scene {
     });
   }
 
+  startCardScene() {
+    this.scene.start("CardScene");
+  }
+
   create() {
-    this.scene.start("PlayScene");
+    if (window.localStorage.getItem("current")) {
+      this.scene.start("CardScene");
+    } else {
+      this.scene.start("PlayScene");
+    }
   }
 }

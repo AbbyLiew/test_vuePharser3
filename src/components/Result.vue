@@ -154,6 +154,12 @@
             SHOP TABBY
           </button>
         </div>
+        <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
+        <div class="btn-next">
+          <button :style="`width : ${innerWidth * 0.45}px`" @click="restart">
+            REPLAY
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -186,6 +192,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    restart: {
+      type: Function,
+      default: () => {},
+    },
   },
   data() {
     return {
@@ -197,6 +207,15 @@ export default {
     };
   },
   methods: {
+    restart() {
+      window.localStorage.setItem("current", true);
+      window.location.reload();
+      // this.$emit("restart");
+      // gsap.to(".Result", {
+      //   zIndex: -10,
+      //   opacity: 0,
+      // });
+    },
     toshop() {
       // open new tab to link
       // version-country
@@ -327,8 +346,8 @@ export default {
               window.startYellowScene();
               break;
             case "AAB":
-              this.output_color = "pink";
-              window.startPinkScene();
+              this.output_color = "cream";
+              window.startChalkScene();
               break;
             case "AAC":
               this.output_color = "teal";
@@ -371,16 +390,24 @@ export default {
               this.output_color = "yellow";
               break;
             case "BBB":
-              window.startYellowScene();
-              this.output_color = "yellow";
+              this.output_color = "cream";
+              window.startChalkScene();
               break;
             case "BBC":
               window.startPinkScene();
               this.output_color = "pink";
               break;
+            case "BCA":
+              window.startChalkScene();
+              this.output_color = "cream";
+              break;
+            case "BCB":
+              this.output_color = "teal";
+              window.startGreenScene();
+              break;
             case "BCC":
-              window.startYellowScene();
-              this.output_color = "yellow";
+              window.startPurpleScene();
+              this.output_color = "purple";
               break;
             case "CAA":
               window.startGreenScene();
@@ -403,20 +430,24 @@ export default {
               this.output_color = "purple";
               break;
             case "CBC":
-              window.startChalkScene();
-              this.output_color = "cream";
+              window.startYellowScene();
+              this.output_color = "yellow";
               break;
             case "CCA":
               window.startChalkScene();
               this.output_color = "cream";
+              break;
+            case "CCB":
+              window.startPurpleScene();
+              this.output_color = "purple";
               break;
             case "CCC":
               window.startPinkScene();
               this.output_color = "pink";
               break;
             default:
-              window.startYellowScene();
-              this.output_color = "yellow";
+              window.startGreenScene();
+              this.output_color = "teal";
               break;
           }
           this.shareButton();

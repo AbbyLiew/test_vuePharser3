@@ -51,8 +51,36 @@ export default {
       },
       deep: true,
     },
+    isloading: {
+      handler: function (newVal, oldVal) {
+        if (newVal === 1) {
+          let current = window.localStorage.getItem("current");
+          if (current) {
+            setTimeout(() => {
+              this.current = 3;
+              window.triggerAnimation();
+              window.localStorage.removeItem("current");
+            }, 20);
+          }
+        }
+      },
+      deep: true,
+    },
   },
   methods: {
+    restart() {
+      this.current = 3;
+      this.quationsData = {
+        quation1: null,
+        quation2: null,
+        quation3: null,
+        quation4: null,
+        quation5: null,
+        quation6: null,
+        quation7: null,
+      };
+      window?.reStartScene();
+    },
     setIsActive() {
       this.isActive_video = true;
     },
@@ -307,6 +335,7 @@ export default {
           :innerHeight="innerHeight"
           :current="current"
           :isActive_video="isActive_video"
+          @restart="restart"
         />
 
         <transition

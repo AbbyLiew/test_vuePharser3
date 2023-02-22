@@ -9,9 +9,17 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Your spirit shoe?<br /><br /></h2>
+          <h2 :style="`text-align : center`">Your spirit shoe?<br /></h2>
+          <div class="block" style="height: 2.5vh" />
           <ul class="section7_shoeContaienr">
-            <li @click="quationsData.quation6 = 'A'">
+            <li
+              @click="
+                if (quationsData.quation6 === 'A') {
+                  this.$emit('next');
+                }
+                quationsData.quation6 = 'A';
+              "
+            >
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -28,7 +36,14 @@
                 <img src="/shoes/01shoes.png" alt="01shoes" />
               </div>
             </li>
-            <li @click="quationsData.quation6 = 'B'">
+            <li
+              @click="
+                if (quationsData.quation6 === 'B') {
+                  this.$emit('next');
+                }
+                quationsData.quation6 = 'B';
+              "
+            >
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -45,7 +60,14 @@
                 <img src="/shoes/02shoes.png" alt="02shoes" />
               </div>
             </li>
-            <li @click="quationsData.quation6 = 'C'">
+            <li
+              @click="
+                if (quationsData.quation6 === 'C') {
+                  this.$emit('next');
+                }
+                quationsData.quation6 = 'C';
+              "
+            >
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -62,7 +84,14 @@
                 <img src="/shoes/03shoes.png" alt="03shoes" />
               </div>
             </li>
-            <li @click="quationsData.quation6 = 'D'">
+            <li
+              @click="
+                if (quationsData.quation6 === 'D') {
+                  this.$emit('next');
+                }
+                quationsData.quation6 = 'D';
+              "
+            >
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -79,7 +108,15 @@
                 <img src="/shoes/04shoes.png" alt="04shoes" />
               </div>
             </li>
-            <li @click="quationsData.quation6 = 'E'">
+            <li
+              @click="
+                if (quationsData.quation6 === 'E') {
+                  this.$emit('next');
+                }
+                quationsData.quation6 = 'E';
+              "
+              style="grid-column: 1/3"
+            >
               <div
                 class="imgContainer"
                 :style="`height : ${innerHeight * 0.13}px;`"
@@ -194,7 +231,7 @@ export default {
           setTimeout(() => {
             this.$emit("setAction", "next");
             this.$emit("next");
-          }, 700);
+          }, 600);
         }
       },
       deep: true,
@@ -209,7 +246,7 @@ export default {
 }
 
 .--extra_padding {
-  padding: 5% 0;
+  padding: 4% 0;
 }
 .--color_white {
   color: #fff;
@@ -217,9 +254,12 @@ export default {
 .section7_shoeContaienr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 80%;
 }
 .section7_shoeContaienr img {
   height: 100%;
+  margin: 0 auto;
 }
 .section7_shoeContaienr li {
   padding: 0 !important;

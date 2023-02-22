@@ -28,19 +28,26 @@
         <div>
           <div
             class="container"
-            :style="`height : ${innerHeight * 0.55}px; width : ${
-              (innerHeight * 0.55 * 736) / 1103
+            :style="`height : ${innerHeight * 0.6}px; width : ${
+              (innerHeight * 0.6 * 588) / 782
             }px;`"
           >
             <h2 :style="`text-align : center`">
               My Signature <br />style is...
             </h2>
-            <ul>
+            <ul class="ul_extra_padding">
               <li
                 :class="
-                  quationsData.quation1 === 'A' ? '--active_sellected' : ''
+                  quationsData.quation1 === 'A'
+                    ? '--active_sellected'
+                    : '_before_active_sellect'
                 "
-                @click="quationsData.quation1 = 'A'"
+                @click="
+                  if (quationsData.quation1 === 'A') {
+                    this.$emit('next');
+                  }
+                  quationsData.quation1 = 'A';
+                "
                 class="--extra_padding"
               >
                 <h6
@@ -51,9 +58,16 @@
               </li>
               <li
                 :class="
-                  quationsData.quation1 === 'B' ? '--active_sellected' : ''
+                  quationsData.quation1 === 'B'
+                    ? '--active_sellected'
+                    : '_before_active_sellect'
                 "
-                @click="quationsData.quation1 = 'B'"
+                @click="
+                  if (quationsData.quation1 === 'B') {
+                    this.$emit('next');
+                  }
+                  quationsData.quation1 = 'B';
+                "
                 class="--extra_padding"
               >
                 <h6
@@ -64,9 +78,16 @@
               </li>
               <li
                 :class="
-                  quationsData.quation1 === 'C' ? '--active_sellected' : ''
+                  quationsData.quation1 === 'C'
+                    ? '--active_sellected'
+                    : '_before_active_sellect'
                 "
-                @click="quationsData.quation1 = 'C'"
+                @click="
+                  if (quationsData.quation1 === 'C') {
+                    this.$emit('next');
+                  }
+                  quationsData.quation1 = 'C';
+                "
                 class="--extra_padding"
               >
                 <h6
@@ -77,9 +98,16 @@
               </li>
               <li
                 :class="
-                  quationsData.quation1 === 'D' ? '--active_sellected' : ''
+                  quationsData.quation1 === 'D'
+                    ? '--active_sellected'
+                    : '_before_active_sellect'
                 "
-                @click="quationsData.quation1 = 'D'"
+                @click="
+                  if (quationsData.quation1 === 'D') {
+                    this.$emit('next');
+                  }
+                  quationsData.quation1 = 'D';
+                "
                 class="--extra_padding"
               >
                 <h6
@@ -90,9 +118,16 @@
               </li>
               <li
                 :class="
-                  quationsData.quation1 === 'E' ? '--active_sellected' : ''
+                  quationsData.quation1 === 'E'
+                    ? '--active_sellected'
+                    : '_before_active_sellect'
                 "
-                @click="quationsData.quation1 = 'E'"
+                @click="
+                  if (quationsData.quation1 === 'E') {
+                    this.$emit('next');
+                  }
+                  quationsData.quation1 = 'E';
+                "
                 class="--extra_padding"
               >
                 <h6
@@ -222,7 +257,7 @@ export default {
 </script>
 
 <style>
-.extra {
+/* .extra {
   padding-top: 7% !important;
 }
 
@@ -235,5 +270,5 @@ export default {
 
 h2 {
   color: #f38a8c;
-}
+} */
 </style>

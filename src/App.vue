@@ -1,6 +1,7 @@
 <script setup>
 import Game from "@/components/Game";
 import DesktopBlock from "./components/DesktopBlock";
+import "./index.css";
 </script>
 
 <template>

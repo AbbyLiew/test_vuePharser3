@@ -15,7 +15,11 @@
           </h2>
           <ul>
             <li
-              :class="quationsData.quation7 === 'A' ? '--active_sellected' : ''"
+              :class="
+                quationsData.quation7 === 'A'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
               @click="quationsData.quation7 = 'A'"
             >
               <h6 :class="quationsData.quation7 === 'A' ? '--color_white' : ''">
@@ -23,7 +27,11 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation7 === 'B' ? '--active_sellected' : ''"
+              :class="
+                quationsData.quation7 === 'B'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
               @click="quationsData.quation7 = 'B'"
             >
               <h6 :class="quationsData.quation7 === 'B' ? '--color_white' : ''">
@@ -31,7 +39,11 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation7 === 'C' ? '--active_sellected' : ''"
+              :class="
+                quationsData.quation7 === 'C'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
               @click="quationsData.quation7 = 'C'"
             >
               <h6 :class="quationsData.quation7 === 'C' ? '--color_white' : ''">
@@ -40,7 +52,11 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation7 === 'D' ? '--active_sellected' : ''"
+              :class="
+                quationsData.quation7 === 'D'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
               @click="quationsData.quation7 = 'D'"
             >
               <h6 :class="quationsData.quation7 === 'D' ? '--color_white' : ''">
@@ -48,7 +64,11 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation7 === 'E' ? '--active_sellected' : ''"
+              :class="
+                quationsData.quation7 === 'E'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
               @click="quationsData.quation7 = 'E'"
             >
               <h6 :class="quationsData.quation7 === 'E' ? '--color_white' : ''">
@@ -173,7 +193,7 @@ export default {
 }
 
 .--extra_padding {
-  padding: 5% 0;
+  padding: 4% 0;
 }
 .--color_white {
   color: #fff;

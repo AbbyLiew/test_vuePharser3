@@ -10,10 +10,19 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">Name your <br />memoir.<br /></h2>
-          <ul>
+          <ul class="ul_extra_padding">
             <li
-              :class="quationsData.quation4 === 'A' ? '--active_sellected' : ''"
-              @click="quationsData.quation4 = 'A'"
+              :class="
+                quationsData.quation4 === 'A'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation4 === 'A') {
+                  this.$emit('next');
+                }
+                quationsData.quation4 = 'A';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
@@ -22,8 +31,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation4 === 'B' ? '--active_sellected' : ''"
-              @click="quationsData.quation4 = 'B'"
+              :class="
+                quationsData.quation4 === 'B'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation4 === 'B') {
+                  this.$emit('next');
+                }
+                quationsData.quation4 = 'B';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'B' ? '--color_white' : ''">
@@ -31,8 +49,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation4 === 'C' ? '--active_sellected' : ''"
-              @click="quationsData.quation4 = 'C'"
+              :class="
+                quationsData.quation4 === 'C'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation4 === 'C') {
+                  this.$emit('next');
+                }
+                quationsData.quation4 = 'C';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
@@ -40,8 +67,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation4 === 'D' ? '--active_sellected' : ''"
-              @click="quationsData.quation4 = 'D'"
+              :class="
+                quationsData.quation4 === 'D'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation4 === 'D') {
+                  this.$emit('next');
+                }
+                quationsData.quation4 = 'D';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
@@ -50,8 +86,17 @@
             </li>
 
             <li
-              :class="quationsData.quation4 === 'E' ? '--active_sellected' : ''"
-              @click="quationsData.quation4 = 'E'"
+              :class="
+                quationsData.quation4 === 'E'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation4 === 'E') {
+                  this.$emit('next');
+                }
+                quationsData.quation4 = 'E';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
@@ -171,7 +216,7 @@ export default {
 }
 
 .--extra_padding {
-  padding: 5% 0;
+  padding: 4% 0;
 }
 .--color_white {
   color: #fff;

@@ -10,6 +10,17 @@ export default class ChalkScene extends Scene {
     this.playedCard2 = false;
     this.playedCard3 = false;
   }
+  resetScene() {
+    this.playedCard1 = false;
+    this.playedCard2 = false;
+    this.playedCard3 = false;
+
+    this.hand.setAlpha(0);
+    this.hand_white.setAlpha(0);
+    this.video.setAlpha(0);
+    this.sprite.setAlpha(0);
+  }
+
   preload() {
     for (let i = 10; i < 84; i++) {
       let assetname = "ChalkSET26_" + i.toString().padStart(3, "0");
@@ -26,7 +37,7 @@ export default class ChalkScene extends Scene {
       false,
       true
     );
-    this.load.image("hand", "/icon/chalk.png");
+    this.load.image("hand_chalk", "/icon/chalk.png");
     this.load.image("hand_white", "/icon/white.png");
   }
 
@@ -80,7 +91,7 @@ export default class ChalkScene extends Scene {
   }
   create() {
     this.addSprite();
-    this.hand = this.add.image(0, 0, "hand");
+    this.hand = this.add.image(0, 0, "hand_chalk");
     this.hand.setScale((this.sys.game.config.height * 0.08) / this.hand.height);
     this.hand.setPosition(
       this.sys.game.config.width * 0.6,
@@ -133,28 +144,28 @@ export default class ChalkScene extends Scene {
 
   addSprite() {
     this.anims.create({
-      key: "play_card1",
+      key: "play_card1_chalk",
       frames: this.ArrayFrame(28, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
-      key: "play_card1_reverse",
+      key: "play_card1_reverse_chalk",
       frames: this.ArrayFrame(42, 10, true),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
-      key: "play_card2",
+      key: "play_card2_chalk",
       frames: this.ArrayFrame(65, 83, false),
       frameRate: 45,
       repeat: 0,
     });
 
     this.anims.create({
-      key: "play_card2_reverse",
+      key: "play_card2_reverse_chalk",
       frames: this.ArrayFrame(83, 52, true),
       frameRate: 45,
       repeat: 0,
@@ -187,7 +198,7 @@ export default class ChalkScene extends Scene {
       }
       if (e.downX >= e.x) {
         if (this.playedCard1 === false) {
-          this.sprite.anims.play("play_card1");
+          this.sprite.anims.play("play_card1_chalk");
           this.playedCard1 = true;
           this.hand.destroy();
           this.sprite.on("animationcomplete", () => {
@@ -195,7 +206,7 @@ export default class ChalkScene extends Scene {
             this.horizontalMove(this.hand_white);
           });
         } else if (this.playedCard2 === false) {
-          this.sprite.anims.play("play_card2");
+          this.sprite.anims.play("play_card2_chalk");
           this.hand_white.destroy();
           this.playedCard2 = true;
           this.sprite.on("animationcomplete", () => {
@@ -212,26 +223,24 @@ export default class ChalkScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
-          gsap.to(".popupModal", {
-            opacity: 1,
-            delay: 2.5,
-          });
+          // gsap.to(".popupModal", {
+          //   opacity: 1,
+          //   delay: 2.5,
+          // });
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {
-          this.sprite.anims.play("play_card2_reverse");
-          console.log("play_card2_reverse");
+          this.sprite.anims.play("play_card2_reverse_chalk");
           this.playedCard2 = false;
           this.hand_white2.destroy();
 
           this.hand.setAlpha(0);
         } else if (this.playedCard1 === true) {
-          this.sprite.anims.play("play_card1_reverse");
+          this.sprite.anims.play("play_card1_reverse_chalk");
           this.playedCard1 = false;
           this.hand_white.destroy();
 
           this.hand.setAlpha(0);
-          console.log("play_card1_reverse");
         }
       }
     });

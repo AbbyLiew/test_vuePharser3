@@ -14,10 +14,19 @@
             you to overcome<br />
             obstacles?
           </h2>
-          <ul>
+          <ul class="ul_extra_padding">
             <li
-              :class="quationsData.quation5 === 'A' ? '--active_sellected' : ''"
-              @click="quationsData.quation5 = 'A'"
+              :class="
+                quationsData.quation5 === 'A'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation5 === 'A') {
+                  this.$emit('next');
+                }
+                quationsData.quation5 = 'A';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
@@ -25,8 +34,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation5 === 'B' ? '--active_sellected' : ''"
-              @click="quationsData.quation5 = 'B'"
+              :class="
+                quationsData.quation5 === 'B'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation5 === 'B') {
+                  this.$emit('next');
+                }
+                quationsData.quation5 = 'B';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
@@ -34,8 +52,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation5 === 'C' ? '--active_sellected' : ''"
-              @click="quationsData.quation5 = 'C'"
+              :class="
+                quationsData.quation5 === 'C'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation5 === 'C') {
+                  this.$emit('next');
+                }
+                quationsData.quation5 = 'C';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'C' ? '--color_white' : ''">
@@ -43,8 +70,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation5 === 'D' ? '--active_sellected' : ''"
-              @click="quationsData.quation5 = 'D'"
+              :class="
+                quationsData.quation5 === 'D'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation5 === 'D') {
+                  this.$emit('next');
+                }
+                quationsData.quation5 = 'D';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
@@ -52,8 +88,17 @@
               </h6>
             </li>
             <li
-              :class="quationsData.quation5 === 'E' ? '--active_sellected' : ''"
-              @click="quationsData.quation5 = 'E'"
+              :class="
+                quationsData.quation5 === 'E'
+                  ? '--active_sellected'
+                  : '_before_active_sellect'
+              "
+              @click="
+                if (quationsData.quation5 === 'E') {
+                  this.$emit('next');
+                }
+                quationsData.quation5 = 'E';
+              "
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'E' ? '--color_white' : ''">
@@ -174,7 +219,7 @@ export default {
 }
 
 .--extra_padding {
-  padding: 5% 0;
+  padding: 4% 0;
 }
 .--color_white {
   color: #fff;
