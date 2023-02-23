@@ -236,6 +236,7 @@ export default {
 <style>
 .--active_sellected {
   background-color: #e87d8c;
+  border: 2px solid #f8ced5;
 }
 
 .--extra_padding {

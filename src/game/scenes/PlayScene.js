@@ -191,27 +191,49 @@ export default class PlayScene extends Scene {
           top2.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
           bag2.y -= (3 * ((this.sys.game.config.width / 3) * 438)) / 626;
 
-          this.minitop.add(top);
+          window.bag2 = bag2;
           this.bagGroup.add(bag);
-          this.minitop.add(top2);
           this.bagGroup.add(bag2);
+
+          this.minitop.add(top);
+          this.minitop.add(top2);
         }
       }
     }
+
     this.anims.create({
-      key: "play_bag",
-      frames: this.ArrayFrame(0, 4, false),
+      key: "play_bag_0",
+      frames: [
+        { key: "bag_00000" },
+        { key: "bag_00004" },
+        { key: "bag_00003" },
+        { key: "bag_00000" },
+        { key: "bag_00002" },
+      ],
       frameRate: 1,
       repeat: -1,
     });
 
     this.anims.create({
-      key: "play_bag_reverse",
+      key: "play_bag_1",
       frames: [
+        { key: "bag_00001" },
+        { key: "bag_00002" },
+        { key: "bag_00001" },
+        { key: "bag_00004" },
+        { key: "bag_00003" },
+      ],
+      frameRate: 1,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "play_bag_2",
+      frames: [
+        { key: "bag_00002" },
         { key: "bag_00004" },
         { key: "bag_00003" },
         { key: "bag_00002" },
-        { key: "bag_00001" },
         { key: "bag_00000" },
       ],
       frameRate: 1,
@@ -219,45 +241,54 @@ export default class PlayScene extends Scene {
     });
 
     this.anims.create({
-      key: "play_bag_random",
+      key: "play_bag_3",
       frames: [
-        { key: "bag_00004" },
-        { key: "bag_00002" },
-        { key: "bag_00001" },
-        { key: "bag_00002" },
         { key: "bag_00003" },
+        { key: "bag_00001" },
+        { key: "bag_00003" },
+        { key: "bag_00000" },
+        { key: "bag_00002" },
       ],
       frameRate: 1,
       repeat: -1,
     });
 
     this.anims.create({
-      key: "play_bag_random_2",
+      key: "play_bag_4",
       frames: [
-        { key: "bag_00002" },
-        { key: "bag_00000" },
-        { key: "bag_00001" },
         { key: "bag_00004" },
-        { key: "bag_00003" },
+        { key: "bag_00001" },
+        { key: "bag_00002" },
+        { key: "bag_00004" },
+        { key: "bag_00000" },
       ],
       frameRate: 1,
       repeat: -1,
     });
 
-    this.bagGroup.children.iterate((child) => {
+    this.bagGroup.children.iterate((child, index) => {
       this.time.addEvent({
-        delay: Math.random() * 1000,
+        delay: Math.random() * 1500,
         callback: () => {
-          // random 0 or 1
-          let random = Math.floor(Math.random() * 4);
-          if (random == 0) {
-            child.anims.play("play_bag");
-          } else if (random == 1) {
-            child.anims.play("play_bag_reverse");
-          } else if (random == 2) {
-            child.anims.play("play_bag_random");
-          } else if (random == 3) {
-            child.anims.play("play_bag_random_2");
+          switch (index) {
+            case 0:
+              child.anims.play("play_bag_0");
+              break;
+            case 1:
+              child.anims.play("play_bag_1");
+              break;
+            case 2:
+              child.anims.play("play_bag_2");
+              break;
+            case 3:
+              child.anims.play("play_bag_3");
+              break;
+            case 4:
+              child.anims.play("play_bag_4");
+              break;
+            default:
+              child.anims.play("play_bag");
+              break;
           }
         },
       });
