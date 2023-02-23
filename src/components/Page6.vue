@@ -30,7 +30,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                My go-to hype songs
+                Remembering <br />I’m that b*tch
               </h6>
             </li>
             <li
@@ -48,7 +48,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                Netflix and chill
+                Netflix and chill ;)
               </h6>
             </li>
             <li

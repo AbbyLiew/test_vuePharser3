@@ -5,7 +5,7 @@
       <div>
         <div
           class="container"
-          :style="`height : ${innerHeight * 0.55}px; width : ${
+          :style="`height : ${innerHeight * 0.6}px; width : ${
             (innerHeight * 0.55 * 736) / 1103
           }px; margin-top : ${innerHeight * -0.05}px;`"
         >
@@ -25,21 +25,21 @@
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
-          <input type="text" placeholder="NAME" class="input" v-model="email" />
-          <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
-
+          <input type="text" placeholder="NAME" class="input" v-model="name" />
+          <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
+          <!-- mobile -->
           <div
             style="display: flex; justify-content: space-between; width: 100%"
           >
             <input
-              type="text"
-              placeholder="+1"
+              type="number"
+              placeholder="+65"
               class="input left"
               style="width: 20%"
             />
             <div style="width: 2.5%" />
             <input
-              type="text"
+              type="number"
               placeholder="MOBILE"
               class="input right"
               style="width: 77.5%"
@@ -47,24 +47,35 @@
               @change="handleInputChange_phone"
             />
           </div>
+          <!-- email -->
+          <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
+          <input
+            type="text"
+            placeholder="EMAIL"
+            style="color: #ff99a7"
+            class="input"
+            v-model="email"
+          />
+          <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
 
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="inputcheckBox">
             <input type="checkbox" id="terms" />
             <label for="terms">
-              BY SUBMITTING THIS FORM, YOU AGREE TO RECEIVE RECURRING AUTOMATED
-              PROMOTIONAL AND PERSONALIZED MARKETING TEXT MESSAGES (E.G. CART
-              REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
-              CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
-              AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY.
-              <a target="_blank" href="http://attn.tv/coach/terms.html">
-                TERMS
+              By submitting your personal details, you are consenting to your
+              personal data being collected and processed by COACH and its
+              affiliated companies to manage and enhance your customer
+              experience and receive marketing & promotion communications via
+              e-mail. We may transfer your data to our third party back-end
+              service provides and to jurisdictions within or outside your
+              country. Please
+              <a
+                target="_blank"
+                href="https://singapore.coach.com/security-and-privacy"
+              >
+                click here
               </a>
-              &
-              <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
-                PRIVACY.
-              </a>
+              to access our privacy policy.
             </label>
           </div>
         </div>
@@ -106,23 +117,26 @@ export default {
   data() {
     return {
       email: "",
+      name: "",
       phone: "",
       isloading: false,
     };
   },
   methods: {
     next() {
-      // del later
-      this.$emit("triggerAnimation");
-
       this.isloading = true;
-      if (!document.querySelector("#terms").checked) {
-        alert("Please check the Terms and Conditions box to proceed.");
+
+      // window scroll to top
+      window.scrollTo(0, 0);
+
+      if (this.email === "" || this.phone === "" || this.name === "") {
+        alert("Please fill in your email and mobile and name to proceed.");
         this.isloading = false;
         return;
       }
-      if (this.email === "" || this.phone === "") {
-        alert("Please fill in your email and mobile to proceed.");
+
+      if (!document.querySelector("#terms").checked) {
+        alert("Please check the Terms and Conditions box to proceed.");
         this.isloading = false;
         return;
       }
@@ -130,8 +144,10 @@ export default {
       axios
         .get(process.env.VUE_APP_API_URL, {
           params: {
+            name: this.name,
             email: this.email,
             phone: this.phone,
+            region: "SG",
           },
         })
         .then((response) => {
@@ -178,7 +194,7 @@ export default {
   height: 100% !important;
 }
 .input::placeholder {
-  color: #ff99a7;
+  color: #ff99a7 !important;
   text-align: center;
   font-family: "Cream-Bold";
   font-size: 2vh;
@@ -188,7 +204,7 @@ export default {
   text-align: center;
   border: none;
   font-family: "Cream-Bold";
-  color: #ff99a7;
+  color: #ff99a7 !important;
   font-size: 2vh;
 }
 .inputcheckBox {
@@ -247,6 +263,9 @@ input[type="checkbox"] {
   100% {
     transform: rotate(360deg);
   }
+}
+label {
+  text-transform: uppercase;
 }
 
 .loadingBTN h4 {

@@ -9,7 +9,7 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Name your <br />memoir.<br /></h2>
+          <h2 :style="`text-align : center`">My life <br />story.<br /></h2>
           <ul class="ul_extra_padding">
             <li
               :class="
@@ -63,7 +63,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
-                Understood the Assignment
+                Understood <br />the Assignment
               </h6>
             </li>
             <li

@@ -157,7 +157,7 @@
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
         <div class="btn-next">
           <button :style="`width : ${innerWidth * 0.45}px`" @click="restart">
-            REPLAY
+            PLAY AGAIN
           </button>
         </div>
       </div>

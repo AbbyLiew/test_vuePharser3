@@ -202,7 +202,7 @@ export default class ChalkScene extends Scene {
           this.playedCard1 = true;
           this.hand.destroy();
           this.sprite.on("animationcomplete", () => {
-            this.hand_white.setAlpha(1);
+            this.hand_white.setAlpha(0);
             this.horizontalMove(this.hand_white);
           });
         } else if (this.playedCard2 === false) {
@@ -210,7 +210,7 @@ export default class ChalkScene extends Scene {
           this.hand_white.destroy();
           this.playedCard2 = true;
           this.sprite.on("animationcomplete", () => {
-            this.hand_white2.setAlpha(1);
+            this.hand_white2.setAlpha(0);
             this.horizontalMove(this.hand_white2);
           });
         } else if (this.playedCard3 === false) {
@@ -223,10 +223,10 @@ export default class ChalkScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
-          // gsap.to(".popupModal", {
-          //   opacity: 1,
-          //   delay: 2.5,
-          // });
+          gsap.to(".popupModal", {
+            opacity: 1,
+            delay: 2.5,
+          });
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {
