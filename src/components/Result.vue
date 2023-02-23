@@ -219,7 +219,10 @@ export default {
     toshop() {
       // open new tab to link
       // version-country
-      window.open("https://singapore.coach.com/bags/tabby.html", "_blank");
+      window.open(
+        "https://id.coach.com/women/collections/tabby.html",
+        "_blank"
+      );
     },
     shareButton() {
       let button = document.getElementById("shareButton");

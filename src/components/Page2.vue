@@ -73,7 +73,7 @@
                 <h6
                   :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
                 >
-                  Comfortable and casual
+                  Comfortable <br />and casual
                 </h6>
               </li>
               <li

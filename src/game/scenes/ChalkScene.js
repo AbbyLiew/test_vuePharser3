@@ -23,7 +23,7 @@ export default class ChalkScene extends Scene {
 
   preload() {
     for (let i = 10; i < 84; i++) {
-      let assetname = "ChalkSET26_" + i.toString().padStart(3, "0");
+      let assetname = "ChalkSET26_Ind" + i.toString().padStart(3, "0");
 
       this.load.image(
         "ChalkSET_" + i,

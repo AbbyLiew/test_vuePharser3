@@ -64,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                The sassy frenemy
+                Joy with a good spirit
               </h6>
             </li>
             <li

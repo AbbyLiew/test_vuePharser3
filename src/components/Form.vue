@@ -33,7 +33,7 @@
           >
             <input
               type="number"
-              placeholder="+65"
+              placeholder="+62"
               class="input left"
               style="width: 20%"
             />
@@ -62,20 +62,11 @@
           <div class="inputcheckBox">
             <input type="checkbox" id="terms" />
             <label for="terms">
-              By submitting your personal details, you are consenting to your
-              personal data being collected and processed by COACH and its
-              affiliated companies to manage and enhance your customer
-              experience and receive marketing & promotion communications via
-              e-mail. We may transfer your data to our third party back-end
-              service provides and to jurisdictions within or outside your
-              country. Please
-              <a
-                target="_blank"
-                href="https://singapore.coach.com/security-and-privacy"
-              >
-                click here
+              By submitting, I agree to Coach Indonesia
+              <a target="_blank" href="https://id.coach.com/privacy-policy">
+                privacy policy
               </a>
-              to access our privacy policy.
+              and terms of use.
             </label>
           </div>
         </div>
@@ -221,7 +212,7 @@ export default {
   line-height: 1;
 }
 #terms {
-  width: 50%;
+  width: 10%;
   height: 1rem;
   border: none;
 }

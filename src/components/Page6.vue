@@ -30,7 +30,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                Remembering <br />I’m that b*tch
+                My barbell or yoga
               </h6>
             </li>
             <li
@@ -48,7 +48,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                Netflix and chill ;)
+                My furry friend(s)
               </h6>
             </li>
             <li
