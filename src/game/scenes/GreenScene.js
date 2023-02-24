@@ -21,7 +21,7 @@ export default class GreenScene extends Scene {
     this.sprite.setAlpha(0);
   }
   preload() {
-    for (let i = 10; i < 84; i++) {
+    for (let i = 23; i < 84; i++) {
       let assetname = "GreenSET26_" + i.toString().padStart(3, "0");
 
       this.load.image(
@@ -144,14 +144,15 @@ export default class GreenScene extends Scene {
   addSprite() {
     this.anims.create({
       key: "play_card1_green",
-      frames: this.ArrayFrame(28, 50, false),
+      frames: this.ArrayFrame(23, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card1_reverse_green",
-      frames: this.ArrayFrame(42, 28, true),
+      frames: this.ArrayFrame(42, 23, false),
+
       frameRate: 30,
       repeat: 0,
     });
@@ -170,7 +171,7 @@ export default class GreenScene extends Scene {
       repeat: 0,
     });
 
-    this.sprite = this.add.sprite(0, 0, "GreenSET_10");
+    this.sprite = this.add.sprite(0, 0, "GreenSET_23");
 
     this.sprite.setDisplaySize(
       window.innerHeight * devicePixelRatio,

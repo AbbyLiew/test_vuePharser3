@@ -24,7 +24,7 @@ export default class YellowScene extends Scene {
     this.tweens.killAll();
   }
   preload() {
-    for (let i = 10; i <= 84; i++) {
+    for (let i = 23; i <= 84; i++) {
       let assetname = "YellowSET26_" + i.toString().padStart(3, "0");
       console.log(assetname);
       this.load.image(
@@ -147,14 +147,15 @@ export default class YellowScene extends Scene {
   addSprite() {
     this.anims.create({
       key: "play_card1_yellow",
-      frames: this.ArrayFrame(28, 50, false),
+      frames: this.ArrayFrame(23, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card1_reverse_yellow",
-      frames: this.ArrayFrame(42, 10, true),
+      frames: this.ArrayFrame(42, 23, false),
+
       frameRate: 30,
       repeat: 0,
     });
@@ -173,7 +174,7 @@ export default class YellowScene extends Scene {
       repeat: 0,
     });
 
-    this.sprite = this.add.sprite(0, 0, "yellowSet_10");
+    this.sprite = this.add.sprite(0, 0, "yellowSet_23");
 
     this.sprite.setDisplaySize(
       window.innerHeight * devicePixelRatio,

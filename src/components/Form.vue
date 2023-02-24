@@ -163,16 +163,12 @@ export default {
             name: this.name,
             email: this.email,
             phone: this.phone,
-            region: "SG",
           },
         })
         .then((response) => {
-          // handle success
-          this.$emit("setNamePhoneEmail", {
-            name: this.name,
-            email: this.email,
-            phone: this.phone,
-          });
+          window.localStorage.setItem("name", this.name);
+          window.localStorage.setItem("email", this.email);
+          window.localStorage.setItem("phone", this.phone);
 
           if (response.data.message?.statusCode === 400) {
             this.isloading = false;
