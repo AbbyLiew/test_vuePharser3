@@ -144,19 +144,31 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
-          <button id="shareButton" :style="`width : ${innerWidth * 0.45}px`">
+          <button
+            class="sharebutton"
+            id="shareButton"
+            :style="`width : ${innerWidth * 0.45}px`"
+          >
             SHARE THE VIDEO
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
         <div class="btn-next">
-          <button :style="`width : ${innerWidth * 0.45}px`" @click="toshop">
+          <button
+            class="shopbutton"
+            :style="`width : ${innerWidth * 0.45}px`"
+            @click="toshop"
+          >
             SHOP TABBY
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
         <div class="btn-next">
-          <button :style="`width : ${innerWidth * 0.45}px`" @click="restart">
+          <button
+            class="playagain_button"
+            :style="`width : ${innerWidth * 0.45}px`"
+            @click="restart"
+          >
             PLAY AGAIN
           </button>
         </div>
