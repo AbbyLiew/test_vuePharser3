@@ -9,7 +9,7 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">My life <br />story.<br /></h2>
+          <h2 :style="`text-align : center`">Name your <br />memoir.<br /></h2>
           <ul class="ul_extra_padding">
             <li
               :class="
