@@ -132,7 +132,7 @@ export default {
         return;
       }
       // phone format
-      if (this.phone.length < 10) {
+      if (this.phone.length < 8) {
         alert("Please fill in a valid mobile to proceed.");
         this.isloading = false;
         return;
@@ -150,7 +150,7 @@ export default {
             name: this.name,
             email: this.email,
             phone: this.phone,
-            region: "SG",
+            region: "ID",
           },
         })
         .then((response) => {
