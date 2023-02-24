@@ -141,6 +141,19 @@ export default {
         return;
       }
 
+      if (this.phone.length < 8) {
+        alert("Please enter a valid mobile number.");
+        this.isloading = false;
+        return;
+      }
+      // email format check
+      if (!this.email.includes("@")) {
+        alert("Please enter a valid email address.");
+        this.isloading = false;
+        return;
+      }
+      // phone number indonesia
+
       axios
         .get(process.env.VUE_APP_API_URL, {
           params: {
