@@ -110,6 +110,10 @@ export default {
       type: Number,
       required: true,
     },
+    setNamePhoneEmail: {
+      type: Function,
+      required: true,
+    },
   },
   components: {
     VueTelInput,
@@ -140,7 +144,7 @@ export default {
         this.isloading = false;
         return;
       }
-
+      // check phone format sigapore
       if (this.phone.length < 8) {
         alert("Please enter a valid mobile number.");
         this.isloading = false;
@@ -152,7 +156,6 @@ export default {
         this.isloading = false;
         return;
       }
-      // phone number indonesia
 
       axios
         .get(process.env.VUE_APP_API_URL, {
@@ -165,6 +168,12 @@ export default {
         })
         .then((response) => {
           // handle success
+          this.$emit("setNamePhoneEmail", {
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+          });
+
           if (response.data.message?.statusCode === 400) {
             this.isloading = false;
             alert(response.data.message.body);

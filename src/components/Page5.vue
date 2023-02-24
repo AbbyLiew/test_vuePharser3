@@ -116,6 +116,7 @@
 
 <script>
 import gsap from "gsap";
+
 export default {
   props: {
     next: {

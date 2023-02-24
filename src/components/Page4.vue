@@ -139,6 +139,7 @@
 
 <script>
 import gsap from "gsap";
+import axios from "axios";
 export default {
   props: {
     next: {
@@ -179,6 +180,18 @@ export default {
       required: true,
     },
     action: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    email: {
       type: String,
       required: true,
     },

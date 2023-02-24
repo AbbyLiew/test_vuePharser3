@@ -208,6 +208,18 @@ export default {
       type: Function,
       default: () => {},
     },
+    name: {
+      type: String,
+      default: "",
+    },
+    email: {
+      type: String,
+      default: "",
+    },
+    phone: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
@@ -332,6 +344,20 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
+          axios
+            .get(process.env.VUE_APP_API_URL, {
+              name: this.name,
+              email: this.email,
+              phone: this.phone,
+              output_color: this.output_color,
+              region: "SG",
+            })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
           window.switchScene();
           let body = document.querySelector("body");
           if (this.output_color === "cream") {
