@@ -125,6 +125,18 @@ export default {
         this.isloading = false;
         return;
       }
+      // email format
+      if (!this.email.includes("@")) {
+        alert("Please fill in a valid email to proceed.");
+        this.isloading = false;
+        return;
+      }
+      // phone format
+      if (this.phone.length < 10) {
+        alert("Please fill in a valid mobile to proceed.");
+        this.isloading = false;
+        return;
+      }
 
       if (!document.querySelector("#terms").checked) {
         alert("Please check the Terms and Conditions box to proceed.");
