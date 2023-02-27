@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-VC8P63955S"
-    ></script>
+    <!-- Google Tag Manager -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-VC8P63955S");
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MSKVWC7");
     </script>
-    <!-- ///////////////// -->
-
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- disable mobile zoom -->
@@ -24,16 +22,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <meta
-      name="description"
-      content="Follow the copy: Take our personality quiz to find out what tabby you are!"
-    />
-
-    <meta name="title" content="shop tabby | What's my Tabby?" />
-
-    <!-- site name -->
-    <meta property="og:site_name" content="shop tabby | What's my Tabby?" />
-    <!-- de -->
     <!-- not push able -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
@@ -165,7 +153,7 @@
       }
     </style>
     <link rel="icon" href="<%=BASE_URL %>icon-icecream.png" />
-    <title>shop tabby | What's my Tabby?</title>
+    <title>shop tabby</title>
   </head>
   <body>
     <noscript>
@@ -177,5 +165,15 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MSKVWC7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>

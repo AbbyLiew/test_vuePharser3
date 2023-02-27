@@ -22,7 +22,7 @@ export default class PinkScene extends Scene {
     this.sprite.setAlpha(0);
   }
   preload() {
-    for (let i = 10; i < 84; i++) {
+    for (let i = 23; i < 84; i++) {
       let assetname = "PinkSET26_" + i.toString().padStart(3, "0");
       this.load.image(
         "pinkset_" + i,
@@ -142,14 +142,15 @@ export default class PinkScene extends Scene {
   addSprite() {
     this.anims.create({
       key: "play_card1_pink",
-      frames: this.ArrayFrame(28, 50, false),
+      frames: this.ArrayFrame(23, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card1_reverse_pink",
-      frames: this.ArrayFrame(42, 10, true),
+      frames: this.ArrayFrame(42, 23, false),
+
       frameRate: 30,
       repeat: 0,
     });
@@ -168,7 +169,7 @@ export default class PinkScene extends Scene {
       repeat: 0,
     });
 
-    this.sprite = this.add.sprite(0, 0, "pinkset_10");
+    this.sprite = this.add.sprite(0, 0, "pinkset_23");
 
     this.sprite.setDisplaySize(
       window.innerHeight * devicePixelRatio,

@@ -35,6 +35,9 @@ export default {
       drawIceCream: 2091,
       action: "next",
       isActive_video: false,
+      name: "",
+      email: "",
+      phone: "",
     };
   },
   watch: {
@@ -86,6 +89,11 @@ export default {
     },
     beforeEnter(el) {
       el.style.opacity = "0";
+    },
+    setNamePhoneEmail(name, phone, email) {
+      this.name = name;
+      this.phone = phone;
+      this.email = email;
     },
     enter(el) {
       gsap.to(el, {
@@ -221,6 +229,7 @@ export default {
             :action="action"
             :current="current"
             @back="back"
+            @setNamePhoneEmail="setNamePhoneEmail"
           />
         </div>
         <div v-if="current === 3 || current === 4">
@@ -336,6 +345,9 @@ export default {
           :current="current"
           :isActive_video="isActive_video"
           @restart="restart"
+          :name="name"
+          :phone="phone"
+          :email="email"
         />
 
         <transition

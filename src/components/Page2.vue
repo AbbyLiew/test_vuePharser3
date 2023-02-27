@@ -6,6 +6,7 @@
         <div>
           <div
             class="container"
+            id="start_quiz_button"
             :style="`height : ${innerHeight * 0.6}px; width : ${
               (innerHeight * 0.6 * 588) / 782
             }px;`"

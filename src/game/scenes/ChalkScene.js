@@ -22,7 +22,7 @@ export default class ChalkScene extends Scene {
   }
 
   preload() {
-    for (let i = 10; i < 84; i++) {
+    for (let i = 23; i < 84; i++) {
       let assetname = "ChalkSET26_Ind" + i.toString().padStart(3, "0");
 
       this.load.image(
@@ -145,14 +145,15 @@ export default class ChalkScene extends Scene {
   addSprite() {
     this.anims.create({
       key: "play_card1_chalk",
-      frames: this.ArrayFrame(28, 50, false),
+      frames: this.ArrayFrame(23, 50, false),
       frameRate: 30,
       repeat: 0,
     });
 
     this.anims.create({
       key: "play_card1_reverse_chalk",
-      frames: this.ArrayFrame(42, 10, true),
+      frames: this.ArrayFrame(42, 23, false),
+
       frameRate: 30,
       repeat: 0,
     });
@@ -171,7 +172,7 @@ export default class ChalkScene extends Scene {
       repeat: 0,
     });
 
-    this.sprite = this.add.sprite(0, 0, "ChalkSET_10");
+    this.sprite = this.add.sprite(0, 0, "ChalkSET_23");
 
     this.sprite.setDisplaySize(
       window.innerHeight * devicePixelRatio,

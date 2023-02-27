@@ -101,6 +101,10 @@ export default {
       type: Number,
       required: true,
     },
+    setNamePhoneEmail: {
+      type: Function,
+      required: true,
+    },
   },
   components: {
     VueTelInput,
@@ -143,9 +147,21 @@ export default {
         this.isloading = false;
         return;
       }
+      // check phone format sigapore
+      if (this.phone.length < 8) {
+        alert("Please enter a valid mobile number.");
+        this.isloading = false;
+        return;
+      }
+      // email format check
+      if (!this.email.includes("@")) {
+        alert("Please enter a valid email address.");
+        this.isloading = false;
+        return;
+      }
 
       axios
-        .get(process.env.VUE_APP_API_URL, {
+        .get(process.env.VUE_APP_API_URL + "/sg", {
           params: {
             name: this.name,
             email: this.email,
@@ -154,7 +170,10 @@ export default {
           },
         })
         .then((response) => {
-          // handle success
+          window.localStorage.setItem("name", this.name);
+          window.localStorage.setItem("email", this.email);
+          window.localStorage.setItem("phone", this.phone);
+
           if (response.data.message?.statusCode === 400) {
             this.isloading = false;
             alert(response.data.message.body);

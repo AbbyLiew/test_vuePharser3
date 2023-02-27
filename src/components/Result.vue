@@ -144,19 +144,31 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
-          <button id="shareButton" :style="`width : ${innerWidth * 0.45}px`">
+          <button
+            class="sharebutton"
+            id="shareButton"
+            :style="`width : ${innerWidth * 0.45}px`"
+          >
             SHARE THE VIDEO
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
         <div class="btn-next">
-          <button :style="`width : ${innerWidth * 0.45}px`" @click="toshop">
+          <button
+            class="shopbutton"
+            :style="`width : ${innerWidth * 0.45}px`"
+            @click="toshop"
+          >
             SHOP TABBY
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
         <div class="btn-next">
-          <button :style="`width : ${innerWidth * 0.45}px`" @click="restart">
+          <button
+            class="playagain_button"
+            :style="`width : ${innerWidth * 0.45}px`"
+            @click="restart"
+          >
             PLAY AGAIN
           </button>
         </div>
@@ -195,6 +207,18 @@ export default {
     restart: {
       type: Function,
       default: () => {},
+    },
+    name: {
+      type: String,
+      default: "",
+    },
+    email: {
+      type: String,
+      default: "",
+    },
+    phone: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -323,6 +347,14 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
+          axios.get(process.env.VUE_APP_API_URL + "/sg", {
+            params: {
+              name: window.localStorage.getItem("name"),
+              email: window.localStorage.getItem("email"),
+              phone: window.localStorage.getItem("phone"),
+              output_color: this.output_color,
+            },
+          });
           window.switchScene();
           let body = document.querySelector("body");
           if (this.output_color === "cream") {
