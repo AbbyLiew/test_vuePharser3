@@ -139,7 +139,6 @@
 
 <script>
 import gsap from "gsap";
-import axios from "axios";
 export default {
   props: {
     next: {
