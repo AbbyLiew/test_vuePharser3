@@ -151,7 +151,7 @@ export default {
         return;
       }
       // email format check
-      if (!this.email.includes("@")) {
+      if (!this.email.includes("@") && !this.email.includes(".")) {
         alert("Please enter a valid email address.");
         this.isloading = false;
         return;
