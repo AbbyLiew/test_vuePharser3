@@ -158,7 +158,7 @@ export default {
       }
 
       axios
-        .get(process.env.VUE_APP_API_URL, {
+        .get(process.env.VUE_APP_API_URL + "/sg", {
           params: {
             name: this.name,
             email: this.email,
