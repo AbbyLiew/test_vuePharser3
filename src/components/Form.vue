@@ -161,12 +161,11 @@ export default {
       }
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/sg", {
+        .get(process.env.VUE_APP_API_URL + "/id", {
           params: {
             name: this.name,
             email: this.email,
             phone: this.phone,
-            region: "ID",
           },
         })
         .then((response) => {
