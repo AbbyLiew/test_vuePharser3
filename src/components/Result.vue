@@ -20,12 +20,14 @@
             <img src="/result/pop_up.png" />
             <div class="innerContainerrr">
               <p :style="`font-size : ${innerHeight * 0.01}px;`">
-                Learn More <br />
                 <a
                   href="https://singapore.coach.com/coachtabbyshop"
                   target="_blank"
-                  >Terms & Conditions apply</a
+                  >Learn More</a
                 >
+                <br />
+
+                Terms & Conditions apply
               </p>
             </div>
           </div>
@@ -239,6 +241,7 @@ export default {
       output_color: "pink",
       closeModal: true,
       isloading: false,
+      triggered: false,
     };
   },
   methods: {
@@ -379,7 +382,14 @@ export default {
     quationsData: {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3 } = newVal;
-        if (quation1 && quation2 && quation3 && this.current <= 6) {
+        if (
+          !this.triggered &&
+          quation1 &&
+          quation2 &&
+          quation3 &&
+          this.current <= 6
+        ) {
+          this.triggered = true;
           let result = quation1 + quation2 + quation3;
           result = result.split("");
           result = this.convertResult(result);

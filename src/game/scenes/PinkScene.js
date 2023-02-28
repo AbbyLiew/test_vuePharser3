@@ -4,7 +4,7 @@ export default class PinkScene extends Scene {
   constructor() {
     super({ key: "PinkScene" });
     this.acc = 0;
-    this.video = null;
+    this.video_pink = null;
 
     this.playedCard1 = false;
     this.playedCard2 = false;
@@ -18,7 +18,7 @@ export default class PinkScene extends Scene {
 
     this.hand.setAlpha(0);
     this.hand_white.setAlpha(0);
-    this.video.setAlpha(0);
+    this.video_pink.setAlpha(0);
     this.sprite.setAlpha(0);
   }
   preload() {
@@ -36,15 +36,15 @@ export default class PinkScene extends Scene {
 
   vidioFadeIn() {
     this.tweens.add({
-      targets: this.video,
+      targets: this.video_pink,
       alpha: 1,
       duration: 1000,
       ease: "Linear",
       delay: 500,
       onComplete: () => {
-        this.video.play(false, 0, 10);
+        this.video_pink.play(false, 0, 10);
 
-        this.video.on("complete", () => {
+        this.video_pink.on("complete", () => {
           this.sprite.setAlpha(1);
           this.sprite.setDepth(2);
 
@@ -118,23 +118,21 @@ export default class PinkScene extends Scene {
 
     window.hand = this.hand;
 
-    this.video = this.add.video(0, 0, "pink");
-    this.video.setAlpha(0);
-    this.video.stop();
+    this.video_pink = this.add.video(0, 0, "pink");
+    this.video_pink.setAlpha(0);
+    this.video_pink.stop();
 
-    window.video = this.video;
-    window.video_reverse = this.video_reverse;
-    this.video.setDisplaySize(
+    this.video_pink.setDisplaySize(
       this.sys.game.config.height,
       this.sys.game.config.height
     );
-    this.video.setPosition(
+    this.video_pink.setPosition(
       this.sys.game.config.width / 2,
       this.sys.game.config.height / 2
     );
 
-    this.video.setDepth(1);
-    this.video.setAlpha(0);
+    this.video_pink.setDepth(1);
+    this.video_pink.setAlpha(0);
 
     // loading assets after preload
     // this.load.on("complete", () => {
