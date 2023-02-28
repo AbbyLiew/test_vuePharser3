@@ -10,7 +10,7 @@ import ChalkScene from "@/game/scenes/ChalkScene";
 
 function launch(containerId) {
   return new Phaser.Game({
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     parent: containerId,
     backgroundColor: "#FEDDE0",
     width: window.innerWidth * window.devicePixelRatio,

@@ -120,6 +120,7 @@ export default class PinkScene extends Scene {
 
     this.video = this.add.video(0, 0, "pink");
     this.video.setAlpha(0);
+    this.video.stop();
 
     window.video = this.video;
     window.video_reverse = this.video_reverse;

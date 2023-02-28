@@ -4,7 +4,7 @@ export default class YellowScene extends Scene {
   constructor() {
     super({ key: "YellowScene" });
     this.acc = 0;
-    this.video = null;
+    this.video_yellow = null;
 
     this.playedCard1 = false;
     this.playedCard2 = false;
@@ -19,7 +19,7 @@ export default class YellowScene extends Scene {
     this.sprite.setDepth(-1);
     this.hand.setAlpha(0);
     this.hand_white.setAlpha(0);
-    this.video.setAlpha(0);
+    this.video_yellow.setAlpha(0);
 
     this.tweens.killAll();
   }
@@ -54,16 +54,23 @@ export default class YellowScene extends Scene {
   }
 
   vidioFadeIn() {
+    // is tweens is running
+    // if (this.tweens.isTweening(this.video_yellow)) {
+    //   console.log("tweening");
+    //   return;
+    // }
+
+    this.video_yellow.setAlpha(1);
     this.tweens.add({
-      targets: this.video,
+      targets: this.video_yellow,
       alpha: 1,
       duration: 1000,
       ease: "Linear",
       delay: 500,
       onComplete: () => {
-        this.video.play(false, 0, 10);
+        this.video_yellow.play(false, 0, 10);
 
-        this.video.on("complete", () => {
+        this.video_yellow.on("complete", () => {
           this.sprite.setAlpha(1);
           this.sprite.setDepth(2);
 
@@ -125,20 +132,21 @@ export default class YellowScene extends Scene {
     this.hand.setDepth(3);
     this.hand.setAlpha(0);
 
-    this.video = this.add.video(0, 0, "yellow");
-    this.video.setAlpha(1);
+    this.video_yellow = this.add.video(0, 0, "yellow");
+    this.video_yellow.setAlpha(1);
+    this.video_yellow.stop();
 
-    this.video.setDisplaySize(
+    this.video_yellow.setDisplaySize(
       this.sys.game.config.height,
       this.sys.game.config.height
     );
-    this.video.setPosition(
+    this.video_yellow.setPosition(
       this.sys.game.config.width / 2,
       this.sys.game.config.height / 2
     );
 
-    this.video.setDepth(1);
-    this.video.setAlpha(0);
+    this.video_yellow.setDepth(1);
+    this.video_yellow.setAlpha(0);
 
     // loading assets after preload
     // this.load.on("complete", () => {

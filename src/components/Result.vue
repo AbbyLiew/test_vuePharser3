@@ -15,9 +15,19 @@
         >
           <div
             class="imgContainer0"
-            :style="`height : ${innerHeight * 0.35}px;`"
+            :style="`height : ${innerHeight * 0.35}px; position : relative;`"
           >
-            <img src="/result/pop-up.png" />
+            <img src="/result/pop_up.png" />
+            <div class="innerContainerrr">
+              <p :style="`font-size : ${innerHeight * 0.01}px;`">
+                Learn More <br />
+                <a
+                  href="https://singapore.coach.com/coachtabbyshop"
+                  target="_blank"
+                  >Terms & Conditions apply</a
+                >
+              </p>
+            </div>
           </div>
           <div
             class="svgContainerrrr"
@@ -584,5 +594,23 @@ svg {
 }
 .popupModal {
   opacity: 0;
+}
+
+.popupModal .innerContainerrr {
+  position: absolute;
+  /* top: 33.35px; */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6%;
+}
+.innerContainerrr p {
+  color: white;
+  text-align: center;
+  font-family: "Cream-Bold";
+  line-height: 1;
+}
+.innerContainerrr a {
+  color: white;
+  font-family: "Cream-Bold";
 }
 </style>
