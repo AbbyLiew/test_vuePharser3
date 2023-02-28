@@ -13,6 +13,7 @@ import Result from "@/components/Result";
 import IceCream from "@/components/svgs/icescream";
 import Form from "@/components/Form";
 import gsap from "gsap";
+gsap.registerPlugin();
 </script>
 
 <script>

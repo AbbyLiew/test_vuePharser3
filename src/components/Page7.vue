@@ -146,6 +146,7 @@
 
 <script>
 import gsap from "gsap";
+gsap.registerPlugin();
 export default {
   props: {
     next: {

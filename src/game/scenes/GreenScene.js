@@ -1,5 +1,6 @@
 import { Scene, Phaser } from "phaser";
 import gsap from "gsap";
+gsap.registerPlugin();
 export default class GreenScene extends Scene {
   constructor() {
     super({ key: "GreenScene" });

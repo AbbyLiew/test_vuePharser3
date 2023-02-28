@@ -1,5 +1,6 @@
 import { Scene, Phaser } from "phaser";
 import gsap from "gsap";
+gsap.registerPlugin();
 export default class ChalkScene extends Scene {
   constructor() {
     super({ key: "ChalkScene" });

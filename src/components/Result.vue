@@ -15,7 +15,7 @@
         >
           <div
             class="imgContainer0"
-            :style="`height : ${innerHeight * 0.35}px;`"
+            :style="`height : ${innerHeight * 0.4}px;`"
           >
             <img src="/result/pop-up.png" />
           </div>
@@ -180,6 +180,7 @@
 
 <script>
 import gsap from "gsap";
+gsap.registerPlugin();
 import axios from "axios";
 export default {
   name: "Result",
@@ -228,6 +229,7 @@ export default {
       output_color: "pink",
       closeModal: true,
       isloading: false,
+      isTriggerred: false,
     };
   },
   methods: {
@@ -371,7 +373,14 @@ export default {
     quationsData: {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3 } = newVal;
-        if (quation1 && quation2 && quation3 && this.current <= 6) {
+        if (
+          !this.isTriggerred &&
+          quation1 &&
+          quation2 &&
+          quation3 &&
+          this.current <= 6
+        ) {
+          this.isTriggerred = true;
           let result = quation1 + quation2 + quation3;
           result = result.split("");
           result = this.convertResult(result);

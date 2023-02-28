@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
+gsap.registerPlugin();
 let gameInstance = null;
 const containerId = "game-container";
 const game = await import(/* webpackChunkName: "game" */ "@/game/game");
