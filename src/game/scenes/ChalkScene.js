@@ -125,6 +125,7 @@ export default class ChalkScene extends Scene {
 
     this.video = this.add.video(0, 0, "purple");
     this.video.setAlpha(1);
+    this.video.stop();
 
     this.video.setDisplaySize(
       this.sys.game.config.height,

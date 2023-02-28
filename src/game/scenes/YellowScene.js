@@ -127,6 +127,7 @@ export default class YellowScene extends Scene {
 
     this.video = this.add.video(0, 0, "yellow");
     this.video.setAlpha(1);
+    this.video.stop();
 
     this.video.setDisplaySize(
       this.sys.game.config.height,
