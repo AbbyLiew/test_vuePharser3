@@ -33,7 +33,7 @@
           >
             <input
               type="number"
-              placeholder="+65"
+              placeholder="+1"
               class="input left"
               style="width: 20%"
             />
@@ -81,11 +81,12 @@
               CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
               APPLY.
-              <a
-                target="_blank"
-                href="https://singapore.coach.com/security-and-privacy"
-              >
-                VIEW TERMS & PRIVACY.
+              <a target="_blank" href="http://attn.tv/coach/terms.html">
+                VIEW TERMS.
+              </a>
+              &
+              <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
+                PRIVACY.
               </a>
             </label>
           </div>
@@ -156,8 +157,8 @@ export default {
         this.isloading = false;
         return;
       }
-      // check phone format sigapore
-      if (this.phone.length < 8) {
+      // us number length check
+      if (this.phone.length < 10) {
         alert("Please enter a valid mobile number.");
         this.isloading = false;
         return;
@@ -176,7 +177,7 @@ export default {
       // }
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/us", {
+        .get(process.env.VUE_APP_API_URL + "/pop-up/", {
           params: {
             name: this.name,
             phone: this.phone,
