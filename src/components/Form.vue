@@ -12,7 +12,7 @@
           <div class="imgContainer_form">
             <img
               :style="`height : ${innerHeight * 0.01}px;`"
-              src="/icon-icecream_darker.png"
+              src="/pop-up/icon-icecream_darker.png"
               alt=""
             />
           </div>

@@ -5,22 +5,22 @@ export default class BootScene extends Scene {
   }
 
   preload() {
-    this.load.image("logo", "/logo.png");
-    this.load.image("minibox", "/box_bottom.jpg");
-    this.load.image("minibox_top", "/box_top.png");
+    this.load.image("logo", "/pop-up/logo.png");
+    this.load.image("minibox", "/pop-up/box_bottom.jpg");
+    this.load.image("minibox_top", "/pop-up/box_top.png");
 
-    this.load.image("roof", "/roof.png");
-    this.load.image("icon_icecream", "/icon-icecream.png");
+    this.load.image("roof", "/pop-up/roof.png");
+    this.load.image("icon_icecream", "/pop-up/icon-icecream.png");
 
     for (let i = 0; i <= 60; i++) {
       let asset_name =
         "Tabby_Card_Flip_Anim_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/Card_Flip/" + asset_name + ".png");
+      this.load.image(asset_name, "/pop-up/Card_Flip/" + asset_name + ".png");
     }
 
     for (let i = 0; i < 5; i++) {
       let asset_name = "bag_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/bag/" + asset_name + ".png");
+      this.load.image(asset_name, "/pop-up/bag/" + asset_name + ".png");
     }
 
     this.load.on("complete", function () {

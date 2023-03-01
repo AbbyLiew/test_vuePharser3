@@ -2,6 +2,7 @@ const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: "/pop-up",
 
   chainWebpack: (config) => {
     /* disable insertion of assets as data urls b/c Phaser doesn't support it */
@@ -15,6 +16,6 @@ module.exports = defineConfig({
 
   devServer: {
     hot: false,
-    https: true,
+    https: false,
   },
 });

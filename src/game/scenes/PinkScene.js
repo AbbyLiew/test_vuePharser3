@@ -26,12 +26,18 @@ export default class PinkScene extends Scene {
       let assetname = "PinkSET26_" + i.toString().padStart(3, "0");
       this.load.image(
         "pinkset_" + i,
-        "/videos/sequance_pink/" + assetname + ".jpg"
+        "/pop-up/videos/sequance_pink/" + assetname + ".jpg"
       );
     }
-    this.load.video("pink", "/videos/pink_01.mp4", "loadeddata", false, true);
-    this.load.image("hand_pink", "/icon/pink.png");
-    this.load.image("hand_white", "/icon/white.png");
+    this.load.video(
+      "pink",
+      "/pop-up/videos/pink_01.mp4",
+      "loadeddata",
+      false,
+      true
+    );
+    this.load.image("hand_pink", "/pop-up/icon/pink.png");
+    this.load.image("hand_white", "/pop-up/icon/white.png");
   }
 
   vidioFadeIn() {
