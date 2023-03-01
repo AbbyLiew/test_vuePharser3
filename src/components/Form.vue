@@ -12,7 +12,7 @@
           <div class="imgContainer_form">
             <img
               :style="`height : ${innerHeight * 0.01}px;`"
-              src="/pop-up/icon-icecream_darker.png"
+              src="/ca/icon-icecream_darker.png"
               alt=""
             />
           </div>
@@ -20,8 +20,7 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            ENTER YOUR PHONE NUMBER TO <br />DISCOVER YOUR TABBY AND <br />CLAIM
-            YOUR PRIZE
+            ENTER YOUR PHONE NUMBER TO <br />DISCOVER YOUR TABBY
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
@@ -80,9 +79,9 @@
               REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
               CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY.
+              APPLY. VIEW
               <a target="_blank" href="http://attn.tv/coach/terms.html">
-                VIEW TERMS.
+                TERMS
               </a>
               &
               <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
@@ -177,7 +176,7 @@ export default {
       // }
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/pop-up/", {
+        .get(process.env.VUE_APP_API_URL + "/ca/", {
           params: {
             name: this.name,
             phone: this.phone,
