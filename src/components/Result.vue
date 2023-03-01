@@ -128,7 +128,7 @@
             </g>
           </svg>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
+        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <!--  -->
         <div
           :style="`height: ${innerHeight * 0.5}px; width: ${innerWidth}px;`"
