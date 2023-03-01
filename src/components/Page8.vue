@@ -23,8 +23,8 @@
               @click="quationsData.quation7 = 'A'"
             >
               <h6 :class="quationsData.quation7 === 'A' ? '--color_white' : ''">
-                A lip tint and an extra<br />
-                dose of confidence.
+                A compact mirror and an<br />
+                extra dose of confidence.
               </h6>
             </li>
             <li
@@ -61,7 +61,7 @@
               @click="quationsData.quation7 = 'D'"
             >
               <h6 :class="quationsData.quation7 === 'D' ? '--color_white' : ''">
-                My phone and some <br />semblance of sanity.
+                A handknit scarf and <br />some warm words.
               </h6>
             </li>
             <li

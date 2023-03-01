@@ -56,7 +56,12 @@
             class="input"
             v-model="email"
           /> -->
-          <select id="age-range" name="age-range">
+          <select
+            id="age-range"
+            placeholder=""
+            name="age-range"
+            v-bind="ageRange"
+          >
             <option value="">AGE RANGE</option>
             <option value="unser 18">unser 18</option>
             <option value="18 to 26">18 to 26</option>
@@ -67,24 +72,21 @@
 
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
 
-          <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="inputcheckBox">
             <input type="checkbox" id="terms" />
             <label for="terms">
-              By submitting your personal details, you are consenting to your
-              personal data being collected and processed by COACH and its
-              affiliated companies to manage and enhance your customer
-              experience and receive marketing & promotion communications via
-              e-mail. We may transfer your data to our third party back-end
-              service provides and to jurisdictions within or outside your
-              country. Please
+              BY SUBMITTING THIS FORM, YOU AGREE TO RECEIVE RECURRING AUTOMATED
+              PROMOTIONAL AND PERSONALIZED MARKETING TEXT MESSAGES (E.G. CART
+              REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
+              CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
+              AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
+              APPLY.
               <a
                 target="_blank"
                 href="https://singapore.coach.com/security-and-privacy"
               >
-                click here
+                VIEW TERMS & PRIVACY.
               </a>
-              to access our privacy policy.
             </label>
           </div>
         </div>
@@ -129,21 +131,22 @@ export default {
   },
   data() {
     return {
-      email: "",
       name: "",
       phone: "",
+      ageRange: "",
       isloading: false,
     };
   },
   methods: {
     next() {
       this.isloading = true;
+      let age = document.querySelector("select");
 
       // window scroll to top
       window.scrollTo(0, 0);
 
       if (this.phone === "" || this.name === "") {
-        alert("Please fill in your email and mobile and name to proceed.");
+        alert("Please fill in your name and mobile and name to proceed.");
         this.isloading = false;
         return;
       }
@@ -159,6 +162,12 @@ export default {
         this.isloading = false;
         return;
       }
+
+      if (age.value === "") {
+        alert("Please select your age range.");
+        this.isloading = false;
+        return;
+      }
       // email format check
       // if (!this.email.includes("@") && !this.email.includes(".")) {
       //   alert("Please enter a valid email address.");
@@ -167,11 +176,11 @@ export default {
       // }
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/sg", {
+        .get(process.env.VUE_APP_API_URL + "/us", {
           params: {
             name: this.name,
-            email: this.email,
             phone: this.phone,
+            ageRange: age.value,
           },
         })
         .then((response) => {
@@ -233,9 +242,15 @@ export default {
   font-family: "Cream-Bold";
   color: #ff99a7 !important;
   font-size: 2vh;
+  border: none;
+  border-radius: 0;
+}
+.input.left {
+  border-radius: 0;
 }
 .inputcheckBox {
   display: flex;
+  margin-top: 1rem;
 }
 .inputcheckBox input {
   margin: 0;
@@ -312,6 +327,8 @@ select {
   background-repeat: no-repeat;
   background-position: left 1rem center;
   background-size: 1em;
+  text-align-last: center;
+  background-color: white;
 }
 select:focus-visible {
   outline: none;
@@ -325,6 +342,7 @@ option {
   color: #ff99a7;
   text-align: center;
   font-family: "Cream-Bold";
+  text-align: -webkit-center;
 }
 
 select option:hover {
