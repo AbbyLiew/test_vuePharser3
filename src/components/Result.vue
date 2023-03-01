@@ -131,12 +131,12 @@
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <!--  -->
         <div
-          :style="`height: ${innerHeight * 0.55}px; width: ${innerWidth}px;`"
+          :style="`height: ${innerHeight * 0.5}px; width: ${innerWidth}px;`"
           class="imgContainer_icecream"
         >
           <div
             class="imgContainer1"
-            :style="`height: ${innerHeight * 0.55}px; width: ${
+            :style="`height: ${innerHeight * 0.5}px; width: ${
               (innerHeight * 0.5 * 315) / 418
             }px;`"
           />
