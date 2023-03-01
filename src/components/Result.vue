@@ -17,7 +17,7 @@
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
           >
-            <img src="/result/pop-up.png" />
+            <img src="/pop-up/result/pop-up.png" />
           </div>
           <div
             class="svgContainerrrr"
@@ -128,19 +128,19 @@
             </g>
           </svg>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
+        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <!--  -->
         <div
-          :style="`height: ${innerHeight * 0.5}px; width: ${innerWidth}px;`"
+          :style="`height: ${innerHeight * 0.55}px; width: ${innerWidth}px;`"
           class="imgContainer_icecream"
         >
           <div
             class="imgContainer1"
-            :style="`height: ${innerHeight * 0.5}px; width: ${
+            :style="`height: ${innerHeight * 0.55}px; width: ${
               (innerHeight * 0.5 * 315) / 418
             }px;`"
           />
-          <img :src="`/result/FN${this.output_color}.png`" />
+          <img :src="`/pop-up/result/FN${this.output_color}.png`" />
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
@@ -251,19 +251,19 @@ export default {
       let storylink = "";
       switch (this.output_color) {
         case "pink":
-          storylink = "/StoryDownloadSIZE/PINK_story.mp4";
+          storylink = "/pop-up/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
-          storylink = "/StoryDownloadSIZE/GREEN_story.mp4";
+          storylink = "/pop-up/StoryDownloadSIZE/GREEN_story.mp4";
           break;
         case "yellow":
-          storylink = "/StoryDownloadSIZE/YELLOW_story.mp4";
+          storylink = "/pop-up/StoryDownloadSIZE/YELLOW_story.mp4";
           break;
         case "purple":
-          storylink = "/StoryDownloadSIZE/PURPLE_story.mp4";
+          storylink = "/pop-up/StoryDownloadSIZE/PURPLE_story.mp4";
           break;
         case "cream":
-          storylink = "/StoryDownloadSIZE/CHALK_story.mp4";
+          storylink = "/pop-up/StoryDownloadSIZE/CHALK_story.mp4";
           break;
       }
       button.addEventListener("click", async (event) => {
@@ -345,14 +345,14 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL + "/sg", {
-            params: {
-              name: window.localStorage.getItem("name"),
-              email: window.localStorage.getItem("email"),
-              phone: window.localStorage.getItem("phone"),
-              output_color: this.output_color,
-            },
-          });
+          // axios.get(process.env.VUE_APP_API_URL + "/sg", {
+          //   params: {
+          //     name: window.localStorage.getItem("name"),
+          //     email: window.localStorage.getItem("email"),
+          //     phone: window.localStorage.getItem("phone"),
+          //     output_color: this.output_color,
+          //   },
+          // });
           window.switchScene();
           let body = document.querySelector("body");
           if (this.output_color === "cream") {

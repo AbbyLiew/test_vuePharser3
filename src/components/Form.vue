@@ -49,13 +49,22 @@
           </div>
           <!-- email -->
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
-          <input
+          <!-- <input
             type="text"
             placeholder="EMAIL"
             style="color: #ff99a7"
             class="input"
             v-model="email"
-          />
+          /> -->
+          <select id="age-range" name="age-range">
+            <option value="">AGE RANGE</option>
+            <option value="unser 18">unser 18</option>
+            <option value="18 to 26">18 to 26</option>
+            <option value="27 to 42">27 to 42</option>
+            <option value="43 to 58">43 to 58</option>
+            <option value="59 +">59 +</option>
+          </select>
+
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
 
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
@@ -133,7 +142,7 @@ export default {
       // window scroll to top
       window.scrollTo(0, 0);
 
-      if (this.email === "" || this.phone === "" || this.name === "") {
+      if (this.phone === "" || this.name === "") {
         alert("Please fill in your email and mobile and name to proceed.");
         this.isloading = false;
         return;
@@ -151,11 +160,11 @@ export default {
         return;
       }
       // email format check
-      if (!this.email.includes("@") && !this.email.includes(".")) {
-        alert("Please enter a valid email address.");
-        this.isloading = false;
-        return;
-      }
+      // if (!this.email.includes("@") && !this.email.includes(".")) {
+      //   alert("Please enter a valid email address.");
+      //   this.isloading = false;
+      //   return;
+      // }
 
       axios
         .get(process.env.VUE_APP_API_URL + "/sg", {
@@ -288,5 +297,38 @@ label {
 
 .loadingBTN h4 {
   margin: 0;
+}
+
+select {
+  font-size: 2vh;
+  padding: 1.2vh;
+  font-family: "Cream-Bold";
+  color: #ff99a7 !important;
+  border: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmY5OWE3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iNiA5IDEyIDE1IDE4IDkiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1em;
+}
+select:focus-visible {
+  outline: none;
+  border: #ff99a7 1px solid;
+}
+
+select::-ms-expand {
+  border-radius: 0%;
+}
+option {
+  color: #ff99a7;
+  text-align: center;
+  font-family: "Cream-Bold";
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 100px #1882a8 inset;
+  color: white;
 }
 </style>

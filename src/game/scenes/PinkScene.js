@@ -140,6 +140,7 @@ export default class PinkScene extends Scene {
 
     this.video.setDepth(1);
     this.video.setAlpha(0);
+    this.video.stop();
 
     // loading assets after preload
     // this.load.on("complete", () => {
@@ -227,10 +228,10 @@ export default class PinkScene extends Scene {
             opacity: 1,
             duration: 0.5,
           });
-          gsap.to(".popupModal", {
-            opacity: 1,
-            delay: 2.5,
-          });
+          // gsap.to(".popupModal", {
+          //   opacity: 1,
+          //   delay: 2.5,
+          // });
         }
       } else if (e.downX < e.x) {
         if (this.playedCard2 === true) {
