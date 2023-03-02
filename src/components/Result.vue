@@ -229,6 +229,7 @@ export default {
       output_color: "pink",
       closeModal: true,
       isloading: false,
+      isTriigered: false,
     };
   },
   methods: {
@@ -369,7 +370,13 @@ export default {
     quationsData: {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3 } = newVal;
-        if (quation1 && quation2 && quation3 && this.current <= 6) {
+        if (
+          !isTriigered &&
+          quation1 &&
+          quation2 &&
+          quation3 &&
+          this.current <= 6
+        ) {
           let result = quation1 + quation2 + quation3;
           result = result.split("");
           result = this.convertResult(result);
