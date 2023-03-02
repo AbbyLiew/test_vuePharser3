@@ -371,7 +371,7 @@ export default {
       handler: function (newVal, oldVal) {
         const { quation1, quation2, quation3 } = newVal;
         if (
-          !isTriigered &&
+          !this.isTriigered &&
           quation1 &&
           quation2 &&
           quation3 &&
