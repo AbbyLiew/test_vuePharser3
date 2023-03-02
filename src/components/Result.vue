@@ -377,6 +377,7 @@ export default {
           quation3 &&
           this.current <= 6
         ) {
+          this.isTriigered = true;
           let result = quation1 + quation2 + quation3;
           result = result.split("");
           result = this.convertResult(result);
