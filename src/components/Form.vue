@@ -63,7 +63,7 @@
             v-bind="ageRange"
           >
             <option value="">AGE RANGE</option>
-            <option value="unser 18">unser 18</option>
+            <option value="under 18">under 18</option>
             <option value="18 to 26">18 to 26</option>
             <option value="27 to 42">27 to 42</option>
             <option value="43 to 58">43 to 58</option>
