@@ -190,7 +190,8 @@ export default {
 
           if (response.data.message?.statusCode === 400) {
             this.isloading = false;
-            alert(response.data.message.body);
+            let message = JSON.parse(response.data.message.body);
+            alert(message.message);
           } else {
             this.isloading = false;
             this.$emit("triggerAnimation");
