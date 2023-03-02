@@ -32,7 +32,7 @@
                 "
               >
                 <img
-                  src="/pop-up/mall.png"
+                  src="/us-popup/mall.png"
                   alt="01shoes"
                   style="rotate: -25deg"
                 />
@@ -57,7 +57,7 @@
               >
                 <!-- <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" /> -->
                 <img
-                  src="/pop-up/manifesting.png"
+                  src="/us-popup/manifesting.png"
                   alt="03shoes"
                   style="rotate: 15deg"
                 />
@@ -86,7 +86,7 @@
                   style="rotate: 35deg"
                 /> -->
                 <img
-                  src="/pop-up/hot.png"
+                  src="/us-popup/hot.png"
                   alt="05shoes"
                   style="rotate: -15deg"
                 />
@@ -110,7 +110,7 @@
                 "
               >
                 <img
-                  src="/pop-up/love.png"
+                  src="/us-popup/love.png"
                   alt="04shoes"
                   style="rotate: -15deg"
                 />
@@ -136,7 +136,7 @@
               >
                 <!-- <img src="/hot.png" alt="05shoes" style="rotate: 45deg" /> -->
                 <img
-                  src="/pop-up/brunch.png"
+                  src="/us-popup/brunch.png"
                   alt="02shoes"
                   style="rotate: 15deg"
                 />

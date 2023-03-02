@@ -17,7 +17,7 @@
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
           >
-            <img src="/pop-up/result/pop-up.png" />
+            <img src="/us-popup/result/us-popup.png" />
           </div>
           <div
             class="svgContainerrrr"
@@ -140,7 +140,7 @@
               (innerHeight * 0.5 * 315) / 418
             }px;`"
           />
-          <img :src="`/pop-up/result/FN${this.output_color}.png`" />
+          <img :src="`/us-popup/result/FN${this.output_color}.png`" />
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
@@ -252,19 +252,19 @@ export default {
       let storylink = "";
       switch (this.output_color) {
         case "pink":
-          storylink = "/pop-up/StoryDownloadSIZE/PINK_story.mp4";
+          storylink = "/us-popup/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
-          storylink = "/pop-up/StoryDownloadSIZE/GREEN_story.mp4";
+          storylink = "/us-popup/StoryDownloadSIZE/GREEN_story.mp4";
           break;
         case "yellow":
-          storylink = "/pop-up/StoryDownloadSIZE/YELLOW_story.mp4";
+          storylink = "/us-popup/StoryDownloadSIZE/YELLOW_story.mp4";
           break;
         case "purple":
-          storylink = "/pop-up/StoryDownloadSIZE/PURPLE_story.mp4";
+          storylink = "/us-popup/StoryDownloadSIZE/PURPLE_story.mp4";
           break;
         case "cream":
-          storylink = "/pop-up/StoryDownloadSIZE/CHALK_story.mp4";
+          storylink = "/us-popup/StoryDownloadSIZE/CHALK_story.mp4";
           break;
       }
       button.addEventListener("click", async (event) => {

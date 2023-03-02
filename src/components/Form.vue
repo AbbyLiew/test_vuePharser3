@@ -12,7 +12,7 @@
           <div class="imgContainer_form">
             <img
               :style="`height : ${innerHeight * 0.01}px;`"
-              src="/pop-up/icon-icecream_darker.png"
+              src="/us-popup/icon-icecream_darker.png"
               alt=""
             />
           </div>
@@ -177,7 +177,7 @@ export default {
       // }
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/pop-up/", {
+        .get(process.env.VUE_APP_API_URL + "/us-popup/", {
           params: {
             name: this.name,
             phone: this.phone,
