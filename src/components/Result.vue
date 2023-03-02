@@ -17,7 +17,7 @@
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
           >
-            <img src="/us-popup/result/us-popup.png" />
+            <img src="/us-popup/result/pop-up.png" />
           </div>
           <div
             class="svgContainerrrr"
