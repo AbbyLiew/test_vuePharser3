@@ -26,18 +26,18 @@ export default class PurpleScene extends Scene {
 
       this.load.image(
         "PurpleSet_" + i,
-        "/pop-up/videos/sequance_purple/" + assetname + ".jpg"
+        "/us-store/videos/sequance_purple/" + assetname + ".jpg"
       );
     }
     this.load.video(
       "purple",
-      "/pop-up/videos/purple_01.mp4",
+      "/us-store/videos/purple_01.mp4",
       "loadeddata",
       false,
       true
     );
-    this.load.image("hand_violet", "/pop-up/icon/lightviolet.png");
-    this.load.image("hand_white", "/pop-up/icon/white.png");
+    this.load.image("hand_violet", "/us-store/icon/lightviolet.png");
+    this.load.image("hand_white", "/us-store/icon/white.png");
   }
 
   horizontalMove(target) {

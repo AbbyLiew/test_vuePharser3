@@ -26,18 +26,18 @@ export default class GreenScene extends Scene {
 
       this.load.image(
         "GreenSET_" + i,
-        "/pop-up/videos/sequance_green/" + assetname + ".jpg"
+        "/us-store/videos/sequance_green/" + assetname + ".jpg"
       );
     }
     this.load.video(
       "purple",
-      "/pop-up/videos/green_01.mp4",
+      "/us-store/videos/green_01.mp4",
       "loadeddata",
       false,
       true
     );
-    this.load.image("hand_green", "/pop-up/icon/lightgreen.png");
-    this.load.image("hand_white", "/pop-up/icon/white.png");
+    this.load.image("hand_green", "/us-store/icon/lightgreen.png");
+    this.load.image("hand_white", "/us-store/icon/white.png");
   }
 
   horizontalMove(target) {
