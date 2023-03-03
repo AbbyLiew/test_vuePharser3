@@ -177,7 +177,6 @@
     </div>
   </div>
 </template>
->
 
 <script>
 import gsap from "gsap";
