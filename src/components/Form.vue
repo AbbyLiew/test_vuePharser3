@@ -20,8 +20,8 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            ENTER YOUR PHONE NUMBER TO <br />DISCOVER YOUR TABBY AND <br />CLAIM
-            YOUR PRIZE
+            STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY AND GET <br />THE
+            INSIDE SCOOP ON ALL THE <br />THINGS COACH
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
@@ -82,11 +82,11 @@
               AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
               APPLY.
               <a target="_blank" href="http://attn.tv/coach/terms.html">
-                VIEW TERMS.
+                VIEW TERMS
               </a>
               &
               <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
-                PRIVACY.
+                PRIVACY
               </a>
             </label>
           </div>

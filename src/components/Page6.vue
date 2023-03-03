@@ -84,7 +84,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
-                My homies Ben & Jerry
+                A pint of ice cream
               </h6>
             </li>
             <li
