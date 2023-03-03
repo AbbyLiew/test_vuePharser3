@@ -148,10 +148,10 @@ export default {
   },
 
   mounted() {
-    window.addEventListener("resize", () => {
-      this.innerHeight = window.innerHeight;
-      this.innerWidth = window.innerWidth;
-    });
+    // window.addEventListener("resize", () => {
+    //   this.innerHeight = window.innerHeight;
+    //   this.innerWidth = window.innerWidth;
+    // });
     window.setIsloading = this.setIsloading;
     window.postfunction = this.postfunction;
 
