@@ -229,7 +229,7 @@ export default {
   color: #ff99a7 !important;
 }
 .imgContainer_form {
-  height: 15%;
+  height: 20%;
   width: fit-content;
   margin: 0 auto;
 }
