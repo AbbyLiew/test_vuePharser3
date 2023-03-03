@@ -11,7 +11,7 @@
         >
           <h2 :style="`text-align : center`">
             Who or what helps <br />
-            you to overcome<br />
+            you overcome<br />
             obstacles?
           </h2>
           <ul class="ul_extra_padding">

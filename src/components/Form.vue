@@ -63,11 +63,11 @@
             v-bind="ageRange"
           >
             <option value="">AGE RANGE</option>
-            <option value="unser 18">under 18</option>
-            <option value="18 to 26">18 to 26</option>
-            <option value="27 to 42">27 to 42</option>
-            <option value="43 to 58">43 to 58</option>
-            <option value="59 +">59 +</option>
+            <option value="18-25">18-25</option>
+            <option value="26-32">26-32</option>
+            <option value="33-41">33-41</option>
+            <option value="42-57">42-57</option>
+            <option value="58 +">58 +</option>
           </select>
 
           <div class="block" :style="`height: ${innerHeight * 0.01}px;`" />
