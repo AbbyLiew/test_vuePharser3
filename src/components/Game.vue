@@ -148,12 +148,13 @@ export default {
   },
 
   mounted() {
-    window.addEventListener("resize", () => {
-      this.innerHeight = window.innerHeight;
-      this.innerWidth = window.innerWidth;
-    });
+    // window.addEventListener("resize", () => {
+    //   this.innerHeight = window.innerHeight;
+    //   this.innerWidth = window.innerWidth;
+    // });
     window.setIsloading = this.setIsloading;
     window.postfunction = this.postfunction;
+    // if is instagram app
 
     // env file
     window.env = {
@@ -166,7 +167,10 @@ export default {
 
 <template>
   <Suspense>
-    <section :style="`width : ${innerWidth}px; height : ${innerHeight}px;`">
+    <section
+      :style="`width : ${innerWidth}px; height : ${innerHeight}px;`"
+      class="mainContainer"
+    >
       <!-- if window resize -->
       <PhaserContainer :current="current" />
       <section

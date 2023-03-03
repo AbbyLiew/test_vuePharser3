@@ -1,5 +1,8 @@
 <template>
-  <div class="page1" :style="`height : ${innerHeight}px`">
+  <div
+    class="page1"
+    :style="`height : ${innerHeight}px; width : ${innerWidth}px`"
+  >
     <div class="block" :style="`height : ${innerHeight * 0.16}px`" />
     <img
       src="/us-store/TabbyGame_sticker.png"

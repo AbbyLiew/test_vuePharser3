@@ -16,23 +16,6 @@ import "./index.css";
 </template>
 
 <!-- hooks for get window dimension -->
-<script>
-import { onMounted, onUnmounted, ref } from "vue";
-const width = ref(window.innerWidth);
-const height = ref(window.innerHeight);
-const resize = () => {
-  width.value = window.innerWidth;
-  height.value = window.innerHeight;
-};
-
-onMounted(() => {
-  window.addEventListener("resize", resize);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("resize", resize);
-});
-</script>
 
 <style lang="scss">
 body {

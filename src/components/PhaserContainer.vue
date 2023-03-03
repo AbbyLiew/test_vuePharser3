@@ -9,10 +9,11 @@ const game_desktop = await import(
 );
 
 onMounted(() => {
+  gameInstance = game.launch(containerId);
   if (window.innerWidth > 768) {
-    gameInstance = game_desktop.launch(containerId);
-  } else {
-    gameInstance = game.launch(containerId);
+    if (navigator.userAgent.match(/Instagram/i)) {
+      window.location.reload();
+    }
   }
 });
 
@@ -48,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <div :style="`height : ${innerHeight}px;`">
+  <div :style="`height : ${innerHeight}px; width : ${innerWidth}px`">
     <div
       :id="containerId"
       :class="current === 11 ? 'game_container' : ''"
