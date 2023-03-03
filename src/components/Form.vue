@@ -21,7 +21,7 @@
 
           <h5 style="text-align: center">
             STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY AND GET <br />THE
-            INSIDE SCOOP ON ALL THE <br />THINGS COACH
+            INSIDE SCOOP ON ALL<br />THINGS COACH
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
