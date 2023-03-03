@@ -5,13 +5,13 @@
       <div>
         <div
           class="container"
-          :style="`height : ${innerHeight * 0.6}px; width : ${
+          :style="`height : ${innerHeight * 0.65}px; width : ${
             (innerHeight * 0.55 * 736) / 1103
           }px; margin-top : ${innerHeight * -0.05}px;`"
         >
           <div class="imgContainer_form">
             <img
-              :style="`height : ${innerHeight * 0.01}px;`"
+              :style="`height : ${innerHeight * 0.005}px;`"
               src="/us-store/icon-icecream_darker.png"
               alt=""
             />
@@ -29,7 +29,12 @@
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
           <!-- mobile -->
           <div
-            style="display: flex; justify-content: space-between; width: 100%"
+            style="
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              padding: 0;
+            "
           >
             <input
               type="number"
@@ -224,7 +229,7 @@ export default {
   color: #ff99a7 !important;
 }
 .imgContainer_form {
-  height: 25%;
+  height: 15%;
   width: fit-content;
   margin: 0 auto;
 }
