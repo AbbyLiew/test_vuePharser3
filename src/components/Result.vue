@@ -150,7 +150,7 @@
             :style="`width : ${innerWidth * 0.45}px`"
           >
             <h4 v-if="!isloading">SHARE THE VIDEO</h4>
-            <div v-if="isloading" class="loader"></div>
+            <div v-if="isloading" class="loader tosmall"></div>
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -269,6 +269,9 @@ export default {
       }
       button.addEventListener("click", async (event) => {
         this.isloading = true;
+        setTimeout(() => {
+          this.isloading = false;
+        }, 2000);
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
@@ -600,5 +603,15 @@ svg {
 }
 .sharebutton h4 {
   margin: 0 !important;
+}
+.sharebutton h4 {
+  margin: 0 !important;
+  font-family: "Cream-Bold" !important;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.tosmall {
+  width: 0.6rem !important;
+  height: 0.6rem !important;
 }
 </style>
