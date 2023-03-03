@@ -149,7 +149,8 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            SHARE THE VIDEO
+            <h4 v-if="!isloading">SHARE THE VIDEO</h4>
+            <div v-if="isloading" class="loader"></div>
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -295,6 +296,7 @@ export default {
               let a = document.createElement("a");
               a.href = window.URL.createObjectURL(blob);
               a.download = this.output_color + "_story";
+              this.isloading = false;
               a.click();
             }
           });
