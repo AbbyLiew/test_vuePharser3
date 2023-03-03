@@ -598,4 +598,7 @@ svg {
 .popupModal {
   opacity: 0;
 }
+.sharebutton h4 {
+  margin: 0 !important;
+}
 </style>
