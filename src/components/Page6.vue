@@ -11,7 +11,7 @@
         >
           <h2 :style="`text-align : center`">
             Who or what helps <br />
-            you to overcome<br />
+            you overcome<br />
             obstacles?
           </h2>
           <ul class="ul_extra_padding">
@@ -84,7 +84,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
-                My homies Ben & Jerry
+                A pint of ice cream
               </h6>
             </li>
             <li

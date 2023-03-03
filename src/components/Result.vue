@@ -149,7 +149,8 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            SHARE THE VIDEO
+            <h4 v-if="!isloadinggg">SHARE THE VIDEO</h4>
+            <div v-if="isloadinggg" class="loader"></div>
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -230,6 +231,7 @@ export default {
       closeModal: true,
       isloading: false,
       isTriigered: false,
+      isloadinggg: false,
     };
   },
   methods: {
@@ -268,7 +270,7 @@ export default {
           break;
       }
       button.addEventListener("click", async (event) => {
-        this.isloading = true;
+        this.isloadinggg = true;
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
@@ -285,6 +287,7 @@ export default {
                 })
                 .then(() => {
                   this.isloading = false;
+                  this.isloadinggg = false;
                   console.log("Thanks for sharing!");
                 })
                 .catch(console.error);
@@ -293,6 +296,8 @@ export default {
               a.href = window.URL.createObjectURL(blob);
               a.download = this.output_color + "_story";
               a.click();
+              this.isloading = false;
+              this.isloadinggg = false;
             }
           });
       });
@@ -592,5 +597,12 @@ svg {
 }
 .popupModal {
   opacity: 0;
+}
+.sharebutton {
+  display: flex;
+  justify-content: center;
+}
+.sharebutton h4 {
+  margin: 0 !important;
 }
 </style>
