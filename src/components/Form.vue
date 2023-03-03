@@ -20,7 +20,8 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            ENTER YOUR PHONE NUMBER TO <br />DISCOVER YOUR TABBY
+            STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY AND GET <br />THE
+            INSIDE SCOOP ON ALL THE <br />THINGS COACH
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />

@@ -381,7 +381,7 @@ export default {
             />
 
             <div class="line_inner_font">
-              <h5>{{ current - 4 }} / 7</h5>
+              <h5>{{ current - 3 }} / 8</h5>
             </div>
           </div>
         </transition>
