@@ -149,7 +149,8 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            SHARE THE VIDEO
+            <h4 v-if="!isloading">SHARE THE VIDEO</h4>
+            <div v-if="isloading" class="loader"></div>
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -592,5 +593,8 @@ svg {
 }
 .popupModal {
   opacity: 0;
+}
+.sharebutton h4 {
+  margin: 0 !important;
 }
 </style>
