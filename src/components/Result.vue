@@ -598,6 +598,10 @@ svg {
 .popupModal {
   opacity: 0;
 }
+.sharebutton {
+  display: flex;
+  justify-content: center;
+}
 .sharebutton h4 {
   margin: 0 !important;
 }
