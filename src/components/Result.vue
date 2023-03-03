@@ -293,6 +293,7 @@ export default {
               let a = document.createElement("a");
               a.href = window.URL.createObjectURL(blob);
               a.download = this.output_color + "_story";
+              this.isloading = false;
               a.click();
             }
           });
@@ -593,6 +594,10 @@ svg {
 }
 .popupModal {
   opacity: 0;
+}
+.sharebutton {
+  display: flex;
+  justify-content: center;
 }
 .sharebutton h4 {
   margin: 0 !important;
