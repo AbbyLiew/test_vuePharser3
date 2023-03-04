@@ -272,7 +272,7 @@ export default {
       button.addEventListener("click", async (event) => {
         this.isloadinggg = true;
         setTimeout(() => {
-          this.isloading = false;
+          this.isloadinggg = false;
         }, 2000);
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
