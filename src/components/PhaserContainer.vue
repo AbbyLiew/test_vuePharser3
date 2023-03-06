@@ -11,8 +11,8 @@ const game_desktop = await import(
 
 onMounted(() => {
   gameInstance = game.launch(containerId);
-  if (window.innerWidth > 768) {
-    if (navigator.userAgent.match(/Instagram/i)) {
+  if (navigator.userAgent.match(/Instagram/i)) {
+    if (window.innerWidth > 768) {
       window.location.reload();
     }
   }
