@@ -602,7 +602,19 @@ svg {
   display: flex;
   justify-content: center;
 }
+
+.sharebutton {
+  display: flex;
+  justify-content: center;
+}
 .sharebutton h4 {
   margin: 0 !important;
+  font-family: "Cream-Bold" !important;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.tosmall {
+  width: 0.6rem !important;
+  height: 0.6rem !important;
 }
 </style>
