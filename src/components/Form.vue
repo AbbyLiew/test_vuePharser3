@@ -20,8 +20,9 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY AND GET <br />THE
-            INSIDE SCOOP ON ALL <br />THINGS COACH
+            STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY<br />
+            AND GET THE INSIDE SCOOP<br />
+            ON ALL THINGS COACH
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
