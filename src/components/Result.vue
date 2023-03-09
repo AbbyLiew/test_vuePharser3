@@ -247,7 +247,10 @@ export default {
     toshop() {
       // open new tab to link
       // version-country
-      window.open("https://www.coach.com/tabby-tour", "_blank");
+      window.open(
+        "https://www.coach.com/shop/women/collections/tabby",
+        "_blank"
+      );
     },
     shareButton() {
       let button = document.getElementById("shareButton");
