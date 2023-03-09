@@ -350,14 +350,14 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          // axios.get(process.env.VUE_APP_API_URL + "/us", {
-          //   params: {
-          //     name: window.localStorage.getItem("name"),
-          //     email: window.localStorage.getItem("email"),
-          //     phone: window.localStorage.getItem("phone"),
-          //     output_color: this.output_color,
-          //   },
-          // });
+          axios.get(process.env.VUE_APP_API_URL_SG + "/us-collect", {
+            params: {
+              name: window.localStorage.getItem("name"),
+              email: window.localStorage.getItem("email"),
+              phone: window.localStorage.getItem("phone"),
+              output_color: this.output_color,
+            },
+          });
           window.switchScene();
           let body = document.querySelector("body");
           if (this.output_color === "cream") {
