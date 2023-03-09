@@ -354,7 +354,7 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL_SG + "/us-collect", {
+          axios.get(process.env.VUE_APP_API_URL_SG + "/us-store-collect", {
             params: {
               name: window.localStorage.getItem("name"),
               email: window.localStorage.getItem("email"),
