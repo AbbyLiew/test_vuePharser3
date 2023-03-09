@@ -28,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'A' ? '--color_white' : ''">
-                The fearless hero
+                The fearless hero.
               </h6>
             </li>
             <li
@@ -46,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'B' ? '--color_white' : ''">
-                The reliable best friend
+                The reliable <br />best friend.
               </h6>
             </li>
             <li
@@ -64,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                The sassy frenemy
+                The sassy frenemy.
               </h6>
             </li>
             <li
@@ -82,7 +82,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
-                The bleeding heart
+                The sentimental <br />sweetheart.
               </h6>
             </li>
             <li
@@ -100,7 +100,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'E' ? '--color_white' : ''">
-                The wild card
+                The wild card.
               </h6>
             </li>
           </ul>
