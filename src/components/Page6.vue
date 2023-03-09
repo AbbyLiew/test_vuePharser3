@@ -30,7 +30,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                My go-to hype songs
+                My go-to hype songs.
               </h6>
             </li>
             <li
@@ -48,7 +48,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                Netflix and chill
+                TV (the more mindless, the better).
               </h6>
             </li>
             <li
@@ -66,7 +66,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'C' ? '--color_white' : ''">
-                (Retail) therapy
+                (Retail) therapy.
               </h6>
             </li>
             <li
@@ -84,7 +84,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
-                A pint of ice cream
+                A pint of ice cream.
               </h6>
             </li>
             <li
@@ -102,7 +102,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'E' ? '--color_white' : ''">
-                The weekend
+                The weekend.
               </h6>
             </li>
           </ul>

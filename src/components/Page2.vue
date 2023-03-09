@@ -54,7 +54,7 @@
                 <h6
                   :class="quationsData.quation1 === 'A' ? '--color_white' : ''"
                 >
-                  Bright and bold
+                  Bright and bold.
                 </h6>
               </li>
               <li
@@ -74,7 +74,7 @@
                 <h6
                   :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
                 >
-                  Comfortable and casual
+                  Comfortable and casual.
                 </h6>
               </li>
               <li
@@ -94,7 +94,7 @@
                 <h6
                   :class="quationsData.quation1 === 'C' ? '--color_white' : ''"
                 >
-                  Trendy and chic
+                  Trendy and chic.
                 </h6>
               </li>
               <li
@@ -114,7 +114,7 @@
                 <h6
                   :class="quationsData.quation1 === 'D' ? '--color_white' : ''"
                 >
-                  Moody and nostalgic
+                  Moody and nostalgic.
                 </h6>
               </li>
               <li
@@ -134,7 +134,7 @@
                 <h6
                   :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
                 >
-                  How I feel when <br />I wake up
+                  How I feel when <br />I wake up.
                 </h6>
               </li>
             </ul>
