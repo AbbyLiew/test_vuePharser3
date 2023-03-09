@@ -182,6 +182,10 @@ export default {
       //   return;
       // }
 
+      window.localStorage.setItem("name", this.name);
+      window.localStorage.setItem("email", this.email);
+      window.localStorage.setItem("phone", this.phone);
+
       axios
         .get(process.env.VUE_APP_API_URL + "/us-store/", {
           params: {
