@@ -48,7 +48,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                TV (the more mindless, the better).
+                TV (the more mindless, <br />the better).
               </h6>
             </li>
             <li

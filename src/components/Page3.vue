@@ -46,7 +46,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'B' ? '--color_white' : ''">
-                The reliable best friend.
+                The reliable<br />
+                best friend.
               </h6>
             </li>
             <li
@@ -64,7 +65,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                The sassy frenemy.
+                The sassy <br />frenemy.
               </h6>
             </li>
             <li
@@ -82,7 +83,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
-                The sentimental sweetheart.
+                The sentimental <br />sweetheart.
               </h6>
             </li>
             <li

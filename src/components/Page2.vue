@@ -74,7 +74,8 @@
                 <h6
                   :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
                 >
-                  Comfortable and casual.
+                  Comfortable <br />
+                  and casual.
                 </h6>
               </li>
               <li
@@ -114,7 +115,7 @@
                 <h6
                   :class="quationsData.quation1 === 'D' ? '--color_white' : ''"
                 >
-                  Moody and nostalgic.
+                  Moody <br />and nostalgic.
                 </h6>
               </li>
               <li
@@ -134,7 +135,7 @@
                 <h6
                   :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
                 >
-                  How I feel when <br />I wake up.
+                  How I feel <br />when I wake up.
                 </h6>
               </li>
             </ul>

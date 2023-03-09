@@ -29,7 +29,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                What Could Go Wrong?
+                What Could<br />
+                Go Wrong?
               </h6>
             </li>
             <li
@@ -83,7 +84,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
-                Confessions of a Serial Softie
+                Confessions of<br />
+                a Serial Softie
               </h6>
             </li>
 
@@ -102,7 +104,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
-                Life Is Like a Box of Chocolates…
+                Life Is Like a Box of <br />Chocolates…
               </h6>
             </li>
           </ul>
