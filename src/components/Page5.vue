@@ -26,8 +26,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                Living Rent Free<br />
-                (in your head)
+                What Could <br />
+                Go Wrong?
               </h6>
             </li>
             <li
@@ -45,7 +45,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'B' ? '--color_white' : ''">
-                Periodt
+                I Told You So
               </h6>
             </li>
             <li
@@ -63,7 +63,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
-                Understood <br />the Assignment
+                All Ways, Always!
               </h6>
             </li>
             <li
@@ -81,7 +81,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
-                Issa Vibe
+                Confessions of <br />a Serial Softie
               </h6>
             </li>
 
@@ -100,7 +100,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
-                We Outside
+                Life Is Like a Box of <br />Chocolates…
               </h6>
             </li>
           </ul>
