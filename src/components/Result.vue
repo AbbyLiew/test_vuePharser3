@@ -350,7 +350,7 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL_SG + "/us-collect", {
+          axios.get(process.env.VUE_APP_API_URL_SG + "/us-popup-collect", {
             params: {
               email: window.localStorage.getItem("name"),
               phone: window.localStorage.getItem("phone"),
