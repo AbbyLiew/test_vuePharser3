@@ -101,12 +101,12 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'E' ? '--color_white' : ''">
-                Une pinte de crème glacée.
+                Le weekend.
               </h6>
             </li>
           </ul>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
+        k
         <div class="btn-next">
           <button @click="next">back</button>
         </div>

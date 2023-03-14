@@ -149,7 +149,7 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            <h4 v-if="!isloadinggg">SHARE THE VIDEO</h4>
+            <h4 v-if="!isloadinggg">PARTAGEZ VOS RÉSULTATS</h4>
             <div v-if="isloadinggg" class="loader tosmall"></div>
           </button>
         </div>
@@ -160,7 +160,7 @@
             :style="`width : ${innerWidth * 0.45}px`"
             @click="toshop"
           >
-            SHOP TABBY
+            MAGASINER LES SACS TABBY
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -170,7 +170,7 @@
             :style="`width : ${innerWidth * 0.45}px`"
             @click="restart"
           >
-            PLAY AGAIN
+            REJOUER
           </button>
         </div>
       </div>
