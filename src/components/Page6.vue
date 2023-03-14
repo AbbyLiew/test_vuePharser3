@@ -10,9 +10,8 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            Who or what helps <br />
-            you overcome<br />
-            obstacles?
+            Qui ou quoi vous aide<br />
+            à surmonter les <br />obstacles?
           </h2>
           <ul class="ul_extra_padding">
             <li
@@ -30,7 +29,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                My go-to hype songs.
+                Mes chansons <br />branchées.
               </h6>
             </li>
             <li
@@ -48,7 +47,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                TV (the more mindless, <br />the better).
+                Écouter Netflix <br />et relaxer.
               </h6>
             </li>
             <li
@@ -66,7 +65,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'C' ? '--color_white' : ''">
-                (Retail) therapy.
+                Une thérapie <br />(par le magasinage).
               </h6>
             </li>
             <li
@@ -84,7 +83,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
-                A pint of ice cream.
+                Une pinte de crème glacée.
               </h6>
             </li>
             <li
@@ -102,7 +101,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'E' ? '--color_white' : ''">
-                The weekend.
+                Une pinte de crème glacée.
               </h6>
             </li>
           </ul>

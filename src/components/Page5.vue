@@ -9,7 +9,9 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Name your <br />memoir.<br /></h2>
+          <h2 :style="`text-align : center`">
+            Donnez un titre à <br />vos mémoires.<br />
+          </h2>
           <ul class="ul_extra_padding">
             <li
               :class="
@@ -26,8 +28,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                What Could <br />
-                Go Wrong?
+                Qu’est-ce qui pourrait<br />
+                mal tourner?
               </h6>
             </li>
             <li
@@ -45,7 +47,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'B' ? '--color_white' : ''">
-                I Told You So
+                Je te l’avais dit
               </h6>
             </li>
             <li
@@ -63,7 +65,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
-                All Ways, Always!
+                De mille et une façons,<br />
+                toujours!
               </h6>
             </li>
             <li
@@ -81,7 +84,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
-                Confessions of <br />a Serial Softie
+                Confessions d’un <br />tendre en série
               </h6>
             </li>
 
@@ -100,7 +103,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
-                Life Is Like a Box of <br />Chocolates…
+                La vie est comme <br />une boîte de chocolat…
               </h6>
             </li>
           </ul>

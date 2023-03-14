@@ -9,9 +9,7 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">
-            Where can we <br />find you?<br />
-          </h2>
+          <h2 :style="`text-align : center`">Que <br />faites-vous?</h2>
           <div class="block" style="height: 1vh" />
           <ul class="section7_shoeContaienr">
             <li
@@ -31,7 +29,11 @@
                     : ''
                 "
               >
-                <img src="/ca/mall.png" alt="01shoes" style="rotate: -25deg" />
+                <img
+                  src="/ca-fr/mall.png"
+                  alt="01shoes"
+                  style="rotate: -25deg"
+                />
               </div>
             </li>
             <li
@@ -53,7 +55,7 @@
               >
                 <!-- <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" /> -->
                 <img
-                  src="/ca/manifesting.png"
+                  src="/ca-fr/manifesting.png"
                   alt="03shoes"
                   style="rotate: 15deg"
                 />
@@ -81,7 +83,11 @@
                   alt="03shoes"
                   style="rotate: 35deg"
                 /> -->
-                <img src="/ca/hot.png" alt="05shoes" style="rotate: -15deg" />
+                <img
+                  src="/ca-fr/hot.png"
+                  alt="05shoes"
+                  style="rotate: -15deg"
+                />
               </div>
             </li>
             <li
@@ -101,7 +107,11 @@
                     : ''
                 "
               >
-                <img src="/ca/love.png" alt="04shoes" style="rotate: -15deg" />
+                <img
+                  src="/ca-fr/love.png"
+                  alt="04shoes"
+                  style="rotate: -15deg"
+                />
               </div>
             </li>
             <li
@@ -123,7 +133,11 @@
                 "
               >
                 <!-- <img src="/hot.png" alt="05shoes" style="rotate: 45deg" /> -->
-                <img src="/ca/brunch.png" alt="02shoes" style="rotate: 15deg" />
+                <img
+                  src="/ca-fr/brunch.png"
+                  alt="02shoes"
+                  style="rotate: 15deg"
+                />
               </div>
             </li>
           </ul>

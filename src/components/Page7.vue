@@ -9,7 +9,9 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Your spirit shoe?<br /></h2>
+          <h2 :style="`text-align : center`">
+            Vos chaussures <br />confortables?
+          </h2>
           <div class="block" style="height: 2.5vh" />
           <ul class="section7_shoeContaienr">
             <li
@@ -33,7 +35,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/ca/shoes/01shoes.png" alt="01shoes" />
+                <img src="/ca-fr/shoes/01shoes.png" alt="01shoes" />
               </div>
             </li>
             <li
@@ -57,7 +59,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/ca/shoes/02shoes.png" alt="02shoes" />
+                <img src="/ca-fr/shoes/02shoes.png" alt="02shoes" />
               </div>
             </li>
             <li
@@ -81,7 +83,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/ca/shoes/03shoes.png" alt="03shoes" />
+                <img src="/ca-fr/shoes/03shoes.png" alt="03shoes" />
               </div>
             </li>
             <li
@@ -105,7 +107,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/ca/shoes/04shoes.png" alt="04shoes" />
+                <img src="/ca-fr/shoes/04shoes.png" alt="04shoes" />
               </div>
             </li>
             <li
@@ -130,7 +132,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/ca/shoes/05shoes.png" alt="05shoes" />
+                <img src="/ca-fr/shoes/05shoes.png" alt="05shoes" />
               </div>
             </li>
           </ul>

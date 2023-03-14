@@ -10,8 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            And finally, I <br />never leave home<br />
-            without…
+            Et finalement, je <br />ne quitte jamais <br />la maison sans…
           </h2>
           <ul>
             <li
@@ -23,8 +22,8 @@
               @click="quationsData.quation7 = 'A'"
             >
               <h6 :class="quationsData.quation7 === 'A' ? '--color_white' : ''">
-                A compact mirror and an<br />
-                extra dose of confidence.
+                Un miroir compact et une <br />dose supplémentaire de
+                <br />confiance.
               </h6>
             </li>
             <li
@@ -36,7 +35,7 @@
               @click="quationsData.quation7 = 'B'"
             >
               <h6 :class="quationsData.quation7 === 'B' ? '--color_white' : ''">
-                A water bottle and <br />a reality check.
+                Une bouteille d’eau et un <br />retour à la réalité.
               </h6>
             </li>
             <li
@@ -48,8 +47,7 @@
               @click="quationsData.quation7 = 'C'"
             >
               <h6 :class="quationsData.quation7 === 'C' ? '--color_white' : ''">
-                A book and a witty<br />
-                comeback.
+                Un livre et une réplique <br />pleine d’esprit.
               </h6>
             </li>
             <li
@@ -61,7 +59,7 @@
               @click="quationsData.quation7 = 'D'"
             >
               <h6 :class="quationsData.quation7 === 'D' ? '--color_white' : ''">
-                A handknit scarf and <br />some warm words.
+                Une écharpe tricotée main et <br />quelques mots réconfortants.
               </h6>
             </li>
             <li
@@ -73,8 +71,7 @@
               @click="quationsData.quation7 = 'E'"
             >
               <h6 :class="quationsData.quation7 === 'E' ? '--color_white' : ''">
-                All the above!<br />
-                But I forgot my keys…
+                Tout ce qui précède! <br />Mais j’ai oublié mes clés...
               </h6>
             </li>
           </ul>

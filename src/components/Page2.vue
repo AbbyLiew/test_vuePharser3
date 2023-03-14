@@ -34,7 +34,7 @@
             }px;`"
           >
             <h2 :style="`text-align : center`">
-              My Signature <br />style is...
+              Mon style <br />Signature C est…
             </h2>
             <ul class="ul_extra_padding">
               <li
@@ -54,7 +54,7 @@
                 <h6
                   :class="quationsData.quation1 === 'A' ? '--color_white' : ''"
                 >
-                  Bright and bold.
+                  Intrépide et audacieux.
                 </h6>
               </li>
               <li
@@ -74,8 +74,7 @@
                 <h6
                   :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
                 >
-                  Comfortable<br />
-                  and casual.
+                  Confortable et <br />décontracté.
                 </h6>
               </li>
               <li
@@ -95,7 +94,7 @@
                 <h6
                   :class="quationsData.quation1 === 'C' ? '--color_white' : ''"
                 >
-                  Trendy and chic.
+                  Tendance et chic.
                 </h6>
               </li>
               <li
@@ -115,8 +114,7 @@
                 <h6
                   :class="quationsData.quation1 === 'D' ? '--color_white' : ''"
                 >
-                  Moody<br />
-                  and nostalgic.
+                  Mélancolique et <br />nostalgique.
                 </h6>
               </li>
               <li
@@ -136,7 +134,7 @@
                 <h6
                   :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
                 >
-                  How I feel when <br />I wake up.
+                  Comment je me <br />sens au réveil.
                 </h6>
               </li>
             </ul>

@@ -7,12 +7,12 @@
           class="container"
           :style="`height : ${innerHeight * 0.65}px; width : ${
             (innerHeight * 0.55 * 736) / 1103
-          }px; margin-top : ${innerHeight * -0.05}px;`"
+          }px; margin-top : ${innerHeight * -0.05}px; opacity : 0;`"
         >
           <div class="imgContainer_form">
             <img
               :style="`height : ${innerHeight * 0.01}px;`"
-              src="/ca/icon-icecream_darker.png"
+              src="/ca-fr/icon-icecream_darker.png"
               alt=""
             />
           </div>
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="btn-next">
-          <button @click="next" class="loadingBTN">
+          <button @click="next" class="loadingBTN" style="opacity: 0">
             <h4 v-if="!isloading">submit</h4>
             <div v-if="isloading" class="loader"></div>
           </button>
@@ -139,6 +139,12 @@ export default {
       isloading: false,
     };
   },
+
+  mounted() {
+    setTimeout(() => {
+      this.$emit("triggerAnimation");
+    }, 500);
+  },
   methods: {
     next() {
       this.isloading = true;
@@ -182,7 +188,7 @@ export default {
       window.localStorage.setItem("phone", this.phone);
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/ca/", {
+        .get(process.env.VUE_APP_API_URL + "/ca-fr/", {
           params: {
             name: this.name,
             phone: this.phone,

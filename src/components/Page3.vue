@@ -10,7 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            What main <br />character energy <br />are you serving?
+            Quel principal <br />type d’énergie <br />dégagez-vous?
           </h2>
           <ul class="ul_extra_padding">
             <li
@@ -28,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'A' ? '--color_white' : ''">
-                The fearless hero.
+                Le héros qui n’a <br />pas froid aux yeux.
               </h6>
             </li>
             <li
@@ -46,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'B' ? '--color_white' : ''">
-                The reliable <br />best friend.
+                Le meilleur ami sur <br />qui l’on peut compter.
               </h6>
             </li>
             <li
@@ -64,7 +64,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                The sassy frenemy.
+                Le faux ami <br />
+                audacieux.
               </h6>
             </li>
             <li
@@ -82,7 +83,8 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
-                The sentimental <br />sweetheart.
+                L’ange <br />
+                sentimental.
               </h6>
             </li>
             <li
@@ -100,7 +102,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'E' ? '--color_white' : ''">
-                The wild card.
+                Le joker.
               </h6>
             </li>
           </ul>

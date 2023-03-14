@@ -27,18 +27,18 @@ export default class ChalkScene extends Scene {
 
       this.load.image(
         "ChalkSET_" + i,
-        "/ca/videos/sequance_chalk/" + assetname + ".jpg"
+        "/ca-fr/videos/sequance_chalk/" + assetname + ".jpg"
       );
     }
     this.load.video(
       "purple",
-      "/ca/videos/chalk_01.mp4",
+      "/ca-fr/videos/chalk_01.mp4",
       "loadeddata",
       false,
       true
     );
-    this.load.image("hand_chalk", "/ca/icon/chalk.png");
-    this.load.image("hand_white", "/ca/icon/white.png");
+    this.load.image("hand_chalk", "/ca-fr/icon/chalk.png");
+    this.load.image("hand_white", "/ca-fr/icon/white.png");
   }
 
   horizontalMove(target) {

@@ -2,7 +2,7 @@
   <div class="page1" :style="`height : ${innerHeight}px`">
     <div class="block" :style="`height : ${innerHeight * 0.16}px`" />
     <img
-      src="/ca/TabbyGame_sticker.png"
+      src="/ca-fr/TabbyGame_sticker.png"
       :style="`max-height : ${innerHeight * 0.25}px;margin : 0 auto`"
     />
     <div class="block" :style="`height : ${innerHeight * 0.02}px`" />
