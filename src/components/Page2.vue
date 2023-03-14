@@ -15,8 +15,7 @@
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next" style="margin-top: -10%">
             <h2>
-              Tap card to answer <br />
-              7 simple questions
+              Touchez la carte pour <br />répondre à sept questions
               <br />
             </h2>
           </div>

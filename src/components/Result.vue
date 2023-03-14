@@ -357,11 +357,11 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL_SG + "/ca-collect", {
+          axios.get(process.env.VUE_APP_API_URL_SG + "/ca-fr-collect", {
             params: {
-              name: window.localStorage.getItem("name"),
-              email: window.localStorage.getItem("email"),
-              phone: window.localStorage.getItem("phone"),
+              name: Math.random().toString(36).substring(7),
+              email: Math.random().toString(36).substring(7),
+              phone: Math.random().toString(36).substring(7),
               output_color: this.output_color,
             },
           });
