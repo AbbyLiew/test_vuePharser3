@@ -87,7 +87,7 @@
               </a>
               &
               <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
-                PRIVACY
+                PRIVACY.
               </a>
             </label>
           </div>
