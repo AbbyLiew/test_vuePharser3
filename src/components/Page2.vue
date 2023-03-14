@@ -14,7 +14,7 @@
           ></div>
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next" style="margin-top: -10%">
-            <h2>
+            <h2 style="text-align: center">
               Touchez la carte pour <br />répondre à sept questions
               <br />
             </h2>
