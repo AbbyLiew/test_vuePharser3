@@ -105,7 +105,7 @@
                 Le joker.
               </h6>
             </li>
-          </ul>
+          </ul>g
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
