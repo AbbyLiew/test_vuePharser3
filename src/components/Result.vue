@@ -248,7 +248,7 @@ export default {
       // open new tab to link
       // version-country
       window.open(
-        "https://www.coach.com/shop/women/collections/tabby",
+        "https://ca.coach.com/fr/shop/women/collections/tabby",
         "_blank"
       );
     },
