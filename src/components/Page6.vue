@@ -106,7 +106,6 @@
             </li>
           </ul>
         </div>
-        k
         <div class="btn-next">
           <button @click="next">back</button>
         </div>
