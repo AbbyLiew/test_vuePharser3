@@ -31,11 +31,7 @@
                     : ''
                 "
               >
-                <img
-                  src="/us-popup/mall.png"
-                  alt="01shoes"
-                  style="rotate: -25deg"
-                />
+                <img src="/mall.png" alt="01shoes" style="rotate: -25deg" />
               </div>
             </li>
             <li
@@ -57,7 +53,7 @@
               >
                 <!-- <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" /> -->
                 <img
-                  src="/us-popup/manifesting.png"
+                  src="/manifesting.png"
                   alt="03shoes"
                   style="rotate: 15deg"
                 />
@@ -85,11 +81,7 @@
                   alt="03shoes"
                   style="rotate: 35deg"
                 /> -->
-                <img
-                  src="/us-popup/hot.png"
-                  alt="05shoes"
-                  style="rotate: -15deg"
-                />
+                <img src="/hot.png" alt="05shoes" style="rotate: -15deg" />
               </div>
             </li>
             <li
@@ -109,11 +101,7 @@
                     : ''
                 "
               >
-                <img
-                  src="/us-popup/love.png"
-                  alt="04shoes"
-                  style="rotate: -15deg"
-                />
+                <img src="/love.png" alt="04shoes" style="rotate: -15deg" />
               </div>
             </li>
             <li
@@ -135,11 +123,7 @@
                 "
               >
                 <!-- <img src="/hot.png" alt="05shoes" style="rotate: 45deg" /> -->
-                <img
-                  src="/us-popup/brunch.png"
-                  alt="02shoes"
-                  style="rotate: 15deg"
-                />
+                <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" />
               </div>
             </li>
           </ul>

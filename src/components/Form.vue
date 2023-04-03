@@ -12,7 +12,7 @@
           <div class="imgContainer_form">
             <img
               :style="`height : ${innerHeight * 0.01}px;`"
-              src="/us-popup/icon-icecream_darker.png"
+              src="/icon-icecream_darker.png"
               alt=""
             />
           </div>
@@ -181,32 +181,34 @@ export default {
       window.localStorage.setItem("email", this.email);
       window.localStorage.setItem("phone", this.phone);
 
-      axios
-        .get(process.env.VUE_APP_API_URL + "/us-popup/", {
-          params: {
-            name: this.name,
-            phone: this.phone,
-            ageRange: age.value,
-          },
-        })
-        .then((response) => {
-          window.localStorage.setItem("name", this.name);
-          window.localStorage.setItem("email", this.email);
-          window.localStorage.setItem("phone", this.phone);
+      this.$emit("triggerAnimation");
 
-          if (response.data.message?.statusCode === 400) {
-            this.isloading = false;
-            let message = JSON.parse(response.data.message.body);
-            alert(message.message);
-          } else {
-            this.isloading = false;
-            this.$emit("triggerAnimation");
-          }
-        })
-        .catch((error) => {
-          this.isloading = false;
-          console.log(error);
-        });
+      // axios
+      //   .get(process.env.VUE_APP_API_URL + "/", {
+      //     params: {
+      //       name: this.name,
+      //       phone: this.phone,
+      //       ageRange: age.value,
+      //     },
+      //   })
+      //   .then((response) => {
+      //     window.localStorage.setItem("name", this.name);
+      //     window.localStorage.setItem("email", this.email);
+      //     window.localStorage.setItem("phone", this.phone);
+
+      //     if (response.data.message?.statusCode === 400) {
+      //       this.isloading = false;
+      //       let message = JSON.parse(response.data.message.body);
+      //       alert(message.message);
+      //     } else {
+      //       this.isloading = false;
+      //       this.$emit("triggerAnimation");
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.isloading = false;
+      //     console.log(error);
+      //   });
     },
     beforeEnter(el) {
       el.style.opacity = "0";
