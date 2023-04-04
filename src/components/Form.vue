@@ -180,34 +180,34 @@ export default {
       window.localStorage.setItem("email", this.email);
       window.localStorage.setItem("phone", this.phone);
 
-      this.$emit("triggerAnimation");
+      // this.$emit("triggerAnimation");
 
-      // axios
-      //   .get(process.env.VUE_APP_API_URL + "/", {
-      //     params: {
-      //       name: this.name,
-      //       phone: this.phone,
-      //       ageRange: age.value,
-      //     },
-      //   })
-      //   .then((response) => {
-      //     window.localStorage.setItem("name", this.name);
-      //     window.localStorage.setItem("email", this.email);
-      //     window.localStorage.setItem("phone", this.phone);
+      axios
+        .get(process.env.VUE_APP_API_URL_SG + "/", {
+          params: {
+            name: this.name,
+            phone: this.phone,
+            ageRange: age.value,
+          },
+        })
+        .then((response) => {
+          window.localStorage.setItem("name", this.name);
+          window.localStorage.setItem("email", this.email);
+          window.localStorage.setItem("phone", this.phone);
 
-      //     if (response.data.message?.statusCode === 400) {
-      //       this.isloading = false;
-      //       let message = JSON.parse(response.data.message.body);
-      //       alert(message.message);
-      //     } else {
-      //       this.isloading = false;
-      //       this.$emit("triggerAnimation");
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     this.isloading = false;
-      //     console.log(error);
-      //   });
+          if (response.data.message?.statusCode === 400) {
+            this.isloading = false;
+            let message = JSON.parse(response.data.message.body);
+            alert(message.message);
+          } else {
+            this.isloading = false;
+            this.$emit("triggerAnimation");
+          }
+        })
+        .catch((error) => {
+          this.isloading = false;
+          console.log(error);
+        });
     },
     beforeEnter(el) {
       el.style.opacity = "0";
