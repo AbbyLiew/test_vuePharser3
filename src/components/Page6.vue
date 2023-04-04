@@ -10,9 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            Who or what helps <br />
-            you overcome<br />
-            obstacles?
+            有哪個人或事物能幫助你<br />克服障礙？
           </h2>
           <ul class="ul_extra_padding">
             <li
@@ -30,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'A' ? '--color_white' : ''">
-                My go-to hype songs.
+                我的必聽歌單
               </h6>
             </li>
             <li
@@ -48,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'B' ? '--color_white' : ''">
-                TV (the more mindless, <br />the better).
+                放鬆看影集
               </h6>
             </li>
             <li
@@ -66,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'C' ? '--color_white' : ''">
-                (Retail) therapy.
+                盡情購物血拼
               </h6>
             </li>
             <li
@@ -84,7 +82,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'D' ? '--color_white' : ''">
-                A pint of ice cream.
+                一大罐冰淇淋
               </h6>
             </li>
             <li
@@ -102,14 +100,14 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation5 === 'E' ? '--color_white' : ''">
-                The weekend.
+                週末假日
               </h6>
             </li>
           </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>

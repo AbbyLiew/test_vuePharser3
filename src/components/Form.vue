@@ -20,13 +20,13 @@
           <div class="block" :style="`height: ${innerHeight * 0.025}px;`" />
 
           <h5 style="text-align: center">
-            STAY IN TOUCH <br /><br />DISCOVER YOUR TABBY<br />
-            AND GET THE INSIDE SCOOP<br />
-            ON ALL THINGS COACH
+            保持聯絡 <br /><br />
+            找出你對應的 Tabby 風格，<br />
+            並了解 COACH 所有相關新訊
           </h5>
 
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
-          <input type="text" placeholder="NAME" class="input" v-model="name" />
+          <input type="text" placeholder="姓名" class="input" v-model="name" />
           <div class="block" :style="`height: ${innerHeight * 0.02}px;`" />
           <!-- mobile -->
           <div
@@ -34,14 +34,14 @@
           >
             <input
               type="number"
-              placeholder="+1"
+              placeholder="+886"
               class="input left"
               style="width: 20%"
             />
             <div style="width: 2.5%" />
             <input
               type="number"
-              placeholder="MOBILE"
+              placeholder="行動電話"
               class="input right"
               style="width: 77.5%"
               v-model="phone"
@@ -63,7 +63,7 @@
             name="age-range"
             v-bind="ageRange"
           >
-            <option value="">AGE RANGE</option>
+            <option value="">年齡區間</option>
             <option value="18-25">18-25</option>
             <option value="26-32">26-32</option>
             <option value="33-41">33-41</option>
@@ -76,19 +76,18 @@
           <div class="inputcheckBox">
             <input type="checkbox" id="terms" />
             <label for="terms">
-              BY SUBMITTING THIS FORM, YOU AGREE TO RECEIVE RECURRING AUTOMATED
-              PROMOTIONAL AND PERSONALIZED MARKETING TEXT MESSAGES (E.G. CART
-              REMINDERS) FROM COACH AT THE CELL NUMBER USED WHEN SIGNING UP.
-              CONSENT IS NOT A CONDITION OF ANY PURCHASE. REPLY HELP FOR HELP
-              AND STOP TO CANCEL. MSG FREQUENCY VARIES. MSG AND DATA RATES MAY
-              APPLY. VIEW
+              送出此表格代表您自動同意透過註冊時使用的手機號碼來接收COACH的自動化優惠活動與
+              個人專屬行銷訊息（如購物車提醒）。您的同意不代表任何消費行為的授意。可依需求點選
+              「幫助」、「終止」和「取消」等功能。因傳輸速度不同，過程中可能會產生訊息與數據費率。
+              請查看使用
               <a target="_blank" href="http://attn.tv/coach/terms.html">
-                TERMS
+                條款
               </a>
-              &
+              與
               <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
-                PRIVACY
+                隱私政策
               </a>
+              。
             </label>
           </div>
         </div>
@@ -147,29 +146,29 @@ export default {
       // window scroll to top
       window.scrollTo(0, 0);
 
-      if (this.phone === "" || this.name === "") {
-        alert("Please fill in your name and mobile and name to proceed.");
-        this.isloading = false;
-        return;
-      }
+      // if (this.phone === "" || this.name === "") {
+      //   alert("Please fill in your name and mobile and name to proceed.");
+      //   this.isloading = false;
+      //   return;
+      // }
 
-      if (!document.querySelector("#terms").checked) {
-        alert("Please check the Terms and Conditions box to proceed.");
-        this.isloading = false;
-        return;
-      }
-      // us number length check
-      if (this.phone.length < 10) {
-        alert("Please enter a valid mobile number.");
-        this.isloading = false;
-        return;
-      }
+      // if (!document.querySelector("#terms").checked) {
+      //   alert("Please check the Terms and Conditions box to proceed.");
+      //   this.isloading = false;
+      //   return;
+      // }
+      // // us number length check
+      // if (this.phone.length < 10) {
+      //   alert("Please enter a valid mobile number.");
+      //   this.isloading = false;
+      //   return;
+      // }
 
-      if (age.value === "") {
-        alert("Please select your age range.");
-        this.isloading = false;
-        return;
-      }
+      // if (age.value === "") {
+      //   alert("Please select your age range.");
+      //   this.isloading = false;
+      //   return;
+      // }
       // email format check
       // if (!this.email.includes("@") && !this.email.includes(".")) {
       //   alert("Please enter a valid email address.");

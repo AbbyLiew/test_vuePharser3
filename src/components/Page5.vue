@@ -9,7 +9,9 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Name your <br />memoir.<br /></h2>
+          <h2 :style="`text-align : center`">
+            如果你要出一本回憶錄，<br />書名會是什麼？<br />
+          </h2>
           <ul class="ul_extra_padding">
             <li
               :class="
@@ -26,8 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                What Could<br />
-                Go Wrong?
+                《及時行樂》
               </h6>
             </li>
             <li
@@ -45,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'B' ? '--color_white' : ''">
-                I Told You So
+                《這就是我》
               </h6>
             </li>
             <li
@@ -63,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
-                All Ways, Always!
+                《安全牌》
               </h6>
             </li>
             <li
@@ -81,7 +82,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'D' ? '--color_white' : ''">
-                Confessions of <br />a Serial Softie
+                《活在當下》
               </h6>
             </li>
 
@@ -100,14 +101,14 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'E' ? '--color_white' : ''">
-                Life Is Like a Box of <br />Chocolates…
+                《閒不下來》
               </h6>
             </li>
           </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>

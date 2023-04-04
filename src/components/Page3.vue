@@ -10,7 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            What main <br />character energy <br />are you serving?
+            哪一種角色是你的<br />主要能量？
           </h2>
           <ul class="ul_extra_padding">
             <li
@@ -28,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'A' ? '--color_white' : ''">
-                The fearless hero.
+                無所畏懼的英雄
               </h6>
             </li>
             <li
@@ -46,7 +46,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'B' ? '--color_white' : ''">
-                The reliable <br />best friend.
+                值得信賴的好朋友
               </h6>
             </li>
             <li
@@ -64,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                The sassy frenemy.
+                不服輸的霸氣女王
               </h6>
             </li>
             <li
@@ -82,7 +82,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
-                The sentimental <br />sweetheart.
+                善解人意的甜姐兒
               </h6>
             </li>
             <li
@@ -100,14 +100,14 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'E' ? '--color_white' : ''">
-                The wild card.
+                難以捉摸的俏皮蛋
               </h6>
             </li>
           </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>

@@ -15,8 +15,7 @@
           <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
           <div class="btn-next" style="margin-top: -10%">
             <h2>
-              Tap card to answer <br />
-              7 simple questions
+              點擊卡片來回答<br />7個簡單的問題
               <br />
             </h2>
           </div>
@@ -33,9 +32,7 @@
               (innerHeight * 0.6 * 588) / 782
             }px;`"
           >
-            <h2 :style="`text-align : center`">
-              My Signature <br />style is...
-            </h2>
+            <h2 :style="`text-align : center`">我的代表 <br />風格是……</h2>
             <ul class="ul_extra_padding">
               <li
                 :class="
@@ -54,7 +51,7 @@
                 <h6
                   :class="quationsData.quation1 === 'A' ? '--color_white' : ''"
                 >
-                  Bright and bold.
+                  搶眼大膽
                 </h6>
               </li>
               <li
@@ -74,7 +71,7 @@
                 <h6
                   :class="quationsData.quation1 === 'B' ? '--color_white' : ''"
                 >
-                  Comfortable <br />and casual.
+                  舒適休閒
                 </h6>
               </li>
               <li
@@ -94,7 +91,7 @@
                 <h6
                   :class="quationsData.quation1 === 'C' ? '--color_white' : ''"
                 >
-                  Trendy and chic.
+                  時髦有型
                 </h6>
               </li>
               <li
@@ -114,7 +111,7 @@
                 <h6
                   :class="quationsData.quation1 === 'D' ? '--color_white' : ''"
                 >
-                  Moody <br />and nostalgic.
+                  懷舊復古
                 </h6>
               </li>
               <li
@@ -134,7 +131,7 @@
                 <h6
                   :class="quationsData.quation1 === 'E' ? '--color_white' : ''"
                 >
-                  How I feel <br />when I wake up.
+                  依照每天起床時<br />的心情而定
                 </h6>
               </li>
             </ul>

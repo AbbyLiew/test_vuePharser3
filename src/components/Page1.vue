@@ -12,7 +12,7 @@
     </h5> -->
     <div class="block" :style="`height : ${innerHeight * 0.04}px`" />
     <div class="btn-next">
-      <button id="start_button" @click="$emit('nextPage')">START</button>
+      <button id="start_button" @click="$emit('nextPage')">開始</button>
     </div>
   </div>
 </template>

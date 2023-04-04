@@ -9,7 +9,7 @@
             (innerHeight * 0.6 * 588) / 782
           }px;`"
         >
-          <h2 :style="`text-align : center`">Your spirit shoe?<br /></h2>
+          <h2 :style="`text-align : center`">最能代表你的鞋款？<br /></h2>
           <div class="block" style="height: 2.5vh" />
           <ul class="section7_shoeContaienr">
             <li
@@ -137,7 +137,7 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>

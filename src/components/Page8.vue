@@ -10,8 +10,7 @@
           }px;`"
         >
           <h2 :style="`text-align : center`">
-            And finally, I <br />never leave home<br />
-            without…
+            最後一題，出門一定<br />會帶的東西是什麼？
           </h2>
           <ul>
             <li
@@ -23,8 +22,7 @@
               @click="quationsData.quation7 = 'A'"
             >
               <h6 :class="quationsData.quation7 === 'A' ? '--color_white' : ''">
-                A compact mirror and an<br />
-                extra dose of confidence.
+                隨身化妝鏡和比平時<br />更多的自信
               </h6>
             </li>
             <li
@@ -36,7 +34,7 @@
               @click="quationsData.quation7 = 'B'"
             >
               <h6 :class="quationsData.quation7 === 'B' ? '--color_white' : ''">
-                A water bottle and <br />a reality check.
+                裝水的瓶子與各種<br />實務的確認
               </h6>
             </li>
             <li
@@ -48,8 +46,7 @@
               @click="quationsData.quation7 = 'C'"
             >
               <h6 :class="quationsData.quation7 === 'C' ? '--color_white' : ''">
-                A book and a witty<br />
-                comeback.
+                一本書以及機智<br />風趣的回歸
               </h6>
             </li>
             <li
@@ -61,7 +58,7 @@
               @click="quationsData.quation7 = 'D'"
             >
               <h6 :class="quationsData.quation7 === 'D' ? '--color_white' : ''">
-                A handknit scarf and <br />some warm words.
+                手工編織的圍巾跟<br />心靈雞湯小語
               </h6>
             </li>
             <li
@@ -73,15 +70,14 @@
               @click="quationsData.quation7 = 'E'"
             >
               <h6 :class="quationsData.quation7 === 'E' ? '--color_white' : ''">
-                All the above!<br />
-                But I forgot my keys…
+                以上皆是！<br />但我忘記帶鑰匙……
               </h6>
             </li>
           </ul>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>
