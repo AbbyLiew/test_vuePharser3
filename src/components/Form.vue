@@ -80,11 +80,14 @@
               個人專屬行銷訊息（如購物車提醒）。您的同意不代表任何消費行為的授意。可依需求點選
               「幫助」、「終止」和「取消」等功能。因傳輸速度不同，過程中可能會產生訊息與數據費率。
               請查看使用
-              <a target="_blank" href="http://attn.tv/coach/terms.html">
+              <a target="_blank" href="https://taiwan.coach.com/terms-of-use">
                 條款
               </a>
               與
-              <a target="_blank" href="https://attnl.tv/legal/p/Ahj">
+              <a
+                target="_blank"
+                href="https://taiwan.coach.com/security-privacy"
+              >
                 隱私政策
               </a>
               。
@@ -263,7 +266,7 @@ export default {
 .inputcheckBox label {
   font-size: 1vh;
   color: #ff99a7;
-  line-height: 1;
+  line-height: 1.3;
   letter-spacing: 0.3px;
 }
 #terms {

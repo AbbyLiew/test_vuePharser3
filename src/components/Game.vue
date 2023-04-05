@@ -390,7 +390,7 @@ export default {
           <p
             class="mt-auto"
             :style="`${
-              current === 11 ? 'color : transparent;' : ' color: #e87d8c;'
+              current === 11 ? 'color : #e87d8c;' : ' color: #e87d8c;'
             }}`"
           >
             &#174; ALL RIGHTS RESERVED BY COACH. POWERED BY
@@ -399,7 +399,7 @@ export default {
               target="_blank"
               rel="noopener noreferrer"
               :style="`${
-                current === 11 ? 'color : transparent;' : ' color: #e87d8c;'
+                current === 11 ? 'color : #e87d8c;' : ' color: #e87d8c;'
               }}`"
               >CONTEN.T</a
             >

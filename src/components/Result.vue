@@ -245,7 +245,7 @@ export default {
     toshop() {
       // open new tab to link
       // version-country
-      window.open("https://www.coach.com/tabby-tour", "_blank");
+      window.open("https://taiwan.coach.com/spring/tabby.html", "_blank");
     },
     shareButton() {
       let button = document.getElementById("shareButton");
