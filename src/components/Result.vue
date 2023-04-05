@@ -149,7 +149,7 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            <h4 v-if="!isloading">SHARE THE VIDEO</h4>
+            <h4 v-if="!isloading">分享測驗結果</h4>
             <div v-if="isloading" class="loader tosmall"></div>
           </button>
         </div>
@@ -160,7 +160,7 @@
             :style="`width : ${innerWidth * 0.45}px`"
             @click="toshop"
           >
-            SHOP TABBY
+            選購 Tabby
           </button>
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.025}px`" />
@@ -170,7 +170,7 @@
             :style="`width : ${innerWidth * 0.45}px`"
             @click="restart"
           >
-            PLAY AGAIN
+            再測一次
           </button>
         </div>
       </div>
@@ -350,10 +350,11 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL_SG + "-collect", {
+          axios.get(process.env.VUE_APP_API_URL_SG + "/taiwan", {
             params: {
-              email: window.localStorage.getItem("name"),
+              name: window.localStorage.getItem("name"),
               phone: window.localStorage.getItem("phone"),
+              ageRange: window.localStorage.getItem("ageRange"),
               output_color: this.output_color,
             },
           });

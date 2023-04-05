@@ -93,7 +93,7 @@
         </div>
         <div class="btn-next">
           <button @click="next" class="loadingBTN">
-            <h4 v-if="!isloading">submit</h4>
+            <h4 v-if="!isloading">開始</h4>
             <div v-if="isloading" class="loader"></div>
           </button>
         </div>
@@ -142,48 +142,43 @@ export default {
     next() {
       this.isloading = true;
       let age = document.querySelector("select");
+      let ageRange = age.options[age.selectedIndex].value;
 
       // window scroll to top
       window.scrollTo(0, 0);
 
-      // if (this.phone === "" || this.name === "") {
-      //   alert("Please fill in your name and mobile and name to proceed.");
-      //   this.isloading = false;
-      //   return;
-      // }
+      if (this.phone === "" || this.name === "") {
+        alert("Please fill in your name and mobile and name to proceed.");
+        this.isloading = false;
+        return;
+      }
 
-      // if (!document.querySelector("#terms").checked) {
-      //   alert("Please check the Terms and Conditions box to proceed.");
-      //   this.isloading = false;
-      //   return;
-      // }
-      // // us number length check
-      // if (this.phone.length < 10) {
-      //   alert("Please enter a valid mobile number.");
-      //   this.isloading = false;
-      //   return;
-      // }
+      if (!document.querySelector("#terms").checked) {
+        alert("Please check the Terms and Conditions box to proceed.");
+        this.isloading = false;
+        return;
+      }
+      // us number length check
+      if (this.phone.length < 10) {
+        alert("Please enter a valid mobile number.");
+        this.isloading = false;
+        return;
+      }
 
-      // if (age.value === "") {
-      //   alert("Please select your age range.");
-      //   this.isloading = false;
-      //   return;
-      // }
-      // email format check
-      // if (!this.email.includes("@") && !this.email.includes(".")) {
-      //   alert("Please enter a valid email address.");
-      //   this.isloading = false;
-      //   return;
-      // }
+      if (age.value === "") {
+        alert("Please select your age range.");
+        this.isloading = false;
+        return;
+      }
 
       window.localStorage.setItem("name", this.name);
-      window.localStorage.setItem("email", this.email);
+      window.localStorage.setItem("ageRange", ageRange);
       window.localStorage.setItem("phone", this.phone);
 
       // this.$emit("triggerAnimation");
 
       axios
-        .get(process.env.VUE_APP_API_URL_SG + "/", {
+        .get(process.env.VUE_APP_API_URL_SG + "/taiwan", {
           params: {
             name: this.name,
             phone: this.phone,
@@ -241,7 +236,7 @@ export default {
   color: #ff99a7 !important;
   text-align: center;
   font-family: "Cream-Bold";
-  font-size: 2vh;
+  font-size: 1.8vh;
 }
 .input {
   padding: 1.2vh;
@@ -249,7 +244,7 @@ export default {
   border: none;
   font-family: "Cream-Bold";
   color: #ff99a7 !important;
-  font-size: 2vh;
+  font-size: 1.8vh;
   border: none;
   border-radius: 0;
 }
@@ -269,6 +264,7 @@ export default {
   font-size: 1vh;
   color: #ff99a7;
   line-height: 1;
+  letter-spacing: 0.3px;
 }
 #terms {
   width: 50%;

@@ -128,7 +128,7 @@
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
         <div class="btn-next">
-          <button @click="next">back</button>
+          <button @click="next">返回</button>
         </div>
       </div>
     </transition>

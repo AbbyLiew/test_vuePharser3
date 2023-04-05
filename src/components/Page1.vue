@@ -56,5 +56,9 @@ export default {
   border: none;
   color: white;
   border-radius: 20px;
+  letter-spacing: 2px;
+}
+.loadingBTN {
+  letter-spacing: 2px;
 }
 </style>
