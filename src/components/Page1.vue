@@ -53,4 +53,7 @@ export default {
   color: white;
   border-radius: 20px;
 }
+.asdad {
+  background-color: red;
+}
 </style>
