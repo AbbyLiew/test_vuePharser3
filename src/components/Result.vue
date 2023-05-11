@@ -9,6 +9,11 @@
         :style="`height : ${innerHeight}px; width : ${innerWidth}px;`"
       >
         <div
+          :style="`width : ${innerWidth}px; height : ${innerHeight}px; z-index : 100; position : absolute;`"
+          id="popUpppp"
+          @click="handlerClose"
+        />
+        <div
           v-if="closeModal"
           class="popupModal"
           :style="`position : absolute;`"
@@ -16,9 +21,27 @@
           <div
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
-            id="coppyContainer"
           >
             <img src="/result/pop-up.png" />
+            <div
+              class="imgContainer"
+              :style="`height : ${
+                innerHeight * 0.04
+              }px; top : 28%; transfrom : translateY(-50%);`"
+              id="coppyContainer"
+            >
+              <img src="/result/copytext.png" />
+              <h1>
+                <span
+                  class="coppyText"
+                  :style="`font-size : ${
+                    innerHeight * 0.018
+                  }px; position : absolute; top : 50%; left : 50%; transform : translate(-50%,-50%);`"
+                >
+                  INMYTABBY
+                </span>
+              </h1>
+            </div>
           </div>
           <div
             class="svgContainerrrr"
@@ -309,6 +332,11 @@ export default {
         opacity: 0,
         display: "none",
       });
+      gsap.to("#popUpppp", {
+        duration: 0.5,
+        opacity: 0,
+        display: "none",
+      });
     },
 
     convertResult(result) {
@@ -349,6 +377,8 @@ export default {
     let copyContainer = document.querySelector("#coppyContainer");
     copyContainer.addEventListener("click", () => {
       navigator.clipboard.writeText("INMYTABBY");
+      let coppyText = document.querySelector(".coppyText");
+      coppyText.style.color = "#ff99a7";
     });
 
     // Copy the text inside the text field
@@ -515,6 +545,9 @@ export default {
 </script>
 
 <style>
+.coppyText {
+  color: black;
+}
 .Result {
   position: fixed;
   z-index: -10;
@@ -605,7 +638,7 @@ svg {
   position: absolute;
 }
 .popupModal {
-  opacity: 0;
+  opacity: 1;
 }
 .sharebutton {
   display: flex;
