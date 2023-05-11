@@ -578,10 +578,10 @@ export default {
 }
 .Result {
   position: fixed;
-  z-index: 100;
+  z-index: -10;
   transition: all 0.5s ease-in-out;
   max-width: 750px;
-  opacity: 1;
+  opacity: 0;
   background-color: black;
 }
 
