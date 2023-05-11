@@ -152,15 +152,26 @@
             </g>
           </svg>
         </div>
-        <div class="block" :style="`height : ${innerHeight * 0.01}px`" />
+        <div class="block" :style="`height : ${innerHeight * 0.02}px`" />
         <!--  -->
         <div
-          :style="`height: ${innerHeight * 0.55}px; width: ${innerWidth}px;`"
+          :style="`height: ${
+            innerHeight * 0.5
+          }px; position: relative; margin-top: 5%;`"
           class="imgContainer_icecream"
         >
           <div
+            class="imgContainer_icecream"
+            id="trigggeerrr"
+            :style="`height: ${
+              innerHeight * 0.14
+            }px; position: absolute; top: -10%; left: -10%;z-index : 1000;`"
+          >
+            <img src="/result/prize.png" />
+          </div>
+          <div
             class="imgContainer1"
-            :style="`height: ${innerHeight * 0.55}px; width: ${
+            :style="`height: ${innerHeight * 0.5}px; width: ${
               (innerHeight * 0.5 * 315) / 418
             }px;`"
           />
@@ -326,7 +337,6 @@ export default {
       });
     },
     handlerClose() {
-      console.log("close");
       gsap.to(".popupModal", {
         duration: 0.5,
         opacity: 0,
@@ -379,6 +389,20 @@ export default {
       navigator.clipboard.writeText("INMYTABBY");
       let coppyText = document.querySelector(".coppyText");
       coppyText.style.color = "#ff99a7";
+    });
+
+    let trigggeerrr = document.querySelector("#trigggeerrr");
+    trigggeerrr.addEventListener("click", () => {
+      gsap.to(".popupModal", {
+        duration: 0.5,
+        opacity: 1,
+        display: "block",
+      });
+      gsap.to("#popUpppp", {
+        duration: 0.5,
+        opacity: 1,
+        display: "block",
+      });
     });
 
     // Copy the text inside the text field
@@ -550,10 +574,10 @@ export default {
 }
 .Result {
   position: fixed;
-  z-index: -10;
+  z-index: 100;
   transition: all 0.5s ease-in-out;
   max-width: 750px;
-  opacity: 0;
+  opacity: 1;
   background-color: black;
 }
 
