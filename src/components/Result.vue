@@ -16,6 +16,7 @@
           <div
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
+            id="coppyContainer"
           >
             <img src="/result/pop-up.png" />
           </div>
@@ -344,6 +345,15 @@ export default {
     let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
     let isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
     this.isIOS = isIOS;
+
+    let copyContainer = document.querySelector("#coppyContainer");
+    copyContainer.addEventListener("click", () => {
+      navigator.clipboard.writeText("INMYTABBY");
+    });
+
+    // Copy the text inside the text field
+
+    // Alert the copied text
   },
 
   watch: {
