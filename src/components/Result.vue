@@ -403,6 +403,10 @@ export default {
         opacity: 1,
         display: "block",
       });
+      gsap.to(".coppyText", {
+        duration: 0.5,
+        color: "black",
+      });
     });
 
     // Copy the text inside the text field
