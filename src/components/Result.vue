@@ -20,14 +20,14 @@
         >
           <div
             class="imgContainer0"
-            :style="`height : ${innerHeight * 0.35}px;`"
+            :style="`height : ${innerHeight * 0.45}px;`"
           >
             <img src="/result/pop-up.png" />
             <div
               class="imgContainer"
               :style="`height : ${
-                innerHeight * 0.04
-              }px; top : 28%; transfrom : translateY(-50%);`"
+                innerHeight * 0.03
+              }px; top : 34.5%; transfrom : translateY(-50%);`"
               id="coppyContainer"
             >
               <img src="/result/copytext.png" />
@@ -35,7 +35,7 @@
                 <span
                   class="coppyText"
                   :style="`font-size : ${
-                    innerHeight * 0.018
+                    innerHeight * 0.014
                   }px; position : absolute; top : 50%; left : 50%; transform : translate(-50%,-50%);`"
                 >
                   INMYTABBY
@@ -578,10 +578,10 @@ export default {
 }
 .Result {
   position: fixed;
-  z-index: -10;
+  z-index: 100 !important;
   transition: all 0.5s ease-in-out;
   max-width: 750px;
-  opacity: 0;
+  opacity: 1 !important;
   background-color: black;
 }
 
