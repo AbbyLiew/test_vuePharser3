@@ -165,7 +165,7 @@
             id="trigggeerrr"
             :style="`height: ${
               innerHeight * 0.14
-            }px; position: absolute; top: -10%; left: -10%;z-index : 1000;`"
+            }px; position: absolute; top: -10%; left: -10%;z-index : 1;`"
           >
             <img src="/result/prize.png" />
           </div>
@@ -578,10 +578,10 @@ export default {
 }
 .Result {
   position: fixed;
-  z-index: 100 !important;
+  z-index: -100;
   transition: all 0.5s ease-in-out;
   max-width: 750px;
-  opacity: 1 !important;
+  opacity: 0;
   background-color: black;
 }
 
