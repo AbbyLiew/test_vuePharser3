@@ -287,19 +287,28 @@ export default {
       let storylink = "";
       switch (this.output_color) {
         case "pink":
-          storylink = "/StoryDownloadSIZE/PINK_story.mp4";
+          storylink =
+            "http://tw.whatsmytabby.com/" + "/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
-          storylink = "/StoryDownloadSIZE/GREEN_story.mp4";
+          storylink =
+            "http://tw.whatsmytabby.com/" +
+            "/StoryDownloadSIZE/GREEN_story.mp4";
           break;
         case "yellow":
-          storylink = "/StoryDownloadSIZE/YELLOW_story.mp4";
+          storylink =
+            "http://tw.whatsmytabby.com/" +
+            "/StoryDownloadSIZE/YELLOW_story.mp4";
           break;
         case "purple":
-          storylink = "/StoryDownloadSIZE/PURPLE_story.mp4";
+          storylink =
+            "http://tw.whatsmytabby.com/" +
+            "/StoryDownloadSIZE/PURPLE_story.mp4";
           break;
         case "cream":
-          storylink = "/StoryDownloadSIZE/CHALK_story.mp4";
+          storylink =
+            "http://tw.whatsmytabby.com/" +
+            "/StoryDownloadSIZE/CHALK_story.mp4";
           break;
       }
       button.addEventListener("click", async (event) => {
@@ -327,8 +336,8 @@ export default {
                       type: "video/mp4",
                     }),
                   ],
-                  title: "coach tabby redeem icecream",
-                  url: window.location.href,
+                  // title: "coach tabby redeem icecream",
+                  // url: window.location.href,
                 })
                 .then(() => {
                   this.isloading = false;
