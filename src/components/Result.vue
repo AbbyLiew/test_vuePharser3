@@ -316,7 +316,6 @@ export default {
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
-            console.log();
             if (navigator.share) {
               navigator
                 .share({
