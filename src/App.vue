@@ -14,6 +14,7 @@ import "./index.css";
     </div>
   </div>
 </template>
+<!--  -->
 
 <!-- hooks for get window dimension -->
 <script>
