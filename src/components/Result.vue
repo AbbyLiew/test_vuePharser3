@@ -288,27 +288,23 @@ export default {
       switch (this.output_color) {
         case "pink":
           storylink =
-            "http://tw.whatsmytabby.com/" + "/StoryDownloadSIZE/PINK_story.mp4";
+            window.location.origin + "/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
           storylink =
-            "http://tw.whatsmytabby.com/" +
-            "/StoryDownloadSIZE/GREEN_story.mp4";
+            window.location.origin + "/StoryDownloadSIZE/GREEN_story.mp4";
           break;
         case "yellow":
           storylink =
-            "http://tw.whatsmytabby.com/" +
-            "/StoryDownloadSIZE/YELLOW_story.mp4";
+            window.location.origin + "/StoryDownloadSIZE/YELLOW_story.mp4";
           break;
         case "purple":
           storylink =
-            "http://tw.whatsmytabby.com/" +
-            "/StoryDownloadSIZE/PURPLE_story.mp4";
+            window.location.origin + "/StoryDownloadSIZE/PURPLE_story.mp4";
           break;
         case "cream":
           storylink =
-            "http://tw.whatsmytabby.com/" +
-            "/StoryDownloadSIZE/CHALK_story.mp4";
+            window.location.origin + "/StoryDownloadSIZE/CHALK_story.mp4";
           break;
       }
       button.addEventListener("click", async (event) => {
@@ -316,18 +312,11 @@ export default {
         setTimeout(() => {
           this.isloading = false;
         }, 2000);
+
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
-            console.log(
-              navigator.canShare({
-                files: [
-                  new File([blob], "video.mp4", {
-                    type: "video/mp4",
-                  }),
-                ],
-              })
-            );
+            console.log();
             if (navigator.share) {
               navigator
                 .share({
@@ -336,8 +325,8 @@ export default {
                       type: "video/mp4",
                     }),
                   ],
-                  // title: "coach tabby redeem icecream",
-                  // url: window.location.href,
+                  title: "coach tabby redeem icecream",
+                  url: window.location.href,
                 })
                 .then(() => {
                   this.isloading = false;
