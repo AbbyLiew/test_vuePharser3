@@ -184,7 +184,7 @@
             id="shareButton"
             :style="`width : ${innerWidth * 0.45}px`"
           >
-            <h4 v-if="!isloading">分享測驗結果</h4>
+            <h4 v-if="!isloading">分享測驗</h4>
             <div v-if="isloading" class="loader tosmall"></div>
           </button>
         </div>
@@ -310,6 +310,15 @@ export default {
         fetch(storylink)
           .then((res) => res.blob()) // Gets the response and returns it as a blob
           .then((blob) => {
+            console.log(
+              navigator.canShare({
+                files: [
+                  new File([blob], "video.mp4", {
+                    type: "video/mp4",
+                  }),
+                ],
+              })
+            );
             if (navigator.share) {
               navigator
                 .share({

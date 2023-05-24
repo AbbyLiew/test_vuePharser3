@@ -28,7 +28,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'A' ? '--color_white' : ''">
-                《及時行樂》
+                《卻上心頭》
               </h6>
             </li>
             <li
@@ -64,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation4 === 'C' ? '--color_white' : ''">
-                《安全牌》
+                《頂尖高手》
               </h6>
             </li>
             <li

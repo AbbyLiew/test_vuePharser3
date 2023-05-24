@@ -64,7 +64,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'C' ? '--color_white' : ''">
-                不服輸的霸氣女王
+                不服輸的霸氣王者
               </h6>
             </li>
             <li
@@ -82,7 +82,7 @@
               class="--extra_padding"
             >
               <h6 :class="quationsData.quation2 === 'D' ? '--color_white' : ''">
-                善解人意的甜姐兒
+                細膩易感的軟心腸
               </h6>
             </li>
             <li
