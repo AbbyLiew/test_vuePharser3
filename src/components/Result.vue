@@ -287,8 +287,7 @@ export default {
       let storylink = "";
       switch (this.output_color) {
         case "pink":
-          storylink =
-            window.location.origin + "/StoryDownloadSIZE/PINK_story.mp4";
+          storylink = +"/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
           storylink =
