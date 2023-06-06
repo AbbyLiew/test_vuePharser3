@@ -420,12 +420,14 @@ export default {
   watch: {
     current: {
       handler: function (newVal, oldVal) {
+        console.log(this.quationsData);
         if (newVal === 11) {
           axios.get(process.env.VUE_APP_API_URL_SG + "/taiwan", {
             params: {
               name: window.localStorage.getItem("name"),
               phone: window.localStorage.getItem("phone"),
               ageRange: window.localStorage.getItem("ageRange"),
+              answers: JSON.stringify(this.quationsData),
               output_color: this.output_color,
             },
           });
