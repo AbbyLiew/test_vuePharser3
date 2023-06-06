@@ -283,8 +283,6 @@ export default {
                       type: "video/mp4",
                     }),
                   ],
-                  title: "coach tabby redeem icecream",
-                  url: window.location.href,
                 })
                 .then(() => {
                   this.isloading = false;
