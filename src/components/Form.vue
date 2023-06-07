@@ -186,7 +186,7 @@ export default {
             name: this.name,
             phone: this.phone,
             ageRange: age.value,
-            answers : "undefined"
+            answers: "undefined",
           },
         })
         .then((response) => {
