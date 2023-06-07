@@ -357,6 +357,7 @@ export default {
               name: window.localStorage.getItem("name"),
               email: window.localStorage.getItem("email"),
               phone: window.localStorage.getItem("phone"),
+              answers: JSON.stringify(this.quationsData),
               output_color: this.output_color,
             },
           });
