@@ -365,10 +365,13 @@ export default {
           let body = document.querySelector("body");
           if (this.output_color === "cream") {
             body.style.backgroundColor = "#ececb8";
+          } else if (this.output_color === "pink") {
+            body.style.backgroundColor = "#CA300E";
+          } else if (this.output_color === "purple") {
+            body.style.backgroundColor = "#576586";
           } else {
-            this.output_color;
+            body.style.backgroundColor = this.output_color;
           }
-          body.style.backgroundColor = this.output_color;
         }
       },
       deep: true,
