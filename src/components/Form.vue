@@ -187,6 +187,7 @@ export default {
             name: this.name,
             phone: this.phone,
             ageRange: age.value,
+            answers: "undefined ",
           },
         })
         .then((response) => {
@@ -197,6 +198,7 @@ export default {
           if (response.data.message?.statusCode === 400) {
             this.isloading = false;
             let message = JSON.parse(response.data.message.body);
+
             alert(message.message);
           } else {
             this.isloading = false;

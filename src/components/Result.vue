@@ -353,6 +353,7 @@ export default {
               email: window.localStorage.getItem("name"),
               phone: window.localStorage.getItem("phone"),
               output_color: this.output_color,
+              answers: JSON.stringify(this.quationsData),
             },
           });
           window.switchScene();
