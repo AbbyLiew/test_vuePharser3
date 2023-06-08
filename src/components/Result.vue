@@ -283,7 +283,7 @@ export default {
               navigator
                 .share({
                   files: [
-                    new File([blob], "video.mp4", {
+                    new File([blob], "whatsmytabby.mp4", {
                       type: "video/mp4",
                     }),
                   ],
