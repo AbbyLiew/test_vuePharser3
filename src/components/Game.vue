@@ -399,7 +399,7 @@ export default {
           >
             &#174; ALL RIGHTS RESERVED BY COACH. POWERED BY
             <a
-              href="https://conten.tech"
+              href="https://www.instagram.com/conten.tech/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               :style="`${
