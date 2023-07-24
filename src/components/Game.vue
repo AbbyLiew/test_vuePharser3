@@ -193,7 +193,7 @@ export default {
             class="imgContainer_logo"
             :style="`height : ${innerHeight * 0.1}px;`"
           >
-            <img src="/us-store/logo.png" />
+            <img src="/us-outlet/logo.png" />
           </div>
 
           <div class="block" :style="`height : ${innerHeight * 0.21}px;`"></div>
@@ -206,7 +206,7 @@ export default {
               class="imgContainer_logo float"
               :style="`height : ${innerHeight * 0.23}px;`"
             >
-              <img src="/us-store/icon-icecream_darker.png" />
+              <img src="/us-outlet/icon-icecream_darker.png" />
             </div>
           </transition>
         </div>

@@ -5,22 +5,25 @@ export default class BootScene extends Scene {
   }
 
   preload() {
-    this.load.image("logo", "/us-store/logo.png");
-    this.load.image("minibox", "/us-store/box_bottom.jpg");
-    this.load.image("minibox_top", "/us-store/box_top.png");
+    this.load.image("logo", "/us-outlet/logo.png");
+    this.load.image("minibox", "/us-outlet/box_bottom.jpg");
+    this.load.image("minibox_top", "/us-outlet/box_top.png");
 
-    this.load.image("roof", "/us-store/roof.png");
-    this.load.image("icon_icecream", "/us-store/icon-icecream.png");
+    this.load.image("roof", "/us-outlet/roof.png");
+    this.load.image("icon_icecream", "/us-outlet/icon-icecream.png");
 
     for (let i = 0; i <= 60; i++) {
       let asset_name =
         "Tabby_Card_Flip_Anim_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/us-store/Card_Flip/" + asset_name + ".png");
+      this.load.image(
+        asset_name,
+        "/us-outlet/Card_Flip/" + asset_name + ".png"
+      );
     }
 
     for (let i = 0; i < 5; i++) {
       let asset_name = "bag_" + "0".repeat(5 - i.toString().length) + i;
-      this.load.image(asset_name, "/us-store/bag/" + asset_name + ".png");
+      this.load.image(asset_name, "/us-outlet/bag/" + asset_name + ".png");
     }
 
     this.load.on("complete", function () {

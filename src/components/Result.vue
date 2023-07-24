@@ -17,7 +17,7 @@
             class="imgContainer0"
             :style="`height : ${innerHeight * 0.35}px;`"
           >
-            <img src="/us-store/result/pop-up.png" />
+            <img src="/us-outlet/result/pop-up.png" />
           </div>
           <div
             class="svgContainerrrr"
@@ -140,7 +140,7 @@
               (innerHeight * 0.5 * 315) / 418
             }px;`"
           />
-          <img :src="`/us-store/result/FN${this.output_color}.png`" />
+          <img :src="`/us-outlet/result/FN${this.output_color}.png`" />
         </div>
         <div class="block" :style="`height : ${innerHeight * 0.05}px`" />
         <div class="btn-next">
@@ -256,19 +256,19 @@ export default {
       let storylink = "";
       switch (this.output_color) {
         case "pink":
-          storylink = "/us-store/StoryDownloadSIZE/PINK_story.mp4";
+          storylink = "/us-outlet/StoryDownloadSIZE/PINK_story.mp4";
           break;
         case "teal":
-          storylink = "/us-store/StoryDownloadSIZE/GREEN_story.mp4";
+          storylink = "/us-outlet/StoryDownloadSIZE/GREEN_story.mp4";
           break;
         case "yellow":
-          storylink = "/us-store/StoryDownloadSIZE/YELLOW_story.mp4";
+          storylink = "/us-outlet/StoryDownloadSIZE/YELLOW_story.mp4";
           break;
         case "purple":
-          storylink = "/us-store/StoryDownloadSIZE/PURPLE_story.mp4";
+          storylink = "/us-outlet/StoryDownloadSIZE/PURPLE_story.mp4";
           break;
         case "cream":
-          storylink = "/us-store/StoryDownloadSIZE/CHALK_story.mp4";
+          storylink = "/us-outlet/StoryDownloadSIZE/CHALK_story.mp4";
           break;
       }
       button.addEventListener("click", async (event) => {
@@ -352,7 +352,7 @@ export default {
     current: {
       handler: function (newVal, oldVal) {
         if (newVal === 11) {
-          axios.get(process.env.VUE_APP_API_URL_SG + "/us-store-collect", {
+          axios.get(process.env.VUE_APP_API_URL_SG + "/us-outlet-collect", {
             params: {
               name: window.localStorage.getItem("name"),
               email: window.localStorage.getItem("email"),

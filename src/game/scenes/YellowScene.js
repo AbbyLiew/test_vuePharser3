@@ -29,18 +29,18 @@ export default class YellowScene extends Scene {
       console.log(assetname);
       this.load.image(
         "yellowSet_" + i,
-        "/us-store/videos/sequance_yellow/" + assetname + ".jpg"
+        "/us-outlet/videos/sequance_yellow/" + assetname + ".jpg"
       );
     }
     this.load.video(
       "yellow",
-      "/us-store/videos/yellow_01.mp4",
+      "/us-outlet/videos/yellow_01.mp4",
       "loadeddata",
       false,
       true
     );
-    this.load.image("hand_yellow", "/us-store/icon/yellowgold.png");
-    this.load.image("hand_white", "/us-store/icon/white.png");
+    this.load.image("hand_yellow", "/us-outlet/icon/yellowgold.png");
+    this.load.image("hand_white", "/us-outlet/icon/white.png");
   }
 
   horizontalMove(target) {

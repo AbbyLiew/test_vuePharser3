@@ -5,7 +5,7 @@
   >
     <div class="block" :style="`height : ${innerHeight * 0.16}px`" />
     <img
-      src="/us-store/TabbyGame_sticker.png"
+      src="/us-outlet/TabbyGame_sticker.png"
       :style="`max-height : ${innerHeight * 0.25}px;margin : 0 auto`"
     />
     <div class="block" :style="`height : ${innerHeight * 0.02}px`" />
