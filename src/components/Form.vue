@@ -187,7 +187,7 @@ export default {
       window.localStorage.setItem("phone", this.phone);
 
       axios
-        .get(process.env.VUE_APP_API_URL + "/us-store/", {
+        .get(process.env.VUE_APP_API_URL + "/us-outlet", {
           params: {
             name: this.name,
             phone: this.phone,
