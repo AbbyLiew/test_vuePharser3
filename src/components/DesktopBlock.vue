@@ -8,13 +8,13 @@
     "
   >
     <div class="rooftop">
-      <img src="/us-outlet/Desktopblock_asset/roof.png" />
+      <img src="/outlet/Desktopblock_asset/roof.png" />
     </div>
     <div class="leftbag">
-      <img src="/us-outlet/Desktopblock_asset/left_block.png" />
+      <img src="/outlet/Desktopblock_asset/left_block.png" />
     </div>
     <div class="rightbag">
-      <img src="/us-outlet/Desktopblock_asset/right_block.png" />
+      <img src="/outlet/Desktopblock_asset/right_block.png" />
     </div>
 
     <div
@@ -29,11 +29,11 @@
     >
       <div class="block" style="height: 15vh"></div>
       <div class="imggcontainer" style="width: 15vw; max-width: 20rem">
-        <img src="/us-outlet/TabbyGame_sticker.png" />
+        <img src="/outlet/TabbyGame_sticker.png" />
       </div>
       <div class="block" style="height: 5vh"></div>
       <div class="imggcontainer" style="width: 15vw; max-width: 20rem">
-        <img src="/us-outlet/qrcode.png" />
+        <img src="/outlet/qrcode.png" />
       </div>
       <div class="block" style="height: 5vh"></div>
       <h2>#InMyTabby</h2>

@@ -32,7 +32,7 @@
                 "
               >
                 <img
-                  src="/us-outlet/mall.png"
+                  src="/outlet/mall.png"
                   alt="01shoes"
                   style="rotate: -25deg"
                 />
@@ -57,7 +57,7 @@
               >
                 <!-- <img src="/brunch.png" alt="02shoes" style="rotate: 15deg" /> -->
                 <img
-                  src="/us-outlet/manifesting.png"
+                  src="/outlet/manifesting.png"
                   alt="03shoes"
                   style="rotate: 15deg"
                 />
@@ -86,7 +86,7 @@
                   style="rotate: 35deg"
                 /> -->
                 <img
-                  src="/us-outlet/hot.png"
+                  src="/outlet/hot.png"
                   alt="05shoes"
                   style="rotate: -15deg"
                 />
@@ -110,7 +110,7 @@
                 "
               >
                 <img
-                  src="/us-outlet/love.png"
+                  src="/outlet/love.png"
                   alt="04shoes"
                   style="rotate: -15deg"
                 />
@@ -136,7 +136,7 @@
               >
                 <!-- <img src="/hot.png" alt="05shoes" style="rotate: 45deg" /> -->
                 <img
-                  src="/us-outlet/brunch.png"
+                  src="/outlet/brunch.png"
                   alt="02shoes"
                   style="rotate: 15deg"
                 />

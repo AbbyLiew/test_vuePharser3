@@ -2,7 +2,7 @@ const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "/us-outlet",
+  publicPath: "/outlet",
 
   chainWebpack: (config) => {
     /* disable insertion of assets as data urls b/c Phaser doesn't support it */

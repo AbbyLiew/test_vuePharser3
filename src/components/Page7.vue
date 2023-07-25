@@ -33,7 +33,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/us-outlet/shoes/01shoes.png" alt="01shoes" />
+                <img src="/outlet/shoes/01shoes.png" alt="01shoes" />
               </div>
             </li>
             <li
@@ -57,7 +57,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/us-outlet/shoes/02shoes.png" alt="02shoes" />
+                <img src="/outlet/shoes/02shoes.png" alt="02shoes" />
               </div>
             </li>
             <li
@@ -81,7 +81,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/us-outlet/shoes/03shoes.png" alt="03shoes" />
+                <img src="/outlet/shoes/03shoes.png" alt="03shoes" />
               </div>
             </li>
             <li
@@ -105,7 +105,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/us-outlet/shoes/04shoes.png" alt="04shoes" />
+                <img src="/outlet/shoes/04shoes.png" alt="04shoes" />
               </div>
             </li>
             <li
@@ -130,7 +130,7 @@
                   height : ${innerHeight * 0.11}px; 
                   width : ${innerHeight * 0.11}px`"
                 />
-                <img src="/us-outlet/shoes/05shoes.png" alt="05shoes" />
+                <img src="/outlet/shoes/05shoes.png" alt="05shoes" />
               </div>
             </li>
           </ul>
